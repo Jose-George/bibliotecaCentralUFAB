@@ -24,5 +24,23 @@ public class AnaisRegistroTest {
 		anaisRegistro.adicionarItem(anaisCongresso);
 		assertEquals("Resumo", AnaisRegistro.listaAcervo.get(0).getTipo());
 	}
-
+	
+	@Test
+	public void testRemoverItem() {
+		anaisRegistro.adicionarItem(anaisCongresso);
+		anaisRegistro.excluirItem(anaisCongresso);
+		assertEquals(0, AnaisRegistro.listaAcervo.size());
+	}
+	
+	@Test
+	public void testEditarItem() {
+		anaisRegistro.adicionarItem(anaisCongresso);
+		AnaisCongresso anaisCongressoNovo = new AnaisCongresso("Resumo", "CONAPESC", "José", "George", 2011,"CAMPG");
+		anaisRegistro.editarItem(anaisCongresso, anaisCongressoNovo);
+		assertEquals("CONAPESC", AnaisRegistro.listaAcervo.get(0).getNomeDoCongresso());
+		
+	}
+	
+	
+	
 }
