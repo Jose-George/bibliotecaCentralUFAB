@@ -66,9 +66,5 @@ public class TrabalhoDeConclusao {
 	public void setLocal(String local) {
 		this.local = local;
 	}
-	
-	
-	
-	
 
 }

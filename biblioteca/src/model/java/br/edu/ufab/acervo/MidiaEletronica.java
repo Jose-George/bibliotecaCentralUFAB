@@ -36,9 +36,6 @@ public class MidiaEletronica {
 
 	public void setDataGravacao(Date dataGravacao) {
 		this.dataGravacao = dataGravacao;
-	} 
- 	
+	}
 	
- 	
- 	
 }

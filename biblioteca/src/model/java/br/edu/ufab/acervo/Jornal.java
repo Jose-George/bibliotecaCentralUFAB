@@ -38,5 +38,5 @@ public class Jornal {
 	public void setEdicao(int edicao) {
 		this.edicao = edicao;
 	}
-	
+
 }

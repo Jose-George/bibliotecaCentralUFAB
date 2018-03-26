@@ -96,10 +96,6 @@ public class Livro {
 
 	public void setTema(String tema) {
 		this.tema = tema;
-	} 
+	}
 	
-	
-	
-	
-
 }

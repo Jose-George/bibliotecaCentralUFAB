@@ -1,16 +1,16 @@
 package br.edu.ufab.acervo;
 
-import java.util.Date;
+//import java.util.Date;
 
 public class Revista {
 
 	private String titulo; 
 	private String editora; 
-	private Date dataPublicacao;
+	private String dataPublicacao;
 	private int edicao; 
 	private int numeroPagina;
 	
-	public Revista(String titulo, String editora, Date dataPublicacao, int edicao, int numeroPagina) {
+	public Revista(String titulo, String editora, String dataPublicacao, int edicao, int numeroPagina) {
 		this.titulo = titulo;
 		this.editora = editora;
 		this.dataPublicacao = dataPublicacao;
@@ -34,11 +34,11 @@ public class Revista {
 		this.editora = editora;
 	}
 
-	public Date getDataPublicacao() {
+	public String getDataPublicacao() {
 		return dataPublicacao;
 	}
 
-	public void setDataPublicacao(Date dataPublicacao) {
+	public void setDataPublicacao(String dataPublicacao) {
 		this.dataPublicacao = dataPublicacao;
 	}
 
@@ -57,7 +57,6 @@ public class Revista {
 	public void setNumeroPagina(int numeroPagina) {
 		this.numeroPagina = numeroPagina;
 	}
-
 	
 }
 

@@ -65,8 +65,6 @@ public class AnaisCongresso {
 
 	public void setLocal(String local) {
 		this.local = local;
-	} 
-	
-	
+	}
 	
 }
