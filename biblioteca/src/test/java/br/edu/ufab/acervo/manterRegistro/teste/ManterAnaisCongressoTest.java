@@ -6,30 +6,30 @@ import org.junit.Before;
 import org.junit.Test;
 
 import br.edu.ufab.acervo.AnaisCongresso;
-import br.edu.ufab.acervo.manterRegistro.AnaisRegistro;
+import br.edu.ufab.acervo.manterRegistro.ManterAnaisCongresso;
 
-public class AnaisRegistroTest {
+public class ManterAnaisCongressoTest {
 	
 	AnaisCongresso anaisCongresso;
-	AnaisRegistro anaisRegistro;
+	ManterAnaisCongresso anaisRegistro;
 	
 	@Before
 	public void inicializandoTeste(){
 		anaisCongresso = new AnaisCongresso("Resumo", "ENECT", "WEB: o novo universo", "José George", 2001, "Campina Grande");
-		 anaisRegistro = new AnaisRegistro();
+		 anaisRegistro = new ManterAnaisCongresso();
 	}
 	
 	@Test
 	public void testAdicionarItem() {
 		anaisRegistro.adicionarItem(anaisCongresso);
-		assertEquals("Resumo", AnaisRegistro.listaAcervo.get(0).getTipo());
+		assertEquals("Resumo", ManterAnaisCongresso.listaAcervo.get(0).getTipo());
 	}
 	
 	@Test
 	public void testRemoverItem() {
 		anaisRegistro.adicionarItem(anaisCongresso);
 		anaisRegistro.excluirItem(anaisCongresso);
-		assertEquals(0, AnaisRegistro.listaAcervo.size());
+		assertEquals(0, ManterAnaisCongresso.listaAcervo.size());
 	}
 	
 	@Test
@@ -37,7 +37,7 @@ public class AnaisRegistroTest {
 		anaisRegistro.adicionarItem(anaisCongresso);
 		AnaisCongresso anaisCongressoNovo = new AnaisCongresso("Resumo", "CONAPESC", "José", "George", 2011,"CAMPG");
 		anaisRegistro.editarItem(anaisCongresso, anaisCongressoNovo);
-		assertEquals("CONAPESC", AnaisRegistro.listaAcervo.get(0).getNomeDoCongresso());
+		assertEquals("CONAPESC", ManterAnaisCongresso.listaAcervo.get(0).getNomeDoCongresso());
 		
 	}
 	

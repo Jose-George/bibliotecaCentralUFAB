@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 import br.edu.ufab.acervo.AnaisCongresso;
 
-public class AnaisRegistro implements ItemAcervo {
+public class ManterAnaisCongresso implements ItemAcervo {
 
 	public static ArrayList<AnaisCongresso> listaAcervo;
 
-	public AnaisRegistro() {
+	public ManterAnaisCongresso() {
 		listaAcervo = new ArrayList<AnaisCongresso>();
 	}
 
