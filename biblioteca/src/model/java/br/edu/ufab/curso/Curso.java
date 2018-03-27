@@ -5,6 +5,7 @@ public class Curso {
 		private String nome; 
 		private String area; 
 		private String tipo; /*Graduação, pós-graduação*/
+		
 		public String getNome() {
 			return nome;
 		}

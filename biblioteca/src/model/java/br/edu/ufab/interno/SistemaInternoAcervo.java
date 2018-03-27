@@ -18,11 +18,9 @@ public class SistemaInternoAcervo implements ItemAcervo {
 	}
 
 	public void remover(Object item) throws Exception {
+		
 		listaAcervo.remove(item);
 		
 	}
 
-
-	
-	
 }
