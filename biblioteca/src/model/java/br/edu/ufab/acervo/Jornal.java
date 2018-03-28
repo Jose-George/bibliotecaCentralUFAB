@@ -2,7 +2,7 @@ package br.edu.ufab.acervo;
 
 import java.util.Date;
 
-public class Jornal {
+public class Jornal implements ItemAcervo {
 
 	private String titulo;  
 	private Date dataPublicacao;
@@ -19,24 +19,13 @@ public class Jornal {
 		return titulo;
 	}
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-
 	public Date getDataPublicacao() {
 		return dataPublicacao;
-	}
-
-	public void setDataPublicacao(Date dataPublicacao) {
-		this.dataPublicacao = dataPublicacao;
 	}
 
 	public int getEdicao() {
 		return edicao;
 	}
 
-	public void setEdicao(int edicao) {
-		this.edicao = edicao;
-	}
 
 }

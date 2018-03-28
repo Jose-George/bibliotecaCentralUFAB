@@ -2,25 +2,25 @@ package br.edu.ufab.interno;
 
 import java.util.ArrayList;
 
-public class SistemaInternoAcervo implements ItemAcervo {
+import br.edu.ufab.acervo.ItemAcervo;
 
-	public ArrayList<Object> listaAcervo = new ArrayList<Object>();
+public abstract class SistemaInternoAcervo  {
 
-	public void cadastrar(Object item) {
+	public static ArrayList<ItemAcervo> listaAcervo = new ArrayList<ItemAcervo>();
+
+	public static void cadastrar(ItemAcervo item) {
 		listaAcervo.add(item);
 	}
 
-	public void editar(Object item, Object novoItem) throws Exception {
+	public static void editar(ItemAcervo item, ItemAcervo novoItem) throws Exception {
 		if(listaAcervo.contains(item)){
 			remover(item);
 			listaAcervo.add(novoItem);
 		}
 	}
 
-	public void remover(Object item) throws Exception {
-		
-		listaAcervo.remove(item);
-		
+	public static void remover(ItemAcervo item) throws Exception {
+		listaAcervo.remove(item);		
 	}
 
 }

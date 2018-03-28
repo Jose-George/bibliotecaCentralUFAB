@@ -1,6 +1,6 @@
 package br.edu.ufab.acervo;
 
-public class Livro {
+public class Livro implements ItemAcervo {
 
 	private String isbn; 
 	private String titulo; 
@@ -30,72 +30,36 @@ public class Livro {
 		return isbn;
 	}
 
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
-
 	public String getTitulo() {
 		return titulo;
-	}
-
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
 	}
 
 	public String getAutor() {
 		return autor;
 	}
 
-	public void setAutor(String autor) {
-		this.autor = autor;
-	}
-
 	public String getEditora() {
 		return editora;
-	}
-
-	public void setEditora(String editora) {
-		this.editora = editora;
 	}
 
 	public int getAnoPublicacao() {
 		return anoPublicacao;
 	}
 
-	public void setAnoPublicacao(int anoPublicacao) {
-		this.anoPublicacao = anoPublicacao;
-	}
-
 	public int getEdicao() {
 		return edicao;
-	}
-
-	public void setEdicao(int edicao) {
-		this.edicao = edicao;
 	}
 
 	public int getNumeroPagina() {
 		return numeroPagina;
 	}
 
-	public void setNumeroPagina(int numeroPagina) {
-		this.numeroPagina = numeroPagina;
-	}
-
 	public String getAreaDoConhecimento() {
 		return areaDoConhecimento;
-	}
-
-	public void setAreaDoConhecimento(String areaDoConhecimento) {
-		this.areaDoConhecimento = areaDoConhecimento;
 	}
 
 	public String getTema() {
 		return tema;
 	}
 
-	public void setTema(String tema) {
-		this.tema = tema;
-	}
-	
 }
