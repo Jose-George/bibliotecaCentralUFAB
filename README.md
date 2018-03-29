@@ -7,6 +7,8 @@ Para melhor compreensão, o professor deverá entrar no source folder, src/test/
 Caso ao baixar esse arquivo, o código não compile corretamente, devera dentro do ambiente do eclipse, clicar com o botão direito em cima 
 do projeto maven biblioteca, ir até as properties Clique em Java Build Path e veja se todas as libs estão marcadas.
 
+A documentação do projeto está na pasta documentação. 
+
 
 
 
