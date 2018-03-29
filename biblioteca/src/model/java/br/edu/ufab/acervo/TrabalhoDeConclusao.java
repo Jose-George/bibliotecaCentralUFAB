@@ -1,5 +1,11 @@
 package br.edu.ufab.acervo;
 
+/*
+ * @author Jose George
+ * Classe TrabalhoDeConclusão
+ * implementa ItemAcervo
+ * */
+
 public class TrabalhoDeConclusao implements ItemAcervo {
 	
 	private String tipo; /*TCC, tese ou Dissertação*/

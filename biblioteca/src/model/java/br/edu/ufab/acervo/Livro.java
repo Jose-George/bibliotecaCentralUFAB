@@ -1,5 +1,10 @@
 package br.edu.ufab.acervo;
 
+/*
+ * @author Jose George
+ * Classe Livro
+ * implementa ItemAcervo
+ * */
 public class Livro implements ItemAcervo {
 
 	private String isbn; 

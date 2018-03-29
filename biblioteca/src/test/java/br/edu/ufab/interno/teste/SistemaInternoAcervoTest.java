@@ -1,4 +1,5 @@
-/**
+/*
+ * @author Caio
  * 
  */
 package br.edu.ufab.interno.teste;
@@ -21,7 +22,7 @@ public class SistemaInternoAcervoTest {
 	Funcionario funcionario;
 	
 	@Before
-	public void inicializandoTeste(){
+	public void inicializandoTeste(){ /*codigo executado antes de cada teste*/
 		anaisCongresso = new AnaisCongresso("Resumo", "ENECT", "WEB: o novo universo", "José George", 2001,
 		"Campina Grande");
 	    
@@ -32,12 +33,12 @@ public class SistemaInternoAcervoTest {
 	}
 	
 	@Test
-	public void cadastrarTest() {
+	public void cadastrarTest() {/*testa a funcionaliade de cadastrar da classe SistemaInternoAcervo */
 		//SistemaInternoAcervo sia = new SistemaInternoAcervo(); 
-		SistemaInternoAcervo.cadastrar(anaisCongresso);
-		assertEquals(anaisCongresso, SistemaInternoAcervo.listaAcervo.get(0));
+		SistemaInternoAcervo.cadastrar(anaisCongresso);/*cadastra itemAcervo*/
+		assertTrue(SistemaInternoAcervo.listaAcervo.contains(anaisCongresso));/*itemDoAcervo deve estar na lista de itens*/
 		SistemaInternoAcervo.cadastrar(revista);
-		assertEquals(revista, SistemaInternoAcervo.listaAcervo.get(1));
+		assertTrue(SistemaInternoAcervo.listaAcervo.contains(anaisCongresso));/**/
 	}
 	
 	@Test
@@ -45,7 +46,8 @@ public class SistemaInternoAcervoTest {
 		//SistemaInternoAcervo sia = new SistemaInternoAcervo(); 
 		SistemaInternoAcervo.cadastrar(anaisCongresso);
 		SistemaInternoAcervo.editar(anaisCongresso, revista);
-		assertEquals(revista, SistemaInternoAcervo.listaAcervo.get(0));
+		assertFalse(SistemaInternoAcervo.listaAcervo.contains(anaisCongresso));/*anaisCongresso não deve estar na lista de itens*/
+		assertTrue(SistemaInternoAcervo.listaAcervo.contains(revista));/*revista deve estar na lista de itens*/
 	}
 	
 	@Test
@@ -53,14 +55,13 @@ public class SistemaInternoAcervoTest {
 		//SistemaInternoAcervo sia = new SistemaInternoAcervo(); 
 		SistemaInternoAcervo.cadastrar(anaisCongresso);;
 		SistemaInternoAcervo.cadastrar(revista);
-		if(funcionario.isTipo() == TipoFuncionario.ADMINISTRADOR){
-			SistemaInternoAcervo.remover(anaisCongresso);
-			SistemaInternoAcervo.remover(revista);
-			assertEquals(0, SistemaInternoAcervo.listaAcervo.size());
-		} else{
-			assertEquals(0, SistemaInternoAcervo.listaAcervo.size());
-		}
+		SistemaInternoAcervo.remover(anaisCongresso, funcionario);/*remove item da lista, se o funcionario for adm*/
+		SistemaInternoAcervo.remover(revista, funcionario);
 		
-	} 
+		
+		assertTrue(!SistemaInternoAcervo.listaAcervo.contains(anaisCongresso));
+		assertTrue(!SistemaInternoAcervo.listaAcervo.contains(revista));	
+		
+	} // fim do removerTeste
 	
 }

@@ -1,6 +1,11 @@
 package br.edu.ufab.acervo;
 
 import java.util.Date;
+/*
+ * @author Jose George
+ * Classe MidiaEletronica
+ * implementa ItemAcervo
+ * */
 
 public class MidiaEletronica implements ItemAcervo {
 

@@ -1,5 +1,10 @@
 package br.edu.ufab.acervo;
 
+/*
+ * @author Jose George
+ * Classe AnaisCogresso
+ * implementa interface ItemAcervo
+ * */
 public class AnaisCongresso implements ItemAcervo {
 
 	private String tipo; /*artigo, pôster, resumo*/

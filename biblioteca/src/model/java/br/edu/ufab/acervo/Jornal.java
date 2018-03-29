@@ -2,6 +2,12 @@ package br.edu.ufab.acervo;
 
 import java.util.Date;
 
+/*
+ * @author Jose George
+ * 
+ * Classe Jornal
+ * implementa interface ItemAcervo
+ * */
 public class Jornal implements ItemAcervo {
 
 	private String titulo;  

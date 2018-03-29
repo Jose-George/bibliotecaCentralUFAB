@@ -1,8 +1,18 @@
 package br.edu.ufab.funcionario;
 
+/*
+ * @author Jose George
+ * Classe Funcionario
+ * inicializa dados do funcionario por construtor
+ * possui gets referentes a cada atributo
+ * 
+ * o usuario pode ser admin ou operador
+ * o tipo do atributo 'tipo' referencia o Enum 'TipoFuncionario'
+ * */
+
 public class Funcionario {
 
-	private TipoFuncionario tipo; /*USUÁRIO OPERADOR OU ADMINISTRADOR*/
+	private TipoFuncionario tipo; /*USUARIO OPERADOR OU ADMINISTRADOR*/
 	private String cpf; 
 	private String nomeCompleto; 
 	private String rg; 
