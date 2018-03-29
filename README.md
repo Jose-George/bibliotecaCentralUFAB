@@ -9,6 +9,7 @@ do projeto maven biblioteca, ir até as properties Clique em Java Build Path e v
 
 A documentação do projeto está na pasta documentação. 
 
+OBS: apesar de todos os commit terem sido feito por José George, Caio teve uma participação essecial para conclusão da sprint, ele apenas teve problemas com o gitBash e não pode dá commit dentro do meu repositório, além do mais, os últimos commit, compartilhamos a mesma máquina. Obrigado.
 
 
 
