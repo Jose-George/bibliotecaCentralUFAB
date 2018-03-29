@@ -1,1 +1,12 @@
 # bibliotecaCentralUFAB
+
+Nessa sprint 1, não temos um código funcional a nível de usuário, apenas temos o código do que foi pedido na sprint, e os casos de teste, que estão no junit. 
+
+Para melhor compreensão, o professor deverá entrar no source folder, src/test/java, lá temos vários package com códigos de teste, no primeiro package acervo.teste não temos nenhum teste, pois as classes dele só retornam gets e sets. 
+
+Caso ao baixar esse arquivo, o código não compile corretamente, devera dentro do ambiente do eclipse, clicar com o botão direito em cima 
+do projeto maven biblioteca, ir até as properties Clique em Java Build Path e veja se todas as libs estão marcadas.
+
+
+
+
