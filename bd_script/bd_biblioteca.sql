@@ -15,11 +15,12 @@ CREATE TABLE IF NOT EXISTS anaisCongresso(
 );
 
 CREATE TABLE IF NOT EXISTS jornal(
+	id int NOT NULL AUTO_INCREMENT,
 	titulo VARCHAR(140), 
 	dataPublicacao DATE,  
     edicao INT, 
     
-    PRIMARY KEY(titulo,edicao)
+    PRIMARY KEY(id)
 ); 
 
 CREATE TABLE IF NOT EXISTS livro(

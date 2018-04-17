@@ -10,7 +10,7 @@ import java.util.Date;
  * */
 public class Jornal extends ItemDeAcervo{
 
-	
+	private int id;
 	private int edicao;
 	
 	
@@ -20,16 +20,20 @@ public class Jornal extends ItemDeAcervo{
 		this.edicao = edicao;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public int getEdicao() {
 		return edicao;
 	}
 
-
 	public void setEdicao(int edicao) {
 		this.edicao = edicao;
 	}
-
-	
 	
 }

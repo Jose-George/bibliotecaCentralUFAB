@@ -51,6 +51,8 @@ public class AnaisCongressoDAO implements ItemDAO<AnaisCongresso> {
 			stmt.setInt(1, anais.getId());
 			stmt.execute();
 			stmt.close();
+			
+			return true;
 		}catch(Exception e){
 			e.printStackTrace();
 		}
