@@ -15,6 +15,7 @@ public class AnaisCongresso extends ItemDeAcervo{
 	private String autor; 
 	private String nomeDoCongresso; 
 	private String local;    
+	private int id;
 	
 	
 	public AnaisCongresso(AnaisEnum tipo, String nomeDoCongresso, String titulo, String autor, Date anoPublicacao,
@@ -66,6 +67,17 @@ public class AnaisCongresso extends ItemDeAcervo{
 	public void setLocal(String local) {
 		this.local = local;
 	}
+
+
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	
 	
 }

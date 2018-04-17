@@ -2,6 +2,7 @@ CREATE DATABASE IF NOT EXISTS biblioteca;
 USE biblioteca;
 
 CREATE TABLE IF NOT EXISTS anaisCongresso(
+	id int NOT NULL AUTO_INCREMENT,
 	tipo VARCHAR(6), 
     titulo VARCHAR(140),
     autor VARCHAR(100), 
@@ -9,7 +10,7 @@ CREATE TABLE IF NOT EXISTS anaisCongresso(
     anoPublicacao DATE, 
 	localEvento VARCHAR(100),
     
-    PRIMARY KEY(titulo,anoPublicacao)
+    PRIMARY KEY(id)
     
 );
 
