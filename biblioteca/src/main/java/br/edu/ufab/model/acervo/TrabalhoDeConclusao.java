@@ -2,7 +2,10 @@ package br.edu.ufab.model.acervo;
 
 import java.sql.Date;
 
-import br.edu.ufab.model.acervo.enumerador.TrabalhoEnum;
+/*Enum especificando tipos de trabalho de conclusão*/
+enum TrabalhoEnum {
+	TCC,DISSERTACAO,TESE;
+}
 
 /*
  * @author Jose George
@@ -66,10 +69,6 @@ public class TrabalhoDeConclusao extends ItemDeAcervo{
 
 	public void setLocal(String local) {
 		this.local = local;
-	}
-
-	
-	
-	
+	}	
 
 }

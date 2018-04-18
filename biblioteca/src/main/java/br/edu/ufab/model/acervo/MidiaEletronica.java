@@ -1,13 +1,17 @@
 package br.edu.ufab.model.acervo;
 
 import java.util.Date;
+
+/*Enum para especificar tipos de midia eletronica*/
+enum MidiaEnum {
+	CD,DVD;
+}
+
 /*
  * @author Jose George
  * Classe MidiaEletronica
  * implementa ItemAcervo
  * */
-
-import br.edu.ufab.model.acervo.enumerador.MidiaEnum;
 
 public class MidiaEletronica extends ItemDeAcervo{
 

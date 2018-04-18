@@ -1,6 +1,8 @@
 package br.edu.ufab.model.curso;
 
-import br.edu.ufab.curso.enumerador.CursoEnum;
+enum CursoEnum {	
+	GRADUACAO, POS_GRADUACAO;
+}
 
 public class Curso {
 

@@ -2,7 +2,11 @@ package br.edu.ufab.model.acervo;
 
 import java.sql.Date;
 
-import br.edu.ufab.model.acervo.enumerador.AnaisEnum;
+/*Enum especificando os tipos de Anais de congresso interno a classe 
+ *para eliminar a necessidade de criar um arquivo exclusivo e facilitar manutenção*/
+enum AnaisEnum {
+	ARTIGO, POSTER, RESUMO;
+}
 
 /*
  * @author Jose George
