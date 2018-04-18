@@ -12,6 +12,7 @@ import br.edu.ufab.model.acervo.enumerador.TrabalhoEnum;
 
 public class TrabalhoDeConclusao extends ItemDeAcervo{
 	
+	private int id;
 	private TrabalhoEnum tipo; 
 	private String autor; 
 	private String Orientador; 
@@ -25,6 +26,14 @@ public class TrabalhoDeConclusao extends ItemDeAcervo{
 		this.autor = autor;
 		this.dataPublicacao = anoDefesa;
 		this.local = local;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public TrabalhoEnum getTipo() {

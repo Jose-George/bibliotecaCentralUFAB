@@ -26,7 +26,8 @@ public class JornalDAO implements ItemDAO<Jornal> {
 			stmt.setString(1, item.getTitulo());
 			stmt.setDate(2, item.getDataPublicacao());
 			stmt.setInt(3, item.getEdicao());
-
+			stmt.execute();
+			stmt.close();
 			return true;
 			
 		} catch (SQLException u) {

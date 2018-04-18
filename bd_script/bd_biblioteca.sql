@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS anaisCongresso(
     PRIMARY KEY(id)
     
 );
-
+		
 CREATE TABLE IF NOT EXISTS jornal(
 	id int NOT NULL AUTO_INCREMENT,
 	titulo VARCHAR(140), 
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS livro(
     titulo VARCHAR(140), 
     autor VARCHAR(100), 
     editora VARCHAR(40), 
-    anoPublicacao DATE, 
+    anoDefesaPublicacao DATE, 
     edicao INT, 
     numeroPagina INT, 
     areaConhecimento VARCHAR(40),
@@ -38,25 +38,28 @@ CREATE TABLE IF NOT EXISTS livro(
 );
 
 CREATE TABLE IF NOT EXISTS midiaEletronica(
+	id int NOT NULL AUTO_INCREMENT,
 	titulo VARCHAR(140), 
     tipo VARCHAR(3), 
     dataGravacao DATE,
     
-    PRIMARY KEY(titulo, dataGravacao)
+    PRIMARY KEY(id)
 );
 
 CREATE TABLE IF NOT EXISTS revista(
+	id int NOT NULL AUTO_INCREMENT,
 	titulo VARCHAR(140), 
     editora VARCHAR(40), 
     dataPublicacao DATE,  
     edicao INT, 
     numeroPagina INT,
     
-    PRIMARY KEY(titulo, edicao)
+    PRIMARY KEY(id)
 
 );
 
 CREATE TABLE IF NOT EXISTS trabalhoConclusao(
+	id int NOT NULL AUTO_INCREMENT,
 	tipo VARCHAR(30), 
     autor VARCHAR(100), 
     orientador VARCHAR(100), 
@@ -64,7 +67,7 @@ CREATE TABLE IF NOT EXISTS trabalhoConclusao(
     anoDefesa DATE, 
     localDefesa VARCHAR(100),
     
-    PRIMARY KEY(titulo, tipo)
+    PRIMARY KEY(id)
 );
 
 CREATE TABLE IF NOT EXISTS curso(

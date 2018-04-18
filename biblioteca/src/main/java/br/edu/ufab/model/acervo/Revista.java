@@ -12,7 +12,7 @@ import java.sql.Date;
 
 public class Revista extends ItemDeAcervo{
 
-	
+	private int id;
 	private String editora; 
 	private int edicao; 
 	private int numeroPagina;
@@ -24,6 +24,17 @@ public class Revista extends ItemDeAcervo{
 		this.edicao = edicao;
 		this.numeroPagina = numeroPagina;
 	}
+
+	
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 
 	public String getEditora() {
 		return editora;
