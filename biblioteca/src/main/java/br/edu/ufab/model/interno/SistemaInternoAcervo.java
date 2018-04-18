@@ -2,20 +2,20 @@ package br.edu.ufab.model.interno;
 
 import java.util.ArrayList;
 
-import br.edu.ufab.model.acervo.ItemAcervo;
+import br.edu.ufab.model.acervo.ItemDeAcervo;
 import br.edu.ufab.model.funcionario.Funcionario;
 import br.edu.ufab.model.funcionario.TipoFuncionario;
 
 public abstract class SistemaInternoAcervo  {
 	/*atributo auxiliar no CRUD de itens do acervo, enquanto nao eh implementada uma base de dados*/
-	public static ArrayList<ItemAcervo> listaAcervo = new ArrayList<ItemAcervo>();
+	public static ArrayList<ItemDeAcervo> listaAcervo = new ArrayList<ItemDeAcervo>();
 	
 	/*
 	 * @author Jose George
 	 * adiciona item ao acervo
 	 * @param ItemAcervo item
 	 * */
-	public static void cadastrar(ItemAcervo item) { //adiciona item do acervo a lista
+	public static void cadastrar(ItemDeAcervo item) { //adiciona item do acervo a lista
 		listaAcervo.add(item);
 	}
 	
@@ -25,7 +25,7 @@ public abstract class SistemaInternoAcervo  {
 	 * @param ItemAcervo itemAntigo
 	 * @param ItemaAcervo novoItem
 	 * */
-	public static void editar(ItemAcervo itemAntigo, ItemAcervo novoItem) throws Exception {
+	public static void editar(ItemDeAcervo itemAntigo, ItemDeAcervo novoItem) throws Exception {
 		int indexItemAntigo = listaAcervo.indexOf(itemAntigo);
 		if(listaAcervo.contains(itemAntigo)){
 			listaAcervo.set(indexItemAntigo, novoItem);
@@ -38,7 +38,7 @@ public abstract class SistemaInternoAcervo  {
 	 * @param ItemAcervo item
 	 * @param Funcionario funcionario
 	 * */
-	public static void remover(ItemAcervo item, Funcionario funcionario) throws Exception {
+	public static void remover(ItemDeAcervo item, Funcionario funcionario) throws Exception {
 		if (funcionario.isTipo() == TipoFuncionario.ADMINISTRADOR)
 			listaAcervo.remove(item);
 	}

@@ -1,5 +1,11 @@
 package br.edu.ufab.model.funcionario;
 
+/*Especificam tipo de funcionario com enum interno, sem necessidade
+ * de criação de um arquivo separado*/
+enum TipoFuncionario {
+	ADMINISTRADOR, OPERADOR
+}
+
 /*
  * @author Jose George
  * Classe Funcionario
