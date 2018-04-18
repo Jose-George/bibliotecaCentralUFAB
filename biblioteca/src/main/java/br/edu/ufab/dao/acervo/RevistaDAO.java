@@ -20,7 +20,7 @@ public class RevistaDAO implements ItemDAO<Revista> {
 
 	public boolean insertion(Revista item) {
 		
-		String sql = "INSERT INTO jornal(titulo,editora,dataPublicacao,edicao,numeroPagina VALUES(?,?,?,?,?)";
+		String sql = "INSERT INTO revista(titulo,editora,dataPublicacao,edicao,numeroPagina) VALUES(?,?,?,?,?)";
 
 		try {
 			stmt = (PreparedStatement) conexao.prepareStatement(sql);

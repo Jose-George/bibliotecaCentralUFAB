@@ -19,7 +19,7 @@ public class MidiaDAO implements ItemDAO<MidiaEletronica> {
 	
 	public boolean insertion(MidiaEletronica item) {
 
-		String sql = "INSERT INTO midiaEletronica (titulo,tipo,dataGravacao VALUES(?,?,?)";
+		String sql = "INSERT INTO midiaEletronica (titulo,tipo,dataGravacao) VALUES(?,?,?)";
 		
 		try {
 			stmt = (PreparedStatement) conexao.prepareStatement(sql);

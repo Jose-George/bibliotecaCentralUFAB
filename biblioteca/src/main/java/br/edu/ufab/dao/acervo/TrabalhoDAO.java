@@ -18,7 +18,7 @@ public class TrabalhoDAO implements ItemDAO<TrabalhoDeConclusao> {
 	}
 	
 	public boolean insertion(TrabalhoDeConclusao item) {
-		String sql = "INSERT INTO trabalhoConclusao(tipo,autor,orientador,titulo,anoDefesa,localDefasa VALUES(?,?,?,?,?,?)";
+		String sql = "INSERT INTO trabalhoConclusao(tipo,autor,orientador,titulo,anoDefesa,localDefasa) VALUES(?,?,?,?,?,?)";
 		
 		try {
 			stmt = (PreparedStatement) conexao.prepareStatement(sql);
