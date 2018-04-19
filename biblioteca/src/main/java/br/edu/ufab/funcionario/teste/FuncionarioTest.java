@@ -6,11 +6,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 import br.edu.ufab.model.funcionario.Funcionario;
-import br.edu.ufab.model.funcionario.TipoFuncionario;
+import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
 
 public class FuncionarioTest {
 
-	Funcionario funcionario; 
+Funcionario funcionario; 
 	
 	@Before
 	public void inicializando(){
@@ -22,7 +22,5 @@ public class FuncionarioTest {
 	public void VerificaSeFuncionarioADMtest() {
 			assertTrue(funcionario.isTipo() == TipoFuncionario.ADMINISTRADOR);
 	}
-	
-	
-
 }
+

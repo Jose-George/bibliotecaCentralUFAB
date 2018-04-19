@@ -4,9 +4,7 @@ import java.sql.Date;
 
 /*Enum especificando os tipos de Anais de congresso interno a classe 
  *para eliminar a necessidade de criar um arquivo exclusivo e facilitar manutenção*/
-enum AnaisEnum {
-	ARTIGO, POSTER, RESUMO;
-}
+
 
 /*
  * @author Jose George
@@ -15,6 +13,10 @@ enum AnaisEnum {
  * */
 public class AnaisCongresso extends ItemDeAcervo{
 
+	public enum AnaisEnum {
+	ARTIGO, POSTER, RESUMO;
+	}
+	
 	private AnaisEnum tipo;
 	private String autor; 
 	private String nomeDoCongresso; 
@@ -33,11 +35,11 @@ public class AnaisCongresso extends ItemDeAcervo{
 	}
 
 
-	public AnaisEnum getTipo() {
+	public AnaisEnum getTipo(){
 		return tipo;
 	}
 
-
+	
 	public void setTipo(AnaisEnum tipo) {
 		this.tipo = tipo;
 	}

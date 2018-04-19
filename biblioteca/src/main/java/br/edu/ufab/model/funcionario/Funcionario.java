@@ -2,9 +2,6 @@ package br.edu.ufab.model.funcionario;
 
 /*Especificam tipo de funcionario com enum interno, sem necessidade
  * de criação de um arquivo separado*/
-enum TipoFuncionario {
-	ADMINISTRADOR, OPERADOR
-}
 
 /*
  * @author Jose George
@@ -18,6 +15,11 @@ enum TipoFuncionario {
 
 public class Funcionario {
 
+	public enum TipoFuncionario {
+		ADMINISTRADOR, OPERADOR
+	}
+
+	
 	private TipoFuncionario tipo; /*USUARIO OPERADOR OU ADMINISTRADOR*/
 	private String cpf; 
 	private String nomeCompleto; 

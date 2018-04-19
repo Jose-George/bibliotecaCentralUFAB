@@ -3,9 +3,6 @@ package br.edu.ufab.model.acervo;
 import java.sql.Date;
 
 /*Enum especificando tipos de trabalho de conclusão*/
-enum TrabalhoEnum {
-	TCC,DISSERTACAO,TESE;
-}
 
 /*
  * @author Jose George
@@ -15,6 +12,9 @@ enum TrabalhoEnum {
 
 public class TrabalhoDeConclusao extends ItemDeAcervo{
 	
+	public enum TrabalhoEnum {
+		TCC,DISSERTACAO,TESE;
+	}
 	private int id;
 	private TrabalhoEnum tipo; 
 	private String autor; 

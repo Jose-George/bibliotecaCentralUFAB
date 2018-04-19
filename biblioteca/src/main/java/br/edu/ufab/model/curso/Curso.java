@@ -1,44 +1,43 @@
 package br.edu.ufab.model.curso;
 
-enum CursoEnum {	
-	GRADUACAO, POS_GRADUACAO;
-}
-
 public class Curso {
 
-		private String nome; 
-		private String area; 
-		private CursoEnum tipo; 
-		
-		public Curso (String nome, String area, CursoEnum tipo){
-			this.nome = nome;
-			this.area = area;
-			this.tipo = tipo;
-		}
+	public enum CursoEnum {
+		GRADUACAO, POS_GRADUACAO;
+	}
 
-		public String getNome() {
-			return nome;
-		}
+	private String nome;
+	private String area;
+	private CursoEnum tipo;
 
-		public void setNome(String nome) {
-			this.nome = nome;
-		}
+	public Curso(String nome, String area, CursoEnum tipo) {
+		this.nome = nome;
+		this.area = area;
+		this.tipo = tipo;
+	}
 
-		public String getArea() {
-			return area;
-		}
+	public String getNome() {
+		return nome;
+	}
 
-		public void setArea(String area) {
-			this.area = area;
-		}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-		public CursoEnum getTipo() {
-			return tipo;
-		}
+	public String getArea() {
+		return area;
+	}
 
-		public void setTipo(CursoEnum tipo) {
-			this.tipo = tipo;
-		}
-	
-		
+	public void setArea(String area) {
+		this.area = area;
+	}
+
+	public CursoEnum getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(CursoEnum tipo) {
+		this.tipo = tipo;
+	}
+
 }
