@@ -2,10 +2,6 @@ package br.edu.ufab.model.acervo;
 
 import java.sql.Date;
 
-/*Enum especificando os tipos de Anais de congresso interno a classe 
- *para eliminar a necessidade de criar um arquivo exclusivo e facilitar manutenção*/
-
-
 /*
  * @author Jose George
  * Classe AnaisCogresso
