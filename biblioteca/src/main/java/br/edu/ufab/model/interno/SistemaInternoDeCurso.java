@@ -16,15 +16,15 @@ public class SistemaInternoDeCurso {
 	}
 	
 	
-	public static boolean cadastrar(CursoDAO cursoDao, Curso curso ){
+	public boolean cadastrar(CursoDAO cursoDao, Curso curso ){
 		return cursoDao.insertion(curso);
 	}
 	
-	public static boolean editar(CursoDAO cursoDao, Curso curso ){
+	public boolean editar(CursoDAO cursoDao, Curso curso ){
 		return cursoDao.update(curso);
 	}
 	
-	public static boolean remover(CursoDAO cursoDao, Curso curso ){
+	public boolean remover(CursoDAO cursoDao, Curso curso ){
 		return cursoDao.remove(curso);
 	}
 	

@@ -21,11 +21,11 @@ public class SistemaInternoDeAcervo {
 	}
 	
 	public boolean editar(ItemDAO itemDao, ItemDeAcervo itemAcervo){
-		return itemDao.update((ItemDeAcervo) itemAcervo);
+		return itemDao.update(itemAcervo);
 	}
 	
 	public boolean remover(ItemDAO itemDao, ItemDeAcervo itemAcervo){
-		return itemDao.remove((ItemDeAcervo) itemAcervo);
+		return itemDao.remove(itemAcervo);
 	}
 	
 }

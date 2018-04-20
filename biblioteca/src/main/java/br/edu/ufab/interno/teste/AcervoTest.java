@@ -34,6 +34,19 @@ public class AcervoTest {
 	public void testCadastro() {
 		assertTrue(sisAcervo.cadastrar(anaisDao,anais));
 	}
-
+	
+	@Test
+	public void testEditarCadastro() {
+		AnaisCongresso anaisUp = new AnaisCongresso(AnaisEnum.POSTER, "CBA",
+				"Computacao parelala", "Jose ",null , "CG");
+		anaisUp.setId(1);
+		assertTrue(sisAcervo.editar(anaisDao, anaisUp));
+	}
+	
+	@Test
+	public void testExcluirCadastro() {
+		anais.setId(7);
+		assertTrue(sisAcervo.remover(anaisDao, anais));
+	}
 	
 }

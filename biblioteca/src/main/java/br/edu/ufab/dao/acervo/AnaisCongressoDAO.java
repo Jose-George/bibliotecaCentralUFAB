@@ -63,6 +63,7 @@ public class AnaisCongressoDAO implements ItemDAO {
 	}
 
 	public boolean update(Object item) {
+		
 		 String sql = "UPDATE anaiscongresso SET tipo = ?, titulo = ?, autor = ?, nomeCongresso = ? ,"
 			 		+ "anoPublicacao = ?, localEvento = ?" +
 			 " WHERE id = ?";

@@ -51,7 +51,7 @@ public class CursoDAO {
 	public boolean remove(Curso curso) {
 		
 		String sql = "DELETE FROM curso"
-				+ " WHERE nome = ?" ;		
+				+ " WHERE nome = ? ; " ;		
 		try{
 			stmt = (PreparedStatement) conexao.prepareStatement(sql);  
 			stmt.setString(1, curso.getNome());
@@ -67,8 +67,8 @@ public class CursoDAO {
 
 	public boolean update(Curso curso) {
 	
-		String sql = "UPDATE revista SET areaCurso = ?, tipo = ?"+
-				 " WHERE nome = ?";
+		String sql = "UPDATE curso SET nome = ?, areaCurso = ?, tipo = ?";
+				 //" WHERE nome = ?";
 		
 		try {
 			stmt = (PreparedStatement) conexao.prepareStatement(sql);
