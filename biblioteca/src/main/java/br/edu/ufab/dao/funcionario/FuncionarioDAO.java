@@ -21,7 +21,7 @@ public class FuncionarioDAO {
 	public boolean insertion(Funcionario funcionario) {
 
 		String sql = "INSERT INTO funcionario(tipoFuncionario,cpf,nomeCompleto,rg,"
-				+ "naturalidade, endereco,telefone,email) VALUES(?,?,?,?,?,?,?,?)";
+				+ "naturalidade, endereco,telefone,email, nomeUsuario, senha) VALUES(?,?,?,?,?,?,?,?,?,?)";
 
 		try {
 			stmt = (PreparedStatement) conexao.prepareStatement(sql);
@@ -33,6 +33,9 @@ public class FuncionarioDAO {
 			stmt.setString(6,funcionario.getEndereco());
 			stmt.setString(7,funcionario.getTelefone());
 			stmt.setString(8,funcionario.getEmail());
+			stmt.setString(9,funcionario.getNomeUsuario());
+			stmt.setString(10,funcionario.getSenha());
+			
 			
 			stmt.execute();
 			stmt.close();
@@ -64,7 +67,7 @@ public class FuncionarioDAO {
 	public boolean update(Funcionario funcionario) {
 		
 		String sql = "UPDATE revista SET tipoFuncionario = ?, nomeCompleto = ?,"
-				+ "rg=?,naturalidade=?,endereco=?,telefone=?,email=?"+
+				+ "rg=?,naturalidade=?,endereco=?,telefone=?,email=? nomeUsuario=?, senha=?"+
 				 " WHERE cpf = ?";
 		
 		try {
@@ -78,6 +81,9 @@ public class FuncionarioDAO {
 			stmt.setString(6,funcionario.getTelefone());
 			stmt.setString(7,funcionario.getEmail());
 			stmt.setString(8,funcionario.getCpf());
+			stmt.setString(9,funcionario.getNomeUsuario());
+			stmt.setString(10,funcionario.getSenha());
+			
 			
 			stmt.execute();
 			stmt.close();

@@ -87,17 +87,11 @@ CREATE TABLE IF NOT EXISTS funcionario(
     endereco VARCHAR(100), 
     telefone VARCHAR(10),
     email VARCHAR(100), 
-	
-	PRIMARY KEY(cpf)
+	nomeUsuario VARCHAR(100), 
+    senha VARCHAR(20), 
+
+
+	PRIMARY KEY(cpf,nomeUsuario)
 );
 
-CREATE TABLE IF NOT EXISTS controleAcesso(
-	nomeUsuario VARCHAR(100), 
-    cpfUsuario BIGINT(11),
-    senha VARCHAR(20), 
-    
-    PRIMARY KEY(nomeUsuario), 
-    FOREIGN KEY(cpfUsuario) REFERENCES funcionario(cpf)
-    
-);
 
