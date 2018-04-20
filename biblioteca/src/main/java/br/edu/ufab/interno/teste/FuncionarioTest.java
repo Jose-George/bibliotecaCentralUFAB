@@ -27,7 +27,7 @@ public class FuncionarioTest {
 	
 	}
 	
-	//@Test
+	@Test
 	public void testCriarCadastro() {
 		Funcionario operador = new Funcionario(TipoFuncionario.OPERADOR, "1002", "Jose", "1232", "Cajazeiras",
 				"Aprigio Veloso", "99913413", "george.djc@gmail.com", "j.georgecg", "1234george");
@@ -37,7 +37,7 @@ public class FuncionarioTest {
 		
 	}
 	
-	//@Test
+	@Test
 	public void testRemoverCadastro() {
 		Funcionario operador = new Funcionario(TipoFuncionario.OPERADOR, "1002", "Jose", "1232", "Cajazeiras",
 				"Aprigio Veloso", "99913413", "george.djc@gmail.com", "j.georgecg", "1234george");

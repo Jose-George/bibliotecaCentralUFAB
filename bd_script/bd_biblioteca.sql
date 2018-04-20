@@ -95,3 +95,10 @@ CREATE TABLE IF NOT EXISTS funcionario(
 );
 
 
+CREATE TABLE IF NOT EXISTS aluno(
+	nome VARCHAR(150),
+	matricula VARCHAR(10), 
+
+	PRIMARY KEY(matricula)
+);
+
