@@ -69,6 +69,7 @@ public class AlunoDAO {
 			stmt.setInt(11, aluno.getAnoIngresso());
 			stmt.setString(12, aluno.getPeriodoInrgresso());
 			stmt.setString(13, aluno.getCpf());
+			
 			stmt.execute();
 			stmt.close();
 			

@@ -22,37 +22,26 @@ public class FuncionarioTest {
 	public void inicializarTest() {
 		func = new Funcionario(TipoFuncionario.ADMINISTRADOR, "1001", "Jose George", "1232", "Cajazeiras",
 				"Aprigio Veloso", "99913413", "george.djc@gmail.com", "j.george", "123george");
-		
+		funcDao = new FuncionarioDAO();
 		sisFuncionario = new SistemaInternoDeFuncionario(func);
 	
 	}
 	
 	@Test
 	public void testCriarCadastro() {
-		Funcionario operador = new Funcionario(TipoFuncionario.OPERADOR, "1002", "Jose", "1232", "Cajazeiras",
-				"Aprigio Veloso", "99913413", "george.djc@gmail.com", "j.georgecg", "1234george");
-	
-		funcDao = new FuncionarioDAO();
-		assertTrue(sisFuncionario.criarFuncionario(funcDao, operador));
-		
-	}
-	
-	@Test
-	public void testRemoverCadastro() {
-		Funcionario operador = new Funcionario(TipoFuncionario.OPERADOR, "1002", "Jose", "1232", "Cajazeiras",
-				"Aprigio Veloso", "99913413", "george.djc@gmail.com", "j.georgecg", "1234george");
-	
-		funcDao = new FuncionarioDAO();
-		assertTrue(sisFuncionario.removerFuncionario(funcDao, operador));
+		assertTrue(sisFuncionario.criarFuncionario(funcDao, func));
 	}
 	
 	@Test
 	public void testAtualizarCadastro() {
-		Funcionario operador = new Funcionario(TipoFuncionario.ADMINISTRADOR, "1003231221", "Jose", "1232", "Cajazeiras",
-				"Aprigio Veloso", "99913413", "george.djc@gmail.com", "j.f", "1234g2");
-	
-		funcDao = new FuncionarioDAO();
-		assertTrue(sisFuncionario.editarFuncionario(funcDao, operador));
+		func.setCpf("1001");
+		func.setEndereco("cabo branco");
+		assertTrue(sisFuncionario.editarFuncionario(funcDao, func));
 	}
 	
+	@Test
+	public void testRemoverCadastro() {
+		func.setCpf("1001");
+		assertTrue(sisFuncionario.removerFuncionario(funcDao, func));
+	}
 }

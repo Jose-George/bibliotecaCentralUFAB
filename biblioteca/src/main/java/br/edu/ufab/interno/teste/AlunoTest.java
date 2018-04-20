@@ -42,17 +42,20 @@ public class AlunoTest {
 	
 	@Test
 	public void testCadastrarAluno() {
+		aluno.setCpf("13214312");
 		assertTrue(sisAluno.cadastrar(alunoDao, aluno));
 	}
 	
 	@Test
 	public void testAtualizarAluno(){
-		aluno.setEmail("sergiopablo@gmaill.com");
+		aluno.setCpf("13214312");
+		aluno.setNaturalidade("cg-pb");
 		assertTrue(sisAluno.editar(alunoDao, aluno));	
 	}
 	
 	@Test
 	public void excluirAluno(){
+		aluno.setCpf("13214312");
 		assertTrue(sisAluno.remover(alunoDao, aluno));
 	}
 

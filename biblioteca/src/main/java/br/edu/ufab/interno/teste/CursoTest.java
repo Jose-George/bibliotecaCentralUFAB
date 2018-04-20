@@ -32,6 +32,7 @@ public class CursoTest {
 
 	@Test
 	public void testAdicionarCurso() {
+		curso.setNome("Psicologia");
 		assertTrue(sisCurso.cadastrar(cursoDao, curso));	
 	}
 	
@@ -45,6 +46,7 @@ public class CursoTest {
 
 	@Test
 	public void testRemoverCurso() {
+		curso.setNome("Psicologia");
 		assertTrue(sisCurso.remover(cursoDao, curso));	
 	}
 	

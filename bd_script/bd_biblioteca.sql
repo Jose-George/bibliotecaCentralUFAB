@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS aluno(
     nomeCurso VARCHAR(40),
     anoIngresso INT , 
     periodoIngresso VARCHAR(6), 
-
+    
 	PRIMARY KEY(cpf), 
 	FOREIGN KEY (nomeCurso) REFERENCES curso(nome)
 );

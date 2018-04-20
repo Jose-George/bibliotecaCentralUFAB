@@ -32,7 +32,6 @@ public class AcervoTestTrabalho {
 		trab = new TrabalhoDeConclusao(TrabalhoEnum.DISSERTACAO, "Scher", "internet das coisas","George", null,
 				"campina gande");
 		
-		
 	}
 	
 	

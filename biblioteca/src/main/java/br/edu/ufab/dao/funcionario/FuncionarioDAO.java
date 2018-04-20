@@ -65,8 +65,8 @@ public class FuncionarioDAO {
 	
 	public boolean update(Funcionario funcionario) {
 		
-		String sql = "UPDATE revista SET tipoFuncionario = ?, nomeCompleto = ?,"
-				+ "rg=?,naturalidade=?,endereco=?,telefone=?,email=? nomeUsuario=?, senha=?"+
+		String sql = "UPDATE funcionario SET tipoFuncionario = ?, nomeCompleto = ?,"
+				+ "rg=?,naturalidade=?,endereco=?,telefone=?,email=?, senha=?"+
 				 " WHERE cpf = ?";
 		
 		try {
@@ -79,10 +79,8 @@ public class FuncionarioDAO {
 			stmt.setString(5,funcionario.getEndereco());
 			stmt.setString(6,funcionario.getTelefone());
 			stmt.setString(7,funcionario.getEmail());
-			stmt.setString(8,funcionario.getCpf());
-			stmt.setString(9,funcionario.getNomeUsuario());
-			stmt.setString(10,funcionario.getSenha());
-			
+			stmt.setString(8,funcionario.getSenha());
+			stmt.setString(9,funcionario.getCpf());
 			
 			stmt.execute();
 			stmt.close();
