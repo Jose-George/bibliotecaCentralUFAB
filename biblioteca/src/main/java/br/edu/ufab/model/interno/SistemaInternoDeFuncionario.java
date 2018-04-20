@@ -6,9 +6,9 @@ import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
 
 public class SistemaInternoDeFuncionario {
 
-	private Funcionario func;
+	private Funcionario funcionario;
 	public SistemaInternoDeFuncionario(Funcionario funcionario) {
-		this.func = funcionario;
+		this.funcionario = funcionario;
 	}
 
 	public boolean criarFuncionario(FuncionarioDAO funcDao,Funcionario func ){
@@ -20,7 +20,7 @@ public class SistemaInternoDeFuncionario {
 	}
 	
 	public boolean removerFuncionario(FuncionarioDAO funcDao,Funcionario func ){
-		if(func.isTipo().equals(TipoFuncionario.ADMINISTRADOR)){
+		if(funcionario.isTipo().equals(TipoFuncionario.ADMINISTRADOR)){
 			return funcDao.remove(func);
 		}
 		return false;

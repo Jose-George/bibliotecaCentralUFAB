@@ -96,9 +96,22 @@ CREATE TABLE IF NOT EXISTS funcionario(
 
 
 CREATE TABLE IF NOT EXISTS aluno(
+	
 	nome VARCHAR(150),
+	nomeMae VARCHAR(150),
 	matricula VARCHAR(10), 
+	cpf BIGINT(11),  
+    rg BIGINT(7), 
+    naturalidade VARCHAR(100), 
+    endereco VARCHAR(100), 
+    telefone VARCHAR(10),
+    email VARCHAR(100), 
+    senha VARCHAR(20), 
+    nomeCurso VARCHAR(40),
+    anoIngresso INT , 
+    periodoIngresso VARCHAR(6), 
 
-	PRIMARY KEY(matricula)
+	PRIMARY KEY(cpf), 
+	FOREIGN KEY (nomeCurso) REFERENCES curso(nome)
 );
 
