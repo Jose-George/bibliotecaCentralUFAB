@@ -6,7 +6,6 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
 import br.edu.ufab.dao.Conexao;
-import br.edu.ufab.model.curso.Curso;
 import br.edu.ufab.model.funcionario.Funcionario;
 
 public class FuncionarioDAO {

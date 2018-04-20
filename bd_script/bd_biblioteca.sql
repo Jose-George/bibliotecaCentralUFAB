@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS funcionario(
 
 	PRIMARY KEY(cpf,nomeUsuario)
 );
-
+        
 
 CREATE TABLE IF NOT EXISTS aluno(
 	
