@@ -43,7 +43,7 @@ public class AcervoTestAnais {
 		anais.setId(0);
 		assertTrue(sisAcervo.editar(anaisDao, anais));
 	}
-	 
+	
 	
 	@Test
 	public void testExcluirCadastro() {
