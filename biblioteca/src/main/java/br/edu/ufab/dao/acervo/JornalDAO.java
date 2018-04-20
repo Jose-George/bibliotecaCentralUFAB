@@ -64,6 +64,8 @@ public class JornalDAO implements ItemDAO {
 			stmt.setString(1, ((ItemDeAcervo) item).getTitulo());
 			stmt.setDate(2, ((ItemDeAcervo) item).getDataPublicacao());
 			stmt.setInt(3, ((Jornal) item).getEdicao());
+			stmt.setInt(4, ((Jornal) item).getId());
+			
 			stmt.execute();
 			stmt.close();
 

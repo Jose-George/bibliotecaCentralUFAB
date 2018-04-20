@@ -12,12 +12,12 @@ import br.edu.ufab.model.funcionario.Funcionario;
 import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
 import br.edu.ufab.model.interno.SistemaInternoDeAcervo;
 
-public class AcervoTest {
+public class AcervoTestAnais {
 	
-	AnaisCongresso anais;
-	Funcionario func;
-	AnaisCongressoDAO anaisDao;
-	SistemaInternoDeAcervo sisAcervo;
+	private AnaisCongresso anais;
+	private Funcionario func;
+	private AnaisCongressoDAO anaisDao;
+	private SistemaInternoDeAcervo sisAcervo;
 	
 	@Before
 	public void inicializandoTeste(){
@@ -32,20 +32,22 @@ public class AcervoTest {
 
 	@Test
 	public void testCadastro() {
+		anais.setId(0);
 		assertTrue(sisAcervo.cadastrar(anaisDao,anais));
 	}
+
 	
 	@Test
 	public void testEditarCadastro() {
-		AnaisCongresso anaisUp = new AnaisCongresso(AnaisEnum.POSTER, "CBA",
-				"Computacao parelala", "Jose ",null , "CG");
-		anaisUp.setId(1);
-		assertTrue(sisAcervo.editar(anaisDao, anaisUp));
+		anais.setNomeDoCongresso("CBA - 2018 - JP");
+		anais.setId(0);
+		assertTrue(sisAcervo.editar(anaisDao, anais));
 	}
+	 
 	
 	@Test
 	public void testExcluirCadastro() {
-		anais.setId(7);
+		anais.setId(0);
 		assertTrue(sisAcervo.remover(anaisDao, anais));
 	}
 	

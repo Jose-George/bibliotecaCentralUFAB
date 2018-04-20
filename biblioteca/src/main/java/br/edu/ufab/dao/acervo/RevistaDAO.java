@@ -61,7 +61,7 @@ public class RevistaDAO implements ItemDAO {
 
 	public boolean update(Object item) {
 
-		String sql = "UPDATE revista SET titulo = ?, editora = ?, dataPublicacao = ?," + "idicao=?, numeroPagina=?"
+		String sql = "UPDATE revista SET titulo = ?, editora = ?, dataPublicacao = ?," + "edicao=?, numeroPagina=?"
 				+ " WHERE id = ?";
 
 		try {

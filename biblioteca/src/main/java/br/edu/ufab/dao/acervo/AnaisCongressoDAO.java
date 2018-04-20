@@ -66,8 +66,7 @@ public class AnaisCongressoDAO implements ItemDAO {
 			 		+ "anoPublicacao = ?, localEvento = ?" +
 			 " WHERE id = ?";
 			 
-			 try{
-				 
+			 try{			 
 				 PreparedStatement stmt = (PreparedStatement) conexao.prepareStatement(sql);  
 				 stmt.setString(1, ((AnaisCongresso) item).getTipo().name());
 				 stmt.setString(2, ((ItemDeAcervo) item).getTitulo());

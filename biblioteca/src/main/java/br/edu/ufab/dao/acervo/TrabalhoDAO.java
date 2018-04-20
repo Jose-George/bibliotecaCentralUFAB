@@ -20,7 +20,7 @@ public class TrabalhoDAO implements ItemDAO {
 
 	public boolean insertion(Object item) {
 
-		String sql = "INSERT INTO trabalhoConclusao(tipo,autor,orientador,titulo,anoDefesa,localDefasa) VALUES(?,?,?,?,?,?)";
+		String sql = "INSERT INTO trabalhoConclusao(tipo,autor,orientador,titulo,anoDefesa,localDefesa) VALUES(?,?,?,?,?,?)";
 
 		try {
 			stmt = (PreparedStatement) conexao.prepareStatement(sql);

@@ -20,8 +20,8 @@ public class LivroDAO implements ItemDAO {
 
 	public boolean insertion(Object item) {
 
-		String sql = "INSERT INTO livro(isbn,titulo,autor,editora"
-				+ "anoPublicacao, edicao, numeroPagina, areaConhecimento, tema)" + " VALUES(?,?,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO livro(isbn,titulo,autor,editora,"
+				+ "anoDefesaPublicacao, edicao, numeroPagina, areaConhecimento, tema)" + " VALUES(?,?,?,?,?,?,?,?,?)";
 
 		try {
 			stmt = (PreparedStatement) conexao.prepareStatement(sql);
@@ -65,7 +65,7 @@ public class LivroDAO implements ItemDAO {
 
 	public boolean update(Object item) {
 
-		String sql = "UPDATE livro SET titulo = ?, autor = ?, editora=?, anoPublicacao=?, edicao=?,"
+		String sql = "UPDATE livro SET titulo = ?, autor = ?, editora=?, anoDefesaPublicacao=?, edicao=?,"
 				+ "numeroPagina=?,areaConhecimento=?, tema=?" + " WHERE isbn = ?";
 
 		try {
