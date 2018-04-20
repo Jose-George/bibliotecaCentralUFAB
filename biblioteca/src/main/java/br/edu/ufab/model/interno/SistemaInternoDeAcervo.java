@@ -9,11 +9,11 @@ import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
 
 public class SistemaInternoDeAcervo {
 	
-	// só o ADM pode ter acesso a essa classe
+	private Funcionario func;
+	
+	// só o ADM pode excluir curso
 	public SistemaInternoDeAcervo(Funcionario funcionario){
-		if(funcionario.isTipo().equals(TipoFuncionario.OPERADOR)){
-			throw new IllegalArgumentException();
-		}
+		this.func = funcionario;
 	}
 	
 	public boolean cadastrar(ItemDAO itemDao, ItemDeAcervo itemAcervo){
@@ -25,7 +25,10 @@ public class SistemaInternoDeAcervo {
 	}
 	
 	public boolean remover(ItemDAO itemDao, ItemDeAcervo itemAcervo){
-		return itemDao.remove(itemAcervo);
+		if(func.isTipo().equals(TipoFuncionario.ADMINISTRADOR)){
+			return itemDao.remove(itemAcervo);
+		}
+		return false;
 	}
 	
 }

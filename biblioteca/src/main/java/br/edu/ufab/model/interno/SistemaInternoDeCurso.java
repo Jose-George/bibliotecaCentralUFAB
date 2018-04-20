@@ -9,10 +9,9 @@ import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
 
 public class SistemaInternoDeCurso {
 	
+	private Funcionario func;
 	public SistemaInternoDeCurso(Funcionario funcionario){
-		if(funcionario.isTipo() != TipoFuncionario.ADMINISTRADOR){
-			throw new IllegalArgumentException();
-		}
+		this.func = funcionario;
 	}
 	
 	
@@ -25,7 +24,10 @@ public class SistemaInternoDeCurso {
 	}
 	
 	public boolean remover(CursoDAO cursoDao, Curso curso ){
-		return cursoDao.remove(curso);
+		if(func.isTipo().equals(TipoFuncionario.ADMINISTRADOR)){
+			return cursoDao.remove(curso);
+		}
+		return false;
 	}
 	
 }

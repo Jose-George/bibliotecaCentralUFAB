@@ -20,12 +20,12 @@ public class AlunoDAO {
 	
 	public boolean insertion(Aluno aluno) {		
 	
-		String sql = "INSERT INTO curso(nome, matricula) VALUES(?,?)";
+		String sql = "INSERT INTO aluno(nome, matricula) VALUES(?,?)";
 
 		try {
 			stmt = (PreparedStatement) conexao.prepareStatement(sql);
 			stmt.setString(1, aluno.getNome());
-			stmt.setString(1, aluno.getMatricula());
+			stmt.setString(2, aluno.getMatricula());
 			stmt.execute();
 			stmt.close();
 			
@@ -40,7 +40,7 @@ public class AlunoDAO {
 	
 	public boolean update(Aluno aluno){
 		
-		String sql = "UPDATE curso SET nome = ?, matricula = ? WHERE matricula = ? ";
+		String sql = "UPDATE aluno SET nome = ?, matricula = ? WHERE matricula = ? ";
 		try {
 			stmt = (PreparedStatement) conexao.prepareStatement(sql);
 			stmt.setString(1, aluno.getNome());
@@ -65,8 +65,7 @@ public class AlunoDAO {
 		
 		try{
 			stmt = (PreparedStatement) conexao.prepareStatement(sql);  
-			stmt.setString(1, aluno.getNome());
-			stmt.setString(2, aluno.getMatricula());
+			stmt.setString(1, aluno.getMatricula());
 			stmt.execute();
 			stmt.close();
 			
@@ -77,4 +76,6 @@ public class AlunoDAO {
 		return false;
 		
 	}
+	
+	
 }

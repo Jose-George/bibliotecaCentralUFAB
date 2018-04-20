@@ -6,10 +6,9 @@ import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
 
 public class SistemaInternoDeFuncionario {
 
+	private Funcionario func;
 	public SistemaInternoDeFuncionario(Funcionario funcionario) {
-		if (funcionario.isTipo() != TipoFuncionario.ADMINISTRADOR) {
-			throw new IllegalArgumentException();
-		}
+		this.func = funcionario;
 	}
 
 	public boolean criarFuncionario(FuncionarioDAO funcDao,Funcionario func ){
@@ -21,6 +20,9 @@ public class SistemaInternoDeFuncionario {
 	}
 	
 	public boolean removerFuncionario(FuncionarioDAO funcDao,Funcionario func ){
-		return funcDao.remove(func);
+		if(func.isTipo().equals(TipoFuncionario.ADMINISTRADOR)){
+			return funcDao.remove(func);
+		}
+		return false;
 	}
 }
