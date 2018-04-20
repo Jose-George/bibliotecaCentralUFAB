@@ -5,50 +5,51 @@ import java.sql.SQLException;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
+import com.mysql.jdbc.StatementImpl;
 
 import br.edu.ufab.dao.Conexao;
 import br.edu.ufab.model.acervo.AnaisCongresso;
+import br.edu.ufab.model.acervo.ItemDeAcervo;
 
 
-public class AnaisCongressoDAO implements ItemDAO<AnaisCongresso> {
+public class AnaisCongressoDAO implements ItemDAO {
 
 	private Connection conexao;
 	
 	public AnaisCongressoDAO(){
 		this.conexao = (Connection) Conexao.getConexao();
 	}
-	
-	public boolean insertion(AnaisCongresso anais) {
+
+	public boolean insertion(Object item) {
 		
 		String sql = "INSERT INTO anaiscongresso(tipo,titulo,autor,nomeCongresso,"
 				+ "anoPublicacao, localEvento) VALUES(?,?,?,?,?,?)";
-		
-		try{
-			 PreparedStatement stmt = (PreparedStatement) conexao.prepareStatement(sql);  
-			 stmt.setString(1, anais.getTipo().name());
-			 stmt.setString(2, anais.getTitulo());
-			 stmt.setString(3, anais.getAutor());
-			 stmt.setString(4, anais.getNomeDoCongresso());
-			 stmt.setDate(5,  anais.getDataPublicacao());
-			 stmt.setString(6, anais.getLocal());
-			 stmt.execute();
-			 stmt.close();
-			 return true;
-			 
-		} catch(SQLException u){
-			throw new RuntimeException(u); 
+
+		try {
+			PreparedStatement stmt = (PreparedStatement) conexao.prepareStatement(sql);
+			stmt.setString(1, ((AnaisCongresso) item).getTipo().name());
+			stmt.setString(2, (((AnaisCongresso) item).getTitulo()));
+			stmt.setString(3, ((AnaisCongresso) item).getAutor());
+			stmt.setString(4, ((AnaisCongresso) item).getNomeDoCongresso());
+			stmt.setDate(5, ((AnaisCongresso) item).getDataPublicacao());
+			stmt.setString(6, ((AnaisCongresso) item).getLocal());
+			stmt.execute();
+			stmt.close();
+			return true;
+
+		} catch (SQLException u) {
+			throw new RuntimeException(u);
 		}
-		
 	}
 
-	public boolean remove(AnaisCongresso anais) {
+	public boolean remove(Object item) {
 		
 		String sql = "DELETE FROM anaiscongresso"
 				+ " WHERE id = ?" ;
 		
 		try{
 			PreparedStatement stmt = (PreparedStatement) conexao.prepareStatement(sql);  
-			stmt.setInt(1, anais.getId());
+			stmt.setInt(1, ((AnaisCongresso) item).getId());
 			stmt.execute();
 			stmt.close();
 			
@@ -58,33 +59,34 @@ public class AnaisCongressoDAO implements ItemDAO<AnaisCongresso> {
 		}
 		
 		return false;
+		
 	}
 
-	public boolean update(AnaisCongresso anais) {
-		 
+	public boolean update(Object item) {
 		 String sql = "UPDATE anaiscongresso SET tipo = ?, titulo = ?, autor = ?, nomeCongresso = ? ,"
-		 		+ "anoPublicacao = ?, localEvento = ?" +
-		 " WHERE id = ?";
-		 
-		 try{
+			 		+ "anoPublicacao = ?, localEvento = ?" +
+			 " WHERE id = ?";
 			 
-			 PreparedStatement stmt = (PreparedStatement) conexao.prepareStatement(sql);  
-			 stmt.setString(1, anais.getTipo().name());
-			 stmt.setString(2, anais.getTitulo());
-			 stmt.setString(3, anais.getAutor());
-			 stmt.setString(4, anais.getNomeDoCongresso());
-			 stmt.setDate(5,  anais.getDataPublicacao());
-			 stmt.setString(6, anais.getLocal());
-			 stmt.setInt(7, anais.getId());
-			 stmt.execute();
-			 stmt.close();
-			 return true;
+			 try{
+				 
+				 PreparedStatement stmt = (PreparedStatement) conexao.prepareStatement(sql);  
+				 stmt.setString(1, ((AnaisCongresso) item).getTipo().name());
+				 stmt.setString(2, ((ItemDeAcervo) item).getTitulo());
+				 stmt.setString(3, ((AnaisCongresso) item).getAutor());
+				 stmt.setString(4, ((AnaisCongresso) item).getNomeDoCongresso());
+				 stmt.setDate(5,  ((ItemDeAcervo) item).getDataPublicacao());
+				 stmt.setString(6, ((AnaisCongresso) item).getLocal());
+				 stmt.setInt(7, ((AnaisCongresso) item).getId());
+				 stmt.execute();
+				 stmt.close();
+				 return true;
+		
+			 }catch(Exception e){
+				 e.printStackTrace();
+			 }
+			 
+			return false;
+	}
 	
-		 }catch(Exception e){
-			 e.printStackTrace();
-		 }
-		 
-		return false;
-	}		
 	
 }

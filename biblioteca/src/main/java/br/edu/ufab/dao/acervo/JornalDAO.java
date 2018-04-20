@@ -4,11 +4,13 @@ import java.sql.SQLException;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
+import com.mysql.jdbc.StatementImpl;
 
 import br.edu.ufab.dao.Conexao;
+import br.edu.ufab.model.acervo.ItemDeAcervo;
 import br.edu.ufab.model.acervo.Jornal;
 
-public class JornalDAO implements ItemDAO<Jornal> {
+public class JornalDAO implements ItemDAO {
 
 	private Connection conexao;
 	PreparedStatement stmt;
@@ -17,65 +19,60 @@ public class JornalDAO implements ItemDAO<Jornal> {
 		this.conexao = (Connection) Conexao.getConexao();
 	}
 
-	public boolean insertion(Jornal item) {
+	public boolean insertion(Object item) {
 
 		String sql = "INSERT INTO jornal(titulo,dataPublicacao,edicao) VALUES(?,?,?)";
 
 		try {
 			stmt = (PreparedStatement) conexao.prepareStatement(sql);
-			stmt.setString(1, item.getTitulo());
-			stmt.setDate(2, item.getDataPublicacao());
-			stmt.setInt(3, item.getEdicao());
+			stmt.setString(1, ((ItemDeAcervo) item).getTitulo());
+			stmt.setDate(2, ((ItemDeAcervo) item).getDataPublicacao());
+			stmt.setInt(3, ((Jornal) item).getEdicao());
 			stmt.execute();
 			stmt.close();
 			return true;
-			
+
 		} catch (SQLException u) {
 			throw new RuntimeException(u);
 		}
-
 	}
 
-	public boolean remove(Jornal item) {
+	public boolean remove(Object item) {
 
-		String sql = "DELETE FROM jornal"
-				+ " WHERE id = ?" ;
-		
-		try{
-			
-			stmt = (PreparedStatement) conexao.prepareStatement(sql);  
-			
-			stmt.setInt(1, item.getId());
+		String sql = "DELETE FROM jornal" + " WHERE id = ?";
+		try {
+
+			stmt = (PreparedStatement) conexao.prepareStatement(sql);
+
+			stmt.setInt(1, ((Jornal) item).getId());
 			stmt.execute();
 			stmt.close();
-			
+
 			return true;
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
+
 		return false;
 	}
 
-	public boolean update(Jornal item) {
+	public boolean update(Object item) {
 
-		String sql = "UPDATE jornal SET titulo = ?, dataPublicacao = ?, edicao = ?" +
-		 " WHERE id = ?";
-		
-		try{
-			stmt = (PreparedStatement) conexao.prepareStatement(sql);  
-			stmt.setString(1,item.getTitulo());
-			stmt.setDate(2,item.getDataPublicacao());
-			stmt.setInt(3,item.getEdicao());
+		String sql = "UPDATE jornal SET titulo = ?, dataPublicacao = ?, edicao = ?" + " WHERE id = ?";
+
+		try {
+			stmt = (PreparedStatement) conexao.prepareStatement(sql);
+			stmt.setString(1, ((ItemDeAcervo) item).getTitulo());
+			stmt.setDate(2, ((ItemDeAcervo) item).getDataPublicacao());
+			stmt.setInt(3, ((Jornal) item).getEdicao());
 			stmt.execute();
 			stmt.close();
-			
+
 			return true;
-		}catch(Exception e){
-			 e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		
+
 		return false;
 	}
 

@@ -15,28 +15,6 @@ public class SistemaInternoDeCurso {
 		}
 	}
 	
-	/*
-	public static ArrayList<Curso> listaCurso = new ArrayList<Curso>();
-	
-	public static void cadastrarCurso(Curso curso){
-		listaCurso.add(curso);
-	}
-	*/
-	
-	/*
-	public static void removerCurso(Curso curso, Funcionario funcionario) throws NullPointerException{
-		if (funcionario.isTipo() == TipoFuncionario.ADMINISTRADOR) /*verifica se o funcionario é admin
-			listaCurso.remove(curso);
-	}
-	
-	
-	public static void editarCurso(Curso cursoAntigo, Curso novoCurso) {
-		int indexCursoAntigo = listaCurso.indexOf(cursoAntigo); /*captura indice do cuso antigo
-		if(listaCurso.contains(cursoAntigo))
-			listaCurso.set(indexCursoAntigo, novoCurso); /*atribui novo curso na mesma posicao do curso antigo (sobrescreve/
-	}
-	*/
-	
 	
 	public static boolean cadastrar(CursoDAO cursoDao, Curso curso ){
 		return cursoDao.insertion(curso);

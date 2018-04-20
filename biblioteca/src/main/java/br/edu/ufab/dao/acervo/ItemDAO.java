@@ -1,9 +1,9 @@
 package br.edu.ufab.dao.acervo;
 
-public interface ItemDAO<tipo> {
+public interface ItemDAO {
 
-	public boolean insertion(tipo item);
-	public boolean remove(tipo item);
-	public boolean update(tipo item);
+	public boolean insertion(Object item);
+	public boolean remove(Object item);
+	public boolean update(Object item);
 	
 }

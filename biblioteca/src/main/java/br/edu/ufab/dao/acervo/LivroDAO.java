@@ -6,33 +6,34 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
 import br.edu.ufab.dao.Conexao;
+import br.edu.ufab.model.acervo.ItemDeAcervo;
 import br.edu.ufab.model.acervo.Livro;
 
-public class LivroDAO implements ItemDAO<Livro> {
+public class LivroDAO implements ItemDAO {
 
 	private Connection conexao;
 	PreparedStatement stmt;
-	
-	public LivroDAO(){
+
+	public LivroDAO() {
 		this.conexao = (Connection) Conexao.getConexao();
 	}
 
-	public boolean insertion(Livro item) {
+	public boolean insertion(Object item) {
 
 		String sql = "INSERT INTO livro(isbn,titulo,autor,editora"
 				+ "anoPublicacao, edicao, numeroPagina, areaConhecimento, tema)" + " VALUES(?,?,?,?,?,?,?,?,?)";
 
 		try {
 			stmt = (PreparedStatement) conexao.prepareStatement(sql);
-			stmt.setString(1, item.getIsbn());
-			stmt.setString(2, item.getTitulo());
-			stmt.setString(3, item.getAutor());
-			stmt.setString(4, item.getEditora());
-			stmt.setDate(5, item.getDataPublicacao());
-			stmt.setInt(6, item.getEdicao());
-			stmt.setInt(7, item.getNumeroPagina());
-			stmt.setString(8, item.getAreaDoConhecimento());
-			stmt.setString(9, item.getTema());
+			stmt.setString(1, ((Livro) item).getIsbn());
+			stmt.setString(2, ((ItemDeAcervo) item).getTitulo());
+			stmt.setString(3, ((Livro) item).getAutor());
+			stmt.setString(4, ((Livro) item).getEditora());
+			stmt.setDate(5, ((ItemDeAcervo) item).getDataPublicacao());
+			stmt.setInt(6, ((Livro) item).getEdicao());
+			stmt.setInt(7, ((Livro) item).getNumeroPagina());
+			stmt.setString(8, ((Livro) item).getAreaDoConhecimento());
+			stmt.setString(9, ((Livro) item).getTema());
 
 			stmt.execute();
 			stmt.close();
@@ -42,16 +43,15 @@ public class LivroDAO implements ItemDAO<Livro> {
 		} catch (SQLException u) {
 			throw new RuntimeException(u);
 		}
-
 	}
 
-	public boolean remove(Livro item) {
+	public boolean remove(Object item) {
 
 		String sql = "DELETE FROM livro" + " WHERE isbn = ?";
 
 		try {
 			stmt = (PreparedStatement) conexao.prepareStatement(sql);
-			stmt.setString(1, item.getIsbn());
+			stmt.setString(1, ((Livro) item).getIsbn());
 			stmt.execute();
 			stmt.close();
 
@@ -63,33 +63,32 @@ public class LivroDAO implements ItemDAO<Livro> {
 		return false;
 	}
 
-	public boolean update(Livro item) {
-		
+	public boolean update(Object item) {
+
 		String sql = "UPDATE livro SET titulo = ?, autor = ?, editora=?, anoPublicacao=?, edicao=?,"
-				+ "numeroPagina=?,areaConhecimento=?, tema=?"+
-				 " WHERE isbn = ?";
-				
-				try{
-					stmt = (PreparedStatement) conexao.prepareStatement(sql);  
-					stmt.setString(1, item.getTitulo());
-					stmt.setString(2, item.getAutor());
-					stmt.setString(3, item.getEditora());
-					stmt.setDate(4, item.getDataPublicacao());
-					stmt.setInt(5, item.getEdicao());
-					stmt.setInt(6, item.getNumeroPagina());
-					stmt.setString(7, item.getAreaDoConhecimento());
-					stmt.setString(8, item.getTema());
-					stmt.setString(9, item.getIsbn());
-					
-					stmt.execute();
-					stmt.close();
-					
-					return true;
-				}catch(Exception e){
-					 e.printStackTrace();
-				}
-				
-				return false;
+				+ "numeroPagina=?,areaConhecimento=?, tema=?" + " WHERE isbn = ?";
+
+		try {
+			stmt = (PreparedStatement) conexao.prepareStatement(sql);
+			stmt.setString(1, ((ItemDeAcervo) item).getTitulo());
+			stmt.setString(2, ((Livro) item).getAutor());
+			stmt.setString(3, ((Livro) item).getEditora());
+			stmt.setDate(4, ((ItemDeAcervo) item).getDataPublicacao());
+			stmt.setInt(5, ((Livro) item).getEdicao());
+			stmt.setInt(6, ((Livro) item).getNumeroPagina());
+			stmt.setString(7, ((Livro) item).getAreaDoConhecimento());
+			stmt.setString(8, ((Livro) item).getTema());
+			stmt.setString(9, ((Livro) item).getIsbn());
+
+			stmt.execute();
+			stmt.close();
+
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return false;
 	}
 
 }
