@@ -5,6 +5,11 @@ import java.util.Random;
 import br.edu.ufab.model.curso.Curso;
 import br.edu.ufab.model.curso.Curso.CursoEnum;
 
+/*A classe Aluno é um classe que recebe vários dados de um aluno e gera uma matricula
+ * @author	José George
+ * */
+
+
 public class Aluno {
 
 	private String nome;
@@ -36,6 +41,7 @@ public class Aluno {
 		this.curso = curso;
 		this.anoIngresso = anoIngresso;
 		this.periodoInrgresso = periodoInrgresso;
+		gerandoMatricula();
 	}
 
 	public String getNome() {
@@ -142,6 +148,8 @@ public class Aluno {
 		this.periodoInrgresso = periodoInrgresso;
 	}
 
+	/*gerar uma matricula para o aluno baseado no curso, no ano que ele inicou, no periodo e no tipo de curso
+	que ele faz*/
 	public String gerandoMatricula() {
 
 		String retorno; 

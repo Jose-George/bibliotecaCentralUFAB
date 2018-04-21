@@ -1,6 +1,9 @@
 package br.edu.ufab.model.acervo;
 
 import java.sql.Date;
+/*Essa Classe é usada para herença, todas as classes do acervo herdam ItemDeAcervo 
+ * @author	José George	 
+ * */
 
 public class ItemDeAcervo {
 
