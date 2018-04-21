@@ -1,15 +1,28 @@
-﻿# bibliotecaCentralUFAB
+﻿# BibliotecaCentralUFAB
+ 
+ #Sprint 2
+ 
+DOCUMENTAÇÃO: https://github.com/Jose-George/bibliotecaCentralUFAB/tree/master/documenta%C3%A7%C3%A3o
+ 
+ARTEFATOS DO BANCO DE DADOS: https://github.com/Jose-George/bibliotecaCentralUFAB/tree/master/documenta%C3%A7%C3%A3o/bd_artefatos
 
-Nessa sprint 1, não temos um código funcional a nível de usuário, apenas temos o código do que foi pedido na sprint, e os casos de teste, que estão no junit. 
+DIAGRAMA DE CLASSE: https://github.com/Jose-George/bibliotecaCentralUFAB/tree/master/documenta%C3%A7%C3%A3o/diagrama%20de%20classe
 
-Para melhor compreensão, o professor deverá entrar no source folder, src/test/java, lá temos vários package com códigos de teste, no primeiro package acervo.teste não temos nenhum teste, pois as classes dele só retornam gets e sets. 
+DIAGRAMA ATUALIZADO: https://github.com/Jose-George/bibliotecaCentralUFAB/blob/master/documenta%C3%A7%C3%A3o/diagrama%20de%20classe/diagrama_completo_classe_sprint2.pdf
 
-Caso ao baixar esse arquivo, o código não compile corretamente, devera dentro do ambiente do eclipse, clicar com o botão direito em cima 
-do projeto maven biblioteca, ir até as properties Clique em Java Build Path e veja se todas as libs estão marcadas.
+IMPLEMENTAÇÃO ACERVO: https://github.com/Jose-George/bibliotecaCentralUFAB/tree/master/biblioteca/src/main/java/br/edu/ufab/model/acervo
 
-A documentação do projeto está na pasta documentação. 
+IMPLEMENTAÇÃO MODEL: https://github.com/Jose-George/bibliotecaCentralUFAB/tree/master/biblioteca/src/main/java/br/edu/ufab/model
 
-OBS: apesar de todos os commits terem sido feitos por José George, Caio teve uma participação essencial para conclusão da sprint, ele apenas teve problemas com o gitBash e não pode dá commit dentro do meu repositório, além do mais, os últimos commit, compartilhamos a mesma máquina. Obrigado.
+IMPLEMENTAÇÃO SISTEMA INTERNO<FUNCIONALIDADES>: https://github.com/Jose-George/bibliotecaCentralUFAB/tree/master/biblioteca/src/main/java/br/edu/ufab/model/interno
+
+IMPLEMENTAÇÃO DAS CLASSES DAO<BANCO DE DADOS>: https://github.com/Jose-George/bibliotecaCentralUFAB/tree/master/biblioteca/src/main/java/br/edu/ufab/dao
+
+TESTES: 
+	- https://github.com/Jose-George/bibliotecaCentralUFAB/tree/master/biblioteca/src/main/java/br/edu/ufab/interno/teste
+	- https://github.com/Jose-George/bibliotecaCentralUFAB/tree/master/biblioteca/src/main/java/br/edu/ufab/funcionario/teste
+	-https://github.com/Jose-George/bibliotecaCentralUFAB/tree/master/biblioteca/src/main/java/br/edu/ufab/acervo/teste
+
 
 
 
