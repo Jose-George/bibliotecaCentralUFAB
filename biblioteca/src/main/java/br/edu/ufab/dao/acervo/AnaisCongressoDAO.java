@@ -3,6 +3,8 @@ package br.edu.ufab.dao.acervo;
 
 import java.sql.SQLException;
 
+import org.apache.log4j.Logger;
+
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import br.edu.ufab.dao.Conexao;
@@ -24,6 +26,7 @@ public class AnaisCongressoDAO implements ItemDAO {
 	 * @param update()
 	 * */
 	private Connection conexao;
+	private static final Logger logger = Logger.getLogger(AnaisCongressoDAO.class);
 	
 	// abrindo uma conexao com a base
 	public AnaisCongressoDAO(){
@@ -51,12 +54,16 @@ public class AnaisCongressoDAO implements ItemDAO {
 			stmt.setString(4, ((AnaisCongresso) item).getNomeDoCongresso());
 			stmt.setDate(5, ((AnaisCongresso) item).getDataPublicacao());
 			stmt.setString(6, ((AnaisCongresso) item).getLocal());
+			
+			logger.info("inserindo no banco: "+item);
+			
 			stmt.execute();
 			stmt.close();
 			return true;
 
 		} catch (SQLException u) {
-			throw new RuntimeException(u);
+			logger.error("Ocorreu um problema ao tentar inserir no bd", u );
+			return false;
 		}
 	}
 
@@ -74,12 +81,15 @@ public class AnaisCongressoDAO implements ItemDAO {
 		try{
 			PreparedStatement stmt = (PreparedStatement) conexao.prepareStatement(sql);  
 			stmt.setInt(1, ((AnaisCongresso) item).getId());
+			
+			logger.info("inserindo no banco: "+item);
+			
 			stmt.execute();
 			stmt.close();
 			
 			return true;
 		}catch(Exception e){
-			e.printStackTrace();
+			logger.error("Ocorreu um problema ao tentar remover do bd", e);
 		}
 		
 		return false;
@@ -108,12 +118,15 @@ public class AnaisCongressoDAO implements ItemDAO {
 				 stmt.setDate(5,  ((ItemDeAcervo) item).getDataPublicacao());
 				 stmt.setString(6, ((AnaisCongresso) item).getLocal());
 				 stmt.setInt(7, ((AnaisCongresso) item).getId());
+				 
+				 logger.info("update no banco: "+item);
+				 
 				 stmt.execute();
 				 stmt.close();
 				 return true;
 		
 			 }catch(Exception e){
-				 e.printStackTrace();
+				 logger.error("Ocorreu um problema ao tentar editar do bd", e);
 			 }
 			 
 			return false;

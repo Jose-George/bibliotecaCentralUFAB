@@ -2,6 +2,8 @@ package br.edu.ufab.model.acervo;
 
 import java.util.Date;
 
+import org.apache.log4j.Logger;
+
 /**
  * Enum para especificar tipos de midia eletronica*/
 
@@ -21,6 +23,8 @@ public class MidiaEletronica extends ItemDeAcervo{
 	private MidiaEnum tipo;
  	private int id;
  	
+ 	private static final Logger logger = Logger.getLogger(MidiaEletronica.class);
+ 	
 	public MidiaEletronica(MidiaEnum tipo, String titulo, Date dataGravacao) {
 		this.tipo = tipo;
 		this.titulo = titulo;
@@ -34,6 +38,7 @@ public class MidiaEletronica extends ItemDeAcervo{
 
 
 	public void setId(int id) {
+		logger.info("setando"+id);
 		this.id = id;
 	}
 
@@ -44,6 +49,7 @@ public class MidiaEletronica extends ItemDeAcervo{
 
 
 	public void setTipo(MidiaEnum tipo) {
+		logger.info("setando"+tipo);
 		this.tipo = tipo;
 	}
 

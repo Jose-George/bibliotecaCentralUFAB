@@ -1,5 +1,7 @@
 package br.edu.ufab.model.interno;
 
+import org.apache.log4j.Logger;
+
 /**Essa Classe é responsável por controlar todo o sistema de acervo, ela tem três metódos
  * que fazem chamadas ao ItemDao e ItemDeAcervo
  * 
@@ -13,6 +15,7 @@ import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
 
 public class SistemaInternoDeAcervo {
 	
+	private static final Logger logger = Logger.getLogger(SistemaInternoDeAcervo.class);
 	private Funcionario func;
 	
 	
@@ -28,6 +31,7 @@ public class SistemaInternoDeAcervo {
 	   que irá instaciar a classe
 	 */
 	public SistemaInternoDeAcervo(Funcionario funcionario){
+		logger.info("iniciando campo funcionario com:"+funcionario.getRg());
 		this.func = funcionario;
 	}
 	
@@ -40,6 +44,7 @@ public class SistemaInternoDeAcervo {
 	 * @return true, caso o cadastro seja efetuado
 	 * */
 	public boolean cadastrar(ItemDAO itemDao, ItemDeAcervo itemAcervo){
+		logger.info("São passados os os seguintes argumentos: "+itemDao+" e "+itemAcervo);
 			return itemDao.insertion(itemAcervo);
 	}
 	
@@ -48,6 +53,7 @@ public class SistemaInternoDeAcervo {
 			 * @return true, caso o cadastro seja efetuado
 	 * */
 	public boolean editar(ItemDAO itemDao, ItemDeAcervo itemAcervo){
+		logger.info("São passados os os seguintes argumentos: "+itemDao+" e "+itemAcervo);
 		return itemDao.update(itemAcervo);
 	}
 	
@@ -57,9 +63,12 @@ public class SistemaInternoDeAcervo {
 	 * @return true, o funcionario Administrador tem direito de excluir, qualquer item do acervo
 	 * */
 	public boolean remover(ItemDAO itemDao, ItemDeAcervo itemAcervo){
+		logger.info("São passados os os seguintes argumentos: "+itemDao+" e "+itemAcervo);
 		if(func.isTipo().equals(TipoFuncionario.ADMINISTRADOR)){
+			logger.info("O funcionario é adm");
 			return itemDao.remove(itemAcervo);
 		}
+		logger.warn("O funcionario NAO é adm");
 		return false;
 	}
 	

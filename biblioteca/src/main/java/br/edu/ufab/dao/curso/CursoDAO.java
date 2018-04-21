@@ -85,10 +85,12 @@ public class CursoDAO {
 			stmt.setString(1, curso.getNome());
 			stmt.execute();
 			stmt.close();
+			logger.info("Removeu "+curso+" com sucesso!");
 			
 			return true;
 		}catch(Exception e){
-			e.printStackTrace();
+			logger.error("Falha ao atualizar "+curso+" na base de dados", e);
+			
 		}
 		return false;
 	}
@@ -112,10 +114,12 @@ public class CursoDAO {
 			stmt.setString(4, curso.getTipo().name());
 			stmt.execute();
 			stmt.close();
+			logger.info("Atualizou "+curso+" com sucesso!");
 			return true;
 			
 		} catch (SQLException u) {
-			throw new RuntimeException(u);
+			logger.error("Falha ao atualizar "+curso+" na base de dados", u);
+			return false;
 		}
 		
 	}

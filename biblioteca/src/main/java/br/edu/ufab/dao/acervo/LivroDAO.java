@@ -2,6 +2,8 @@ package br.edu.ufab.dao.acervo;
 
 import java.sql.SQLException;
 
+import org.apache.log4j.Logger;
+
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
@@ -18,7 +20,7 @@ public class LivroDAO implements ItemDAO {
 
 	private Connection conexao;
 	PreparedStatement stmt;
-	
+	private static final Logger logger = Logger.getLogger(LivroDAO.class);
 
 	/**
 	 * @param insertion()
@@ -54,14 +56,15 @@ public class LivroDAO implements ItemDAO {
 			stmt.setInt(7, ((Livro) item).getNumeroPagina());
 			stmt.setString(8, ((Livro) item).getAreaDoConhecimento());
 			stmt.setString(9, ((Livro) item).getTema());
-
+			logger.info("inserindo no banco: "+item);
 			stmt.execute();
 			stmt.close();
 
 			return true;
 
 		} catch (SQLException u) {
-			throw new RuntimeException(u);
+			logger.error("Ocorreu um problema ao tentar inserir no bd", u );
+			return false;
 		}
 	}
 
@@ -81,11 +84,12 @@ public class LivroDAO implements ItemDAO {
 			stmt = (PreparedStatement) conexao.prepareStatement(sql);
 			stmt.setString(1, ((Livro) item).getIsbn());
 			stmt.execute();
+			logger.info("removendo no banco: "+item);
 			stmt.close();
 
 			return true;
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Ocorreu um problema ao tentar remover no bd", e );
 		}
 
 		return false;
@@ -115,13 +119,13 @@ public class LivroDAO implements ItemDAO {
 			stmt.setString(7, ((Livro) item).getAreaDoConhecimento());
 			stmt.setString(8, ((Livro) item).getTema());
 			stmt.setString(9, ((Livro) item).getIsbn());
-
+			logger.info("Update no banco passando: "+item);
 			stmt.execute();
 			stmt.close();
 
 			return true;
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Ocorreu um problema ao tentar fazer Update no bd", e );
 		}
 
 		return false;

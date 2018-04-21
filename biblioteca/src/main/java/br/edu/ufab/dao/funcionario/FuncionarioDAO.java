@@ -2,6 +2,8 @@ package br.edu.ufab.dao.funcionario;
 
 import java.sql.SQLException;
 
+import org.apache.log4j.Logger;
+
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
@@ -26,9 +28,12 @@ public class FuncionarioDAO {
 	
 	private Connection conexao;
 	PreparedStatement stmt;
+	
+	private static Logger logger = Logger.getLogger(FuncionarioDAO.class);
 
 	// abrindo uma conexao com a base
 	public FuncionarioDAO() {
+		logger.info("conectando...");
 		this.conexao = (Connection) Conexao.getConexao();
 	}
 	
@@ -55,14 +60,14 @@ public class FuncionarioDAO {
 			stmt.setString(8,funcionario.getEmail());
 			stmt.setString(9,funcionario.getNomeUsuario());
 			stmt.setString(10,funcionario.getSenha());
-			
-			
+			logger.info("inserindo funcionario no bd"+funcionario);			
 			stmt.execute();
 			stmt.close();
 			return true;
 
 		} catch (SQLException u) {
-			throw new RuntimeException(u);
+			logger.error("Ocorreu um problema ao tentar inserir no bd", u );
+			return false;
 		}
 
 	}
@@ -86,7 +91,7 @@ public class FuncionarioDAO {
 			
 			return true;
 		}catch(Exception e){
-			e.printStackTrace();
+			logger.error("Ocorreu um problema ao tentar remover no bd", e );
 		}
 		return false;
 	}
@@ -118,10 +123,12 @@ public class FuncionarioDAO {
 			
 			stmt.execute();
 			stmt.close();
+			logger.info("Atualizou "+funcionario+" com sucesso!");
 			return true;
 			
 		} catch (SQLException u) {
-			throw new RuntimeException(u);
+			logger.error("Falha ao atualizar "+funcionario+" na base de dados", u);
+			return false;
 		}
 		
 	}

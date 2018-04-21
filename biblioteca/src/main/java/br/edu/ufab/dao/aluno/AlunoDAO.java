@@ -2,10 +2,13 @@ package br.edu.ufab.dao.aluno;
 
 import java.sql.SQLException;
 
+import org.apache.log4j.Logger;
+
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
 import br.edu.ufab.dao.Conexao;
+import br.edu.ufab.dao.curso.AlunoDAO;
 import br.edu.ufab.model.aluno.Aluno;
 
 /**
@@ -27,6 +30,7 @@ public class AlunoDAO {
 	private Connection conexao;
 	PreparedStatement stmt;
 	
+	private static Logger logger = Logger.getLogger(AlunoDAO.class);
 	// abrindo uma conexao com a base
 	public AlunoDAO(){
 		this.conexao = (Connection) Conexao.getConexao();
@@ -61,10 +65,13 @@ public class AlunoDAO {
 			stmt.execute();
 			stmt.close();
 			
+			logger.info("Inseriu "+aluno+" com sucesso!");
+			
 			return true;
 
 		} catch (SQLException u) {
-			throw new RuntimeException(u);
+			logger.error("Falha ao inserir "+aluno+" na base de dados", u);
+			return false;
 			
 		}
 
@@ -98,10 +105,13 @@ public class AlunoDAO {
 			stmt.execute();
 			stmt.close();
 			
+			logger.info("Atualizou "+aluno+" com sucesso!");
+			
 			return true;
 
 		} catch (SQLException u) {
-			throw new RuntimeException(u);
+			logger.error("Falha ao atualizar "+aluno+" na base de dados", u);
+			return false;
 			
 		}
 
@@ -124,10 +134,11 @@ public class AlunoDAO {
 			stmt.setString(1, aluno.getCpf());
 			stmt.execute();
 			stmt.close();
+			logger.info("Removeu "+aluno+" com sucesso!");
 			
 			return true;
 		}catch(Exception e){
-			e.printStackTrace();
+			logger.error("Ocorreu um problema ao tentar remover do bd", e );
 		}
 		return false;
 		

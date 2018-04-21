@@ -3,6 +3,8 @@ package br.edu.ufab.dao.acervo;
 
 import java.sql.SQLException;
 
+import org.apache.log4j.Logger;
+
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
@@ -19,7 +21,7 @@ public class RevistaDAO implements ItemDAO {
 
 	private Connection conexao;
 	PreparedStatement stmt;
-
+	private static final Logger logger = Logger.getLogger(RevistaDAO.class);
 
 	/**
 	 * @param insertion()
@@ -49,13 +51,14 @@ public class RevistaDAO implements ItemDAO {
 			stmt.setDate(3, ((ItemDeAcervo) item).getDataPublicacao());
 			stmt.setInt(4, ((Revista) item).getEdicao());
 			stmt.setInt(5, ((Revista) item).getNumeroPagina());
-
+			logger.info("inserindo no banco: "+item);
 			stmt.execute();
 			stmt.close();
 			return true;
 
 		} catch (SQLException u) {
-			throw new RuntimeException(u);
+			logger.error("Ocorreu um problema ao tentar inserir no bd", u );
+			return false;
 		}
 
 	}
@@ -76,11 +79,12 @@ public class RevistaDAO implements ItemDAO {
 
 			stmt.setInt(1, ((Revista) item).getId());
 			stmt.execute();
+			logger.info("removendo no banco: "+item);
 			stmt.close();
 
 			return true;
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Ocorreu um problema ao tentar remover no bd", e );
 		}
 
 		return false;
@@ -105,13 +109,13 @@ public class RevistaDAO implements ItemDAO {
 			stmt.setInt(4, ((Revista) item).getEdicao());
 			stmt.setInt(5, ((Revista) item).getNumeroPagina());
 			stmt.setInt(6, ((Revista) item).getId());
-
+			logger.info("Update no banco passando: "+item);
 			stmt.execute();
 			stmt.close();
 			return true;
 
 		} catch (SQLException u) {
-			throw new RuntimeException(u);
+			logger.error("Ocorreu um problema ao tentar fazer Update no bd", e );
 		}
 	}
 

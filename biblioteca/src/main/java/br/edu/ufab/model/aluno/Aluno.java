@@ -2,8 +2,11 @@ package br.edu.ufab.model.aluno;
 
 import java.util.Random;
 
+import org.apache.log4j.Logger;
+
 import br.edu.ufab.model.curso.Curso;
 import br.edu.ufab.model.curso.Curso.CursoEnum;
+
 
 /**
  * A classe Aluno é um classe que recebe vários dados de um aluno e gera uma matricula
@@ -26,6 +29,8 @@ public class Aluno {
 	private Curso curso;
 	private int anoIngresso;
 	private String periodoInrgresso;
+	
+	private static final Logger logger = Logger.getLogger(Aluno.class);
 
 	public Aluno(String nome, String nomeMae, String cpf, String rg, String naturalidade, String endereco,
 			String telefone, String email, String senha, Curso curso, int anoIngresso, String periodoInrgresso) {
@@ -50,6 +55,7 @@ public class Aluno {
 	}
 
 	public void setNome(String nome) {
+		logger.info("passando"+nome);
 		this.nome = nome;
 	}
 
@@ -58,6 +64,7 @@ public class Aluno {
 	}
 
 	public void setNomeMae(String nomeMae) {
+		logger.info("passando"+nomeMae);
 		this.nomeMae = nomeMae;
 	}
 
@@ -66,6 +73,7 @@ public class Aluno {
 	}
 
 	public void setMatricula(String matricula) {
+		logger.info("passando"+matricula);
 		this.matricula = matricula;
 	}
 
@@ -74,6 +82,7 @@ public class Aluno {
 	}
 
 	public void setCpf(String cpf) {
+		logger.info("passando"+cpf);
 		this.cpf = cpf;
 	}
 
@@ -82,6 +91,7 @@ public class Aluno {
 	}
 
 	public void setRg(String rg) {
+		logger.info("passando"+rg);
 		this.rg = rg;
 	}
 
@@ -90,6 +100,7 @@ public class Aluno {
 	}
 
 	public void setNaturalidade(String naturalidade) {
+		logger.info("passando"+naturalidade);
 		this.naturalidade = naturalidade;
 	}
 
@@ -98,6 +109,7 @@ public class Aluno {
 	}
 
 	public void setEndereco(String endereco) {
+		logger.info("passando"+endereco);
 		this.endereco = endereco;
 	}
 
@@ -106,6 +118,7 @@ public class Aluno {
 	}
 
 	public void setTelefone(String telefone) {
+		logger.info("passando"+telefone);
 		this.telefone = telefone;
 	}
 
@@ -114,6 +127,7 @@ public class Aluno {
 	}
 
 	public void setEmail(String email) {
+		logger.info("passando"+email);
 		this.email = email;
 	}
 
@@ -122,6 +136,7 @@ public class Aluno {
 	}
 
 	public void setSenha(String senha) {
+		logger.info("passando"+senha);
 		this.senha = senha;
 	}
 
@@ -130,6 +145,7 @@ public class Aluno {
 	}
 
 	public void setCurso(Curso curso) {
+		logger.info("passando"+curso);
 		this.curso = curso;
 	}
 
@@ -138,6 +154,7 @@ public class Aluno {
 	}
 
 	public void setAnoIngresso(int anoIngresso) {
+		logger.info("passando"+anoIngresso);
 		this.anoIngresso = anoIngresso;
 	}
 
@@ -146,27 +163,30 @@ public class Aluno {
 	}
 
 	public void setPeriodoInrgresso(String periodoInrgresso) {
+		logger.info("passando"+periodoInrgresso);
 		this.periodoInrgresso = periodoInrgresso;
 	}
 
 	/*gerar uma matricula para o aluno baseado no curso, no ano que ele inicou, no periodo e no tipo de curso
 	que ele faz*/
 	public String gerandoMatricula() {
-
+		logger.info("gerando matricula");
 		String retorno; 
 		
 		if (curso.getTipo().equals(CursoEnum.GRADUACAO)) {
 			retorno = "G"+curso.getSiglaNomeCurso()+anoIngresso+periodoInrgresso
 					+numAleatorio()+numAleatorio()+numAleatorio();
 			this.matricula = retorno;
-			return matricula;
+			logger.info("matricula gerada = "+retorno);
+			
 		}
 		if (curso.getTipo().equals(CursoEnum.MESTRADO)) {
 			
 			retorno = "M"+curso.getSiglaNomeCurso()+anoIngresso+periodoInrgresso
 					+numAleatorio()+numAleatorio()+numAleatorio();
 			this.matricula = retorno;
-			return matricula;
+			logger.info("matricula gerada = "+retorno);
+			
 				
 		}
 
@@ -174,17 +194,19 @@ public class Aluno {
 			retorno = "D"+curso.getSiglaNomeCurso()+anoIngresso+periodoInrgresso
 					+numAleatorio()+numAleatorio()+numAleatorio();
 			this.matricula = retorno;
-			return matricula;
+			logger.info("matricula gerada = "+retorno);
+			
 		}
 
 		if (curso.getTipo().equals(CursoEnum.ESPECIALIZACAO)) {
 			retorno = "E"+curso.getSiglaNomeCurso()+anoIngresso+periodoInrgresso
 					+numAleatorio()+numAleatorio()+numAleatorio();
 			this.matricula = retorno;
-			return matricula;
+			logger.info("matricula gerada = "+retorno);
+			
 		}
 		
-		return "";
+		return matricula;
 	}
 
 	public int numAleatorio() {

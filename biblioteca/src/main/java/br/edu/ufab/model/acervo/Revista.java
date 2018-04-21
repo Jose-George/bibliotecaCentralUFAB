@@ -2,6 +2,8 @@ package br.edu.ufab.model.acervo;
 
 import java.sql.Date;
 
+import org.apache.log4j.Logger;
+
 //import java.util.Date;
 
 /**
@@ -17,7 +19,10 @@ public class Revista extends ItemDeAcervo{
 	private int edicao; 
 	private int numeroPagina;
 	
+	private static final Logger logger = Logger.getLogger(Revista.class);
+	
 	public Revista(String titulo, String editora, Date dataPublicacao, int edicao, int numeroPagina) {
+		logger.info("iniciando construtor");
 		this.titulo = titulo;
 		this.editora = editora;
 		this.dataPublicacao = dataPublicacao;
@@ -32,15 +37,18 @@ public class Revista extends ItemDeAcervo{
 
 
 	public void setId(int id) {
+		logger.info("setando"+id);
 		this.id = id;
 	}
 
 
 	public String getEditora() {
+		
 		return editora;
 	}
 
 	public void setEditora(String editora) {
+		logger.info("setando"+editora);
 		this.editora = editora;
 	}
 
@@ -49,6 +57,7 @@ public class Revista extends ItemDeAcervo{
 	}
 
 	public void setEdicao(int edicao) {
+		logger.info("setando"+edicao);
 		this.edicao = edicao;
 	}
 
@@ -57,6 +66,7 @@ public class Revista extends ItemDeAcervo{
 	}
 
 	public void setNumeroPagina(int numeroPagina) {
+		logger.info("setando"+numeroPagina);
 		this.numeroPagina = numeroPagina;
 	}
 

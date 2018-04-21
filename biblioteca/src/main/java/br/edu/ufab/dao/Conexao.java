@@ -7,9 +7,6 @@ import java.sql.SQLException;
 import org.apache.log4j.Logger;
 
 
-import br.edu.ufab.dao.curso.CursoDAO;
-
-
 public class Conexao {
 	
 	/**
@@ -18,10 +15,11 @@ public class Conexao {
 	 * 
 	 * @author José George*/
 	
+	private static final Logger logger = Logger.getLogger(Conexao.class);
+	
 	
 
-	public static Connection getConexao() {
-		Logger logger = Logger.getLogger(CursoDAO.class);		
+	public static Connection getConexao() {		
 
 		Connection conn = null;
 		

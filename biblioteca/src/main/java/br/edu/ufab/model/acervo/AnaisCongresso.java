@@ -2,6 +2,10 @@ package br.edu.ufab.model.acervo;
 
 import java.sql.Date;
 
+import org.apache.log4j.Logger;
+
+
+
 /**
  * @author Jose George
  * Classe AnaisCogresso
@@ -19,9 +23,12 @@ public class AnaisCongresso extends ItemDeAcervo{
 	private String local;    
 	private int id;
 	
+	private static final Logger logger = Logger.getLogger(AnaisCongresso.class);
+	
 	
 	public AnaisCongresso(AnaisEnum tipo, String nomeDoCongresso, String titulo, String autor, Date anoPublicacao,
 			String local) {
+		logger.info("iniciando construtor");
 		this.tipo = tipo;
 		this.nomeDoCongresso = nomeDoCongresso;
 		this.titulo = titulo;
@@ -37,6 +44,7 @@ public class AnaisCongresso extends ItemDeAcervo{
 
 	
 	public void setTipo(AnaisEnum tipo) {
+		logger.info("passando"+tipo);
 		this.tipo = tipo;
 	}
 
@@ -47,6 +55,7 @@ public class AnaisCongresso extends ItemDeAcervo{
 
 
 	public void setAutor(String autor) {
+		logger.info("passando"+autor);
 		this.autor = autor;
 	}
 
@@ -57,6 +66,7 @@ public class AnaisCongresso extends ItemDeAcervo{
 
 
 	public void setNomeDoCongresso(String nomeDoCongresso) {
+		logger.info("passando"+nomeDoCongresso);
 		this.nomeDoCongresso = nomeDoCongresso;
 	}
 
@@ -67,6 +77,7 @@ public class AnaisCongresso extends ItemDeAcervo{
 
 
 	public void setLocal(String local) {
+		logger.info("passando"+local);
 		this.local = local;
 	}
 
@@ -77,6 +88,7 @@ public class AnaisCongresso extends ItemDeAcervo{
 
 
 	public void setId(int id) {
+		logger.info("passando"+id);
 		this.id = id;
 	}
 	

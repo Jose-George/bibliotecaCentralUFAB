@@ -1,5 +1,7 @@
 package br.edu.ufab.model.interno;
 
+import org.apache.log4j.Logger;
+
 import br.edu.ufab.dao.aluno.AlunoDAO;
 import br.edu.ufab.model.aluno.Aluno;
 import br.edu.ufab.model.funcionario.Funcionario;
@@ -20,6 +22,8 @@ public class SistemaInternoDeAluno {
 	 * @param excluirAluno()
 	 * */
 	
+	private static final Logger logger = Logger.getLogger(SistemaInternoDeAluno.class);
+
 	private Funcionario func;
 	
 	/** 
@@ -27,6 +31,7 @@ public class SistemaInternoDeAluno {
 	   que irá instaciar a classe
 	 */
 	public SistemaInternoDeAluno(Funcionario func){
+		logger.info("iniciando campo funcionario com:"+func.getRg());
 		this.func = func;
 	}
 	
@@ -36,6 +41,7 @@ public class SistemaInternoDeAluno {
 	 * @return true, caso o cadastro seja efetuado
 	 * */
 	public boolean cadastrar(AlunoDAO alunoDao, Aluno aluno) {
+		logger.info("São passados os os seguintes argumentos: "+alunoDao+" e "+aluno);
 		return alunoDao.insertion(aluno);
 	}
 
@@ -45,6 +51,7 @@ public class SistemaInternoDeAluno {
 	 * @return true, caso o cadastro seja efetuado
 	 * */
 	public boolean editar(AlunoDAO alunoDao, Aluno aluno) {
+		logger.info("São passados os os seguintes argumentos: "+alunoDao+" e "+aluno);
 		return alunoDao.update(aluno);
 	}
 
@@ -57,10 +64,12 @@ public class SistemaInternoDeAluno {
 	 * @return true, caso o cadastro seja efetuado
 	 * */
 	public boolean remover(AlunoDAO alunoDao, Aluno aluno) {
+		logger.info("São passados os os seguintes argumentos: "+alunoDao+" e "+aluno);
 		if(func.isTipo().equals(TipoFuncionario.ADMINISTRADOR)){
+			logger.info("O funcionario é adm");
 			return alunoDao.remove(aluno);
 		}
-			//lançar log/exceção
+		logger.warn("O funcionario NÃO é adm");
 			return false;
 	}
 

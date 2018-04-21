@@ -1,5 +1,7 @@
 package br.edu.ufab.model.curso;
 
+import org.apache.log4j.Logger;
+
 /**
  * A classe curso, ela contem um tipo de curso, que é um ENUM.
  * o tipo pode ser: graduação, pos-graduacao, mestrado, especializacao e doutorado.
@@ -19,8 +21,11 @@ public class Curso {
 	private String siglaNomeCurso;
 	
 	private CursoEnum tipo;
+	
+	private static final Logger logger = Logger.getLogger(Curso.class);
 
 	public Curso(String nome, String area,String sigla ,CursoEnum tipo) {
+		logger.info("iniciando construtor");
 		this.nome = nome;
 		this.area = area;
 		this.siglaNomeCurso = sigla;
@@ -33,6 +38,7 @@ public class Curso {
 	}
 
 	public void setSiglaNomeCurso(String siglaNomeCurso) {
+		logger.info("passando"+siglaNomeCurso);
 		this.siglaNomeCurso = siglaNomeCurso;
 	}
 
@@ -41,6 +47,7 @@ public class Curso {
 	}
 
 	public void setNome(String nome) {
+		logger.info("passando"+nome);
 		this.nome = nome;
 	}
 
@@ -49,6 +56,7 @@ public class Curso {
 	}
 
 	public void setArea(String area) {
+		logger.info("passando"+area);
 		this.area = area;
 	}
 
@@ -57,6 +65,7 @@ public class Curso {
 	}
 
 	public void setTipo(CursoEnum tipo) {
+		logger.info("passando"+tipo);
 		this.tipo = tipo;
 	}
 

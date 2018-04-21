@@ -2,6 +2,8 @@ package br.edu.ufab.model.acervo;
 
 import java.sql.Date;
 
+import org.apache.log4j.Logger;
+
 /**
  * Enum especificando tipos de trabalho de conclusão*/
 
@@ -22,6 +24,8 @@ public class TrabalhoDeConclusao extends ItemDeAcervo{
 	private String Orientador; 
 	private String local;
 	
+	private static final Logger logger = Logger.getLogger(TrabalhoDeConclusao.class);
+	
 	public TrabalhoDeConclusao(TrabalhoEnum tipo, String orientador, String titulo, String autor, Date anoDefesa,
 			String local) {
 		this.tipo = tipo;
@@ -37,6 +41,7 @@ public class TrabalhoDeConclusao extends ItemDeAcervo{
 	}
 
 	public void setId(int id) {
+		logger.info("setando"+id);
 		this.id = id;
 	}
 
@@ -45,6 +50,7 @@ public class TrabalhoDeConclusao extends ItemDeAcervo{
 	}
 
 	public void setTipo(TrabalhoEnum tipo) {
+		logger.info("setando"+tipo);
 		this.tipo = tipo;
 	}
 
@@ -53,6 +59,7 @@ public class TrabalhoDeConclusao extends ItemDeAcervo{
 	}
 
 	public void setAutor(String autor) {
+		logger.info("setando"+autor);
 		this.autor = autor;
 	}
 
@@ -61,6 +68,7 @@ public class TrabalhoDeConclusao extends ItemDeAcervo{
 	}
 
 	public void setOrientador(String orientador) {
+		logger.info("setando"+orientador);
 		Orientador = orientador;
 	}
 
@@ -69,6 +77,7 @@ public class TrabalhoDeConclusao extends ItemDeAcervo{
 	}
 
 	public void setLocal(String local) {
+		logger.info("setando"+local);
 		this.local = local;
 	}	
 

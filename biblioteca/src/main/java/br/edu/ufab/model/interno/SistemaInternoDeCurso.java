@@ -1,5 +1,7 @@
 package br.edu.ufab.model.interno;
 
+import org.apache.log4j.Logger;
+
 //import java.util.ArrayList;
 
 import br.edu.ufab.dao.curso.CursoDAO;
@@ -23,12 +25,14 @@ public class SistemaInternoDeCurso {
 	 * @param excluirCurso()
 	 * */
 	
+	private static final Logger logger = Logger.getLogger(SistemaInternoDeCurso.class);
 	private Funcionario func;
 	/**
 	 *  só o ADM pode excluir curso, sendo assim se faz necessário informar o funcionario
 	   que irá instaciar a classe
 	 */
 	public SistemaInternoDeCurso(Funcionario funcionario){
+		logger.info("iniciando campo funcionario com:"+funcionario.getRg());
 		this.func = funcionario;
 	}
 	
@@ -38,6 +42,7 @@ public class SistemaInternoDeCurso {
 	 * @return true, caso o cadastro seja efetuado
 	 * */
 	public boolean cadastrar(CursoDAO cursoDao, Curso curso ){
+		logger.info("São passados os os seguintes argumentos: "+cursoDao+" e "+curso);
 		return cursoDao.insertion(curso);
 	}
 	
@@ -47,6 +52,7 @@ public class SistemaInternoDeCurso {
 	 * @return true, caso o cadastro seja efetuado
 	 * */
 	public boolean editar(CursoDAO cursoDao, Curso curso ){
+		logger.info("São passados os os seguintes argumentos: "+cursoDao+" e "+curso);
 		return cursoDao.update(curso);
 	}
 	
@@ -59,9 +65,13 @@ public class SistemaInternoDeCurso {
 	 * @return true, caso o cadastro seja efetuado
 	 * */
 	public boolean remover(CursoDAO cursoDao, Curso curso ){
+		logger.info("São passados os os seguintes argumentos: "+cursoDao+" e "+curso);
 		if(func.isTipo().equals(TipoFuncionario.ADMINISTRADOR)){
+			logger.info("O funcionario é adm");
 			return cursoDao.remove(curso);
 		}
+		
+		logger.warn("O funcionario NAO é adm");
 		return false;
 	}
 	

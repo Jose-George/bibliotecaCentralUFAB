@@ -1,5 +1,7 @@
 package br.edu.ufab.model.funcionario;
 
+import org.apache.log4j.Logger;
+
 
 
 /**
@@ -20,7 +22,8 @@ public class Funcionario {
 	public enum TipoFuncionario {
 		ADMINISTRADOR, OPERADOR
 	}
-
+	
+	private static final Logger logger = Logger.getLogger(Funcionario.class);
 	
 	private TipoFuncionario tipo; /*USUARIO OPERADOR OU ADMINISTRADOR*/
 	private String cpf; 
@@ -35,6 +38,7 @@ public class Funcionario {
 	
 	public Funcionario(TipoFuncionario tipo, String cpf, String nomeCompleto, String rg, String naturalidade, String endereco,
 			String telefone, String email, String nomeUsuario, String senha) {
+		
 		this.setTipo(tipo);
 		this.setCpf(cpf);
 		this.setNomeCompleto(nomeCompleto);
@@ -52,6 +56,7 @@ public class Funcionario {
 	}
 
 	public void setTipo(TipoFuncionario tipo) {
+		logger.info("passando"+tipo);
 		this.tipo = tipo;
 	}
 
@@ -60,6 +65,7 @@ public class Funcionario {
 	}
 
 	public void setCpf(String cpf) {
+		logger.info("passando"+cpf);
 		this.cpf = cpf;
 	}
 
@@ -68,6 +74,7 @@ public class Funcionario {
 	}
 
 	public void setNomeCompleto(String nomeCompleto) {
+		logger.info("passando"+nomeCompleto);
 		this.nomeCompleto = nomeCompleto;
 	}
 
@@ -76,6 +83,7 @@ public class Funcionario {
 	}
 
 	public void setRg(String rg) {
+		logger.info("passando"+rg);
 		this.rg = rg;
 	}
 
@@ -84,6 +92,7 @@ public class Funcionario {
 	}
 
 	public void setNaturalidade(String naturalidade) {
+		logger.info("passando"+naturalidade);
 		this.naturalidade = naturalidade;
 	}
 
@@ -92,6 +101,7 @@ public class Funcionario {
 	}
 
 	public void setEndereco(String endereco) {
+		logger.info("passando"+endereco);
 		this.endereco = endereco;
 	}
 
@@ -100,6 +110,7 @@ public class Funcionario {
 	}
 
 	public void setTelefone(String telefone) {
+		logger.info("passando"+telefone);
 		this.telefone = telefone;
 	}
 
@@ -108,6 +119,7 @@ public class Funcionario {
 	}
 
 	public void setEmail(String email) {
+		logger.info("passando"+email);
 		this.email = email;
 	}
 
@@ -116,6 +128,7 @@ public class Funcionario {
 	}
 
 	public void setNomeUsuario(String nomeUsuario) {
+		logger.info("passando"+nomeUsuario);
 		this.nomeUsuario = nomeUsuario;
 	}
 
@@ -124,6 +137,7 @@ public class Funcionario {
 	}
 
 	public void setSenha(String senha) {
+		logger.info("passando"+senha);
 		this.senha = senha;
 	} 
 	
