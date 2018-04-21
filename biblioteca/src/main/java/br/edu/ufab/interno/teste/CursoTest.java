@@ -25,7 +25,7 @@ public class CursoTest {
 		
 		func = new Funcionario(TipoFuncionario.ADMINISTRADOR, "1001", "Jose George", "1232", "Cajazeiras",
 				"Aprigio Veloso", "99913413", "george.djc@gmail.com", "j.george", "123george");
-		curso = new Curso("Psicologia", "Saúde", CursoEnum.GRADUACAO);
+		curso = new Curso("Psicologia", "Saúde","PI", CursoEnum.GRADUACAO);
 		sisCurso = new SistemaInternoDeCurso(func);
 		cursoDao = new CursoDAO();
 	}

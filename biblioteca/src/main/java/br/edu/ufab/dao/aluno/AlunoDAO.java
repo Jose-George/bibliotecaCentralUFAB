@@ -20,24 +20,23 @@ public class AlunoDAO {
 	
 	public boolean insertion(Aluno aluno) {		
 	
-		String sql = "INSERT INTO aluno(nome,nomeMae,matricula,cpf,rg,naturalidade,endereco"
-				+ ",telefone,email,senha,nomeCurso,anoIngresso,periodoIngresso) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO aluno(nome,nomeMae,cpf,rg,naturalidade,endereco"
+				+ ",telefone,email,senha,nomeCurso,anoIngresso,periodoIngresso) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 
 		try {
 			stmt = (PreparedStatement) conexao.prepareStatement(sql);
 			stmt.setString(1, aluno.getNome());
 			stmt.setString(2, aluno.getNomeMae());
-			stmt.setString(3, aluno.getMatricula());
-			stmt.setString(4, aluno.getCpf());
-			stmt.setString(5, aluno.getRg());
-			stmt.setString(6, aluno.getNaturalidade());
-			stmt.setString(7, aluno.getEndereco());
-			stmt.setString(8, aluno.getTelefone());
-			stmt.setString(9, aluno.getEmail());
-			stmt.setString(10, aluno.getSenha());
-			stmt.setString(11, aluno.getCurso());
-			stmt.setInt(12, aluno.getAnoIngresso());
-			stmt.setString(13, aluno.getPeriodoInrgresso());
+			stmt.setString(3, aluno.getCpf());
+			stmt.setString(4, aluno.getRg());
+			stmt.setString(5, aluno.getNaturalidade());
+			stmt.setString(6, aluno.getEndereco());
+			stmt.setString(7, aluno.getTelefone());
+			stmt.setString(8, aluno.getEmail());
+			stmt.setString(9, aluno.getSenha());
+			stmt.setString(10, aluno.getCurso());
+			stmt.setInt(11, aluno.getAnoIngresso());
+			stmt.setString(12, aluno.getPeriodoInrgresso());
 			stmt.execute();
 			stmt.close();
 			
@@ -52,13 +51,13 @@ public class AlunoDAO {
 	
 	public boolean update(Aluno aluno){
 		
-		String sql = "UPDATE aluno nome=?,nomeMae=?,matricula=?,rg=?,naturalidade=?,endereco=?"
-				+ ",telefone=?,email=?,senha=?,nomeCurso=?,anoIngresso=?,periodoIngresso=? WHERE cpf = ? ";
+		String sql = "UPDATE aluno nome=?,nomeMae=?,rg=?,naturalidade=?,endereco=?"
+				+ ",telefone=?,email=?,senha=?,anoIngresso=?,periodoIngresso=? WHERE cpf = ? ";
 		try {
 			stmt = (PreparedStatement) conexao.prepareStatement(sql);
 			stmt.setString(1, aluno.getNome());
 			stmt.setString(2, aluno.getNomeMae());
-			stmt.setString(3, aluno.getMatricula());
+			stmt.setString(3, aluno.getCpf());
 			stmt.setString(4, aluno.getRg());
 			stmt.setString(5, aluno.getNaturalidade());
 			stmt.setString(6, aluno.getEndereco());
@@ -68,8 +67,6 @@ public class AlunoDAO {
 			stmt.setString(10, aluno.getCurso());
 			stmt.setInt(11, aluno.getAnoIngresso());
 			stmt.setString(12, aluno.getPeriodoInrgresso());
-			stmt.setString(13, aluno.getCpf());
-			
 			stmt.execute();
 			stmt.close();
 			

@@ -26,14 +26,14 @@ public class CursoDAO {
 		logger.info("Inserindo curso na base de dados, passando"+curso+"como parametro");
 		
 		boolean flag = false;
-		String sql = "INSERT INTO curso(nome,areaCurso,tipo) VALUES(?,?,?)";
+		String sql = "INSERT INTO curso(nome,areaCurso,sigla,tipo) VALUES(?,?,?,?)";
 
 		try {
 			stmt = (PreparedStatement) conexao.prepareStatement(sql);
 			stmt.setString(1, curso.getNome());
 			stmt.setString(2, curso.getArea());
-			stmt.setString(3, curso.getTipo().name());
-	
+			stmt.setString(3, curso.getSiglaNomeCurso());
+			stmt.setString(4, curso.getTipo().name());
 			stmt.execute();
 			stmt.close();
 			logger.info("Inseriu "+curso+" com sucesso!");
@@ -67,14 +67,15 @@ public class CursoDAO {
 
 	public boolean update(Curso curso) {
 	
-		String sql = "UPDATE curso SET nome = ?, areaCurso = ?, tipo = ?";
+		String sql = "UPDATE curso SET nome = ?, areaCurso = ?,sigla=?, tipo = ?";
 				 //" WHERE nome = ?";
 		
 		try {
 			stmt = (PreparedStatement) conexao.prepareStatement(sql);
-			stmt.setString(1, curso.getArea());
-			stmt.setString(2, curso.getTipo().name());
-			stmt.setString(3,curso.getNome());
+			stmt.setString(1, curso.getNome());
+			stmt.setString(2, curso.getArea());
+			stmt.setString(3, curso.getSiglaNomeCurso());
+			stmt.setString(4, curso.getTipo().name());
 			stmt.execute();
 			stmt.close();
 			return true;

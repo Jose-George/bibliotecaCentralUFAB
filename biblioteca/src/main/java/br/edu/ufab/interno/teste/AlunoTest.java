@@ -27,12 +27,13 @@ public class AlunoTest {
 		func = new Funcionario(TipoFuncionario.ADMINISTRADOR, "1001", "Jose George", "1232", "Cajazeiras",
 				"Aprigio Veloso", "99913413", "george.djc@gmail.com", "j.george", "123george");
 		
-		curso = new Curso("Biologia","area",CursoEnum.GRADUACAO);
+		curso = new Curso("Biologia","area","BI",CursoEnum.GRADUACAO);
 
-		aluno = new Aluno("Samuel Jr.","Socorro","13214312","123413","1233",
+		aluno = new Aluno("Samuel Jr.","Socorro","123413","1233",
 				"Cajazeiras","rua padre ibiapina","971386687","freo@gmail.com",
-				"13413as",curso,2012,"2012.1");
+				"13413as",curso,2012,"1");
 		
+
 		alunoDao= new AlunoDAO();	
 		
 		sisAluno = new SistemaInternoDeAluno(func);
@@ -42,22 +43,25 @@ public class AlunoTest {
 	
 	@Test
 	public void testCadastrarAluno() {
-		aluno.setCpf("13214312");
+		aluno.setCpf("123413");
 		assertTrue(sisAluno.cadastrar(alunoDao, aluno));
 	}
+
 	
 	@Test
 	public void testAtualizarAluno(){
-		aluno.setCpf("13214312");
+		aluno.setCpf("123413");
 		aluno.setNaturalidade("cg-pb");
 		assertTrue(sisAluno.editar(alunoDao, aluno));	
 	}
 	
 	@Test
 	public void excluirAluno(){
-		aluno.setCpf("13214312");
+		aluno.setCpf("123413");
 		assertTrue(sisAluno.remover(alunoDao, aluno));
 	}
+	
+	
 
 	
 	
