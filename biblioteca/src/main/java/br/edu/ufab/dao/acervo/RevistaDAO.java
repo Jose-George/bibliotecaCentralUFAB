@@ -115,7 +115,8 @@ public class RevistaDAO implements ItemDAO {
 			return true;
 
 		} catch (SQLException u) {
-			logger.error("Ocorreu um problema ao tentar fazer Update no bd", e );
+			logger.error("Ocorreu um problema ao tentar fazer Update no bd", u );
+			return false;
 		}
 	}
 

@@ -8,7 +8,7 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
 import br.edu.ufab.dao.Conexao;
-import br.edu.ufab.dao.curso.AlunoDAO;
+
 import br.edu.ufab.model.aluno.Aluno;
 
 /**
@@ -143,6 +143,6 @@ public class AlunoDAO {
 		return false;
 		
 	}
-	
+
 	
 }

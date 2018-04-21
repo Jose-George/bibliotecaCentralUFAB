@@ -62,6 +62,7 @@ public class TrabalhoDAO implements ItemDAO {
 
 		} catch (SQLException u) {
 			logger.error("Ocorreu um problema ao tentar inserir no bd", u );
+			return false;
 		}
 	}
 
@@ -119,7 +120,8 @@ public class TrabalhoDAO implements ItemDAO {
 			return true;
 
 		} catch (SQLException u) {
-			logger.error("Ocorreu um problema ao tentar fazer Update no bd", e );
+			logger.error("Ocorreu um problema ao tentar fazer Update no bd", u );
+			return false;
 		}
 	}
 
