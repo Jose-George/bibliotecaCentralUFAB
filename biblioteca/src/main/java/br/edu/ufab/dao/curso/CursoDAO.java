@@ -12,7 +12,8 @@ import br.edu.ufab.dao.Conexao;
 import br.edu.ufab.model.curso.Curso;
 
 
-/*A Classe CursoDAO abre uma conexão com o banco de dados e realiza as operações de inserir, deletar e atualizar
+/**
+ * A Classe CursoDAO abre uma conexão com o banco de dados e realiza as operações de inserir, deletar e atualizar
  * o objeto curso na base de dados.
  *  
  * @author	José George	
@@ -21,7 +22,7 @@ import br.edu.ufab.model.curso.Curso;
 public class CursoDAO {
 
 
-	/*
+	/**
 	 * @param insertion()
 	 * @param remove()
 	 * @param update()

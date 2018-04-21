@@ -12,27 +12,37 @@ public class MidiaEletronicaTest {
 
 	MidiaEletronica midia;
 	
-	/*Responsável por testar os tipos da classe Midia Eletronica*/
+	/**
+	 * Responsável por testar os tipos da classe Midia Eletronica
+	 * */
 	
-	/*Iniciando um teste*/
+	/**
+	 * Iniciando um teste
+	 * */
 	@Before
 	public void inicia() {
 		midia = new MidiaEletronica(MidiaEnum.CD, "The Beatles", null);
 	}
 
-	/*Testando os tipos de Midia: CD ou DVD*/
+	/**
+	 * Testando os tipos de Midia: CD ou DVD
+	 * */
 	@Test
 	public void getTipoTest() {
 		assertTrue(midia.getTipo() == MidiaEnum.CD);
 	}
 
-	/*Testando os tipos de Anais: titulo da mídia*/
+	/**
+	 * Testando os tipos de Anais: titulo da mídia
+	 * */
 	@Test
 	public void getTituloTest() {
 		assertTrue(midia.getTitulo().equals("The Beatles"));
 	}
 	
-	/*Testando a data de gravação da mídia*/
+	/**
+	 * Testando a data de gravação da mídia
+	 * */
 	@Test
 	public void getDataGravacaoTest() {
 		assertTrue(midia.getDataPublicacao() == null);

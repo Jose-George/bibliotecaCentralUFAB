@@ -4,7 +4,7 @@ import java.sql.Date;
 
 //import java.util.Date;
 
-/*
+/**
  * @author Jose George
  * Classe Revista
  * implementa ItemAcervo

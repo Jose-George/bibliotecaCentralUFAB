@@ -8,7 +8,8 @@ import com.mysql.jdbc.PreparedStatement;
 import br.edu.ufab.dao.Conexao;
 import br.edu.ufab.model.aluno.Aluno;
 
-/*A Classe AlunoDAO abre uma conexão com o banco de dados e realiza as operações de inserir, deletar e atualizar
+/**
+ * A Classe AlunoDAO abre uma conexão com o banco de dados e realiza as operações de inserir, deletar e atualizar
  * o objeto Aluno na base de dados.
  *  
  * @author	José George	
@@ -17,7 +18,7 @@ import br.edu.ufab.model.aluno.Aluno;
 public class AlunoDAO {
 	
 
-	/*
+	/**
 	 * @param insertion()
 	 * @param remove()
 	 * @param update()
@@ -107,7 +108,7 @@ public class AlunoDAO {
 	}
 	
 
-	/*
+	/**
 	 * *Deletar um Aluno no banco de dados
 	 * @param item,um objeto do tipo Aluno
 	 * @return true, se o objetivo for inserido no banco de dados

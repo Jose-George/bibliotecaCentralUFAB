@@ -1,6 +1,7 @@
 package br.edu.ufab.model.curso;
 
-/*A classe curso, ela contem um tipo de curso, que é um ENUM.
+/**
+ * A classe curso, ela contem um tipo de curso, que é um ENUM.
  * o tipo pode ser: graduação, pos-graduacao, mestrado, especializacao e doutorado.
  * 
  * Contém ainda os metódos gets e sets

@@ -11,7 +11,8 @@ import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
 import br.edu.ufab.model.interno.SistemaInternoDeFuncionario;
 
 
-/*Essa classe FuncionarioTest realiza teste para verificar se os dados do curso estão 
+/**
+ * Essa classe FuncionarioTest realiza teste para verificar se os dados do curso estão 
  * sendo corretamente salvos, como também atualizados e excluidos da base de dados
  * @author	José George	 
  * */
@@ -25,7 +26,8 @@ public class FuncionarioTest {
 	SistemaInternoDeFuncionario sisFuncionario;
 	
 	
-	/*Inicializando o teste
+	/**
+	 * Inicializando o teste
 	 * Aqui é criado objetos do tipo, FunncinarioDAO, Funcionario e SistemaInternoDeAcervo,
 	 * pois todos participam do cadastro de um curso na base de dados.	
 	*/
@@ -38,7 +40,8 @@ public class FuncionarioTest {
 	
 	}
 	
-	/*Cadastrar um Funcionario
+	/**
+	 * Cadastrar um Funcionario
 	 * @return false, o funcionario não foi salvo na base
 	 * @return true, aluno salvo devidamente na base
 	 */
@@ -48,7 +51,8 @@ public class FuncionarioTest {
 	}
 	
 
-	/*Atualizar um Funcionario
+	/**
+	 * Atualizar um Funcionario
 	 * @return false, o funcionario não foi salvo na base
 	 * @return true, aluno salvo devidamente na base
 	 */
@@ -59,7 +63,8 @@ public class FuncionarioTest {
 		assertTrue(sisFuncionario.editarFuncionario(funcDao, func));
 	}
 
-	/*Remover um Funcionario
+	/**
+	 * Remover um Funcionario
 	 * @return false, o funcionario não foi salvo na base
 	 * @return true, aluno salvo devidamente na base
 	 */

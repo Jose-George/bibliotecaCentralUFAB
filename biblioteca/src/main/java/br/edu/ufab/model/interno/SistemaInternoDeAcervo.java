@@ -1,6 +1,6 @@
 package br.edu.ufab.model.interno;
 
-/*Essa Classe é responsável por controlar todo o sistema de acervo, ela tem três metódos
+/**Essa Classe é responsável por controlar todo o sistema de acervo, ela tem três metódos
  * que fazem chamadas ao ItemDao e ItemDeAcervo
  * 
  * @author José George
@@ -16,21 +16,23 @@ public class SistemaInternoDeAcervo {
 	private Funcionario func;
 	
 	
-	/*
+	/**
 	 * @param cadastrarItemDeAcervo()
 	 * @param editarItemDeAcervo()
 	 * @param excluirItemDeAcervo()
 	 * */
 	
 	
-	/* só o ADM pode excluir curso, sendo assim se faz necessário informar o funcionario
+	/**
+	 * só o ADM pode excluir curso, sendo assim se faz necessário informar o funcionario
 	   que irá instaciar a classe
 	 */
 	public SistemaInternoDeAcervo(Funcionario funcionario){
 		this.func = funcionario;
 	}
 	
-	/*Metodo de cadastro, recebe por parametro um tipo de ItemDao(usamos polimorfismo), esse tipo
+	/**
+	 * Metodo de cadastro, recebe por parametro um tipo de ItemDao(usamos polimorfismo), esse tipo
 	 * é generico  se estende para todo o acervoDAO .
 	 * Também é usado um itemDeAcervo, que pode ser qualquer classe que estende ItemDeAcervo
 	 * 
@@ -41,14 +43,16 @@ public class SistemaInternoDeAcervo {
 			return itemDao.insertion(itemAcervo);
 	}
 	
-	 /* @return false, se o cadastro não for possível
+	 /**
+	  *  @return false, se o cadastro não for possível
 			 * @return true, caso o cadastro seja efetuado
 	 * */
 	public boolean editar(ItemDAO itemDao, ItemDeAcervo itemAcervo){
 		return itemDao.update(itemAcervo);
 	}
 	
-	/*Caso o funcionario que esteja tendo excluir um itemDeAcervo não seja adminstrador
+	/**
+	 * Caso o funcionario que esteja tendo excluir um itemDeAcervo não seja adminstrador
 	 * @return false, será retornado um false
 	 * @return true, o funcionario Administrador tem direito de excluir, qualquer item do acervo
 	 * */

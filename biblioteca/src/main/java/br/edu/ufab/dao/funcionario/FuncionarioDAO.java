@@ -17,11 +17,12 @@ import br.edu.ufab.model.funcionario.Funcionario;
 public class FuncionarioDAO {
 
 
-	/*
+	/**
 	 * @param insertion()
 	 * @param remove()
 	 * @param update()
-	 * */
+	 * 
+	 **/
 	
 	private Connection conexao;
 	PreparedStatement stmt;

@@ -13,7 +13,7 @@ import br.edu.ufab.model.funcionario.Funcionario;
 import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
 import br.edu.ufab.model.interno.SistemaInternoDeAluno;
 
-/*Essa classe AlunoTest realiza teste para verificar se os dados do aluno estão 
+/**Essa classe AlunoTest realiza teste para verificar se os dados do aluno estão 
  * sendo corretamente salvos, como também atualizados e excluidos da base de dados
  * @author	José George	 
  * */
@@ -26,7 +26,8 @@ public class AlunoTest {
 	SistemaInternoDeAluno sisAluno;
 	Curso curso;
 	
-	/*Inicializando o teste
+	/**
+	 * Inicializando o teste
 	 * Aqui é criado objetos do tipo, alunoDAO, curso, Aluno e Funcionario e SistemaInternoDeAcervo,
 	 * pois todos participam do cadastro de um aluno na base de dados.	
 	*/
@@ -48,7 +49,8 @@ public class AlunoTest {
 	}
 	
 	
-	/*Cadastrar um aluno
+	/**
+	 * Cadastrar um aluno
 	 * @return false, o aluno não foi salvo na base
 	 * @return true, aluno salvo devidamente na base
 	 */
@@ -58,7 +60,8 @@ public class AlunoTest {
 		assertTrue(sisAluno.cadastrar(alunoDao, aluno));
 	}
 
-	/*Atualizar um aluno
+	/**
+	 * Atualizar um aluno
 	 * @return false, o aluno não foi salvo na base
 	 * @return true, aluno salvo devidamente na base
 	 */	
@@ -69,7 +72,8 @@ public class AlunoTest {
 		assertTrue(sisAluno.editar(alunoDao, aluno));	
 	}
 	
-	/*Excluir um aluno
+	/**
+	 * Excluir um aluno
 	 * @return false, o aluno não foi salvo na base
 	 * @return true, aluno salvo devidamente na base
 	 */

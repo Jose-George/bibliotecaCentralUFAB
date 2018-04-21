@@ -2,7 +2,7 @@ package br.edu.ufab.model.acervo;
 
 import java.util.Date;
 
-/*
+/**
  * @author Jose George
  * 
  * Classe Jornal

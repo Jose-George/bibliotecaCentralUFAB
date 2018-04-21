@@ -9,7 +9,7 @@ import br.edu.ufab.dao.Conexao;
 import br.edu.ufab.model.acervo.ItemDeAcervo;
 import br.edu.ufab.model.acervo.TrabalhoDeConclusao;
 
-/*Classe que abre uma conexao dos objetos de TrabalhoDeConclusao com o banco e realiza inserção, atualização e remoção de objetos do
+/**Classe que abre uma conexao dos objetos de TrabalhoDeConclusao com o banco e realiza inserção, atualização e remoção de objetos do
  * tipo TrabalhoDeConclusao.
  * 
  * @author	José George	
@@ -21,7 +21,7 @@ public class TrabalhoDAO implements ItemDAO {
 	PreparedStatement stmt;
 
 
-	/*
+	/**
 	 * @param insertion()
 	 * @param remove()
 	 * @param update()

@@ -2,7 +2,7 @@ package br.edu.ufab.model.acervo;
 
 import java.sql.Date;
 
-/*
+/**
  * @author Jose George
  * Classe AnaisCogresso
  * implementa interface ItemAcervo

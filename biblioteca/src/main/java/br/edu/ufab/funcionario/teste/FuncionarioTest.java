@@ -8,7 +8,8 @@ import org.junit.Test;
 import br.edu.ufab.model.funcionario.Funcionario;
 import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
 
-/* A classe FuncionarioTest, faz teste para a classe funcionario
+/**
+ *  A classe FuncionarioTest, faz teste para a classe funcionario
  * @author	José George	
  * */
 public class FuncionarioTest {

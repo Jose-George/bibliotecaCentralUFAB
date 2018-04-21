@@ -2,10 +2,11 @@ package br.edu.ufab.model.acervo;
 
 import java.util.Date;
 
-/*Enum para especificar tipos de midia eletronica*/
+/**
+ * Enum para especificar tipos de midia eletronica*/
 
 
-/*
+/**
  * @author Jose George
  * Classe MidiaEletronica
  * implementa ItemAcervo

@@ -12,7 +12,8 @@ import br.edu.ufab.dao.curso.CursoDAO;
 
 public class Conexao {
 	
-	/*Essa classe é responsavel por fazer a conexão do Software(JAVA) ao Banco(MySQL)
+	/**
+	 * Essa classe é responsavel por fazer a conexão do Software(JAVA) ao Banco(MySQL)
 	 * Temos um metodo estatico getConexao(), que abre conexão com banco. 
 	 * 
 	 * @author José George*/

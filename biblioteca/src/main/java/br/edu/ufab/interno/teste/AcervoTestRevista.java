@@ -11,7 +11,7 @@ import br.edu.ufab.model.funcionario.Funcionario;
 import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
 import br.edu.ufab.model.interno.SistemaInternoDeAcervo;
 
-/*Essa Classe testa a inserção, remoção e atualização dos Revista na base de dados
+/**Essa Classe testa a inserção, remoção e atualização dos Revista na base de dados
  * @author	José George	 
  * */
 

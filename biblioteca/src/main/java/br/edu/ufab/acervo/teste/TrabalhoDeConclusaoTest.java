@@ -12,7 +12,8 @@ public class TrabalhoDeConclusaoTest {
 
 	TrabalhoDeConclusao trabalho;
 	
-	/*Responsável por testar os tipos da classe TrabalhoDeConclusao*/
+	/**
+	 * Responsável por testar os tipos da classe TrabalhoDeConclusao*/
 
 	
 	@Before

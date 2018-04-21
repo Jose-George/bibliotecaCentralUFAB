@@ -5,7 +5,8 @@ import java.util.Random;
 import br.edu.ufab.model.curso.Curso;
 import br.edu.ufab.model.curso.Curso.CursoEnum;
 
-/*A classe Aluno é um classe que recebe vários dados de um aluno e gera uma matricula
+/**
+ * A classe Aluno é um classe que recebe vários dados de um aluno e gera uma matricula
  * @author	José George
  * */
 

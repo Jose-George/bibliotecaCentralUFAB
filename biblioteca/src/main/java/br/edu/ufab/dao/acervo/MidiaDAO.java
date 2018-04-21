@@ -9,7 +9,7 @@ import br.edu.ufab.dao.Conexao;
 import br.edu.ufab.model.acervo.ItemDeAcervo;
 import br.edu.ufab.model.acervo.MidiaEletronica;
 
-/*Classe que abre uma conexao dos objetos de MidiaEletronica com o banco e realiza inserção, atualização e remoção de objetos do
+/**Classe que abre uma conexao dos objetos de MidiaEletronica com o banco e realiza inserção, atualização e remoção de objetos do
  * tipo MidiaEletronica.
  * @author	José George	
  * */
@@ -20,7 +20,7 @@ public class MidiaDAO implements ItemDAO {
 	PreparedStatement stmt;
 	
 
-	/*
+	/**
 	 * @param insertion()
 	 * @param remove()
 	 * @param update()

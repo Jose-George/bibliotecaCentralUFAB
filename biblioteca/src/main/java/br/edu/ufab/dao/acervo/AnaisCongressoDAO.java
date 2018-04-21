@@ -9,7 +9,8 @@ import br.edu.ufab.dao.Conexao;
 import br.edu.ufab.model.acervo.AnaisCongresso;
 import br.edu.ufab.model.acervo.ItemDeAcervo;
 
-/*Classe que abre uma conexao dos objetos de AnaisCongresso com o banco e realiza inserção, atualização e remoção de objetos do
+/**
+ * Classe que abre uma conexao dos objetos de AnaisCongresso com o banco e realiza inserção, atualização e remoção de objetos do
  * tipo AnaisCongresso.
  * @author	José George	
  * */
@@ -17,7 +18,7 @@ import br.edu.ufab.model.acervo.ItemDeAcervo;
 public class AnaisCongressoDAO implements ItemDAO {
 
 	
-	/*
+	/**
 	 * @param insertion()
 	 * @param remove()
 	 * @param update()

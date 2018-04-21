@@ -2,9 +2,10 @@ package br.edu.ufab.model.acervo;
 
 import java.sql.Date;
 
-/*Enum especificando tipos de trabalho de conclusão*/
+/**
+ * Enum especificando tipos de trabalho de conclusão*/
 
-/*
+/**
  * @author Jose George
  * Classe TrabalhoDeConclusão
  * implementa ItemAcervo

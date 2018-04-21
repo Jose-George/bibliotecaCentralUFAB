@@ -9,7 +9,7 @@ import br.edu.ufab.dao.Conexao;
 import br.edu.ufab.model.acervo.ItemDeAcervo;
 import br.edu.ufab.model.acervo.Jornal;
 
-/*Classe que abre uma conexao dos objetos de Jornal com o banco e realiza inserção, atualização e remoção de objetos do
+/**Classe que abre uma conexao dos objetos de Jornal com o banco e realiza inserção, atualização e remoção de objetos do
  * tipo Jornal.
  * @author	José George	
  * */
@@ -17,7 +17,7 @@ import br.edu.ufab.model.acervo.Jornal;
 public class JornalDAO implements ItemDAO {
 
 
-	/*
+	/**
 	 * @param insertion()
 	 * @param remove()
 	 * @param update()

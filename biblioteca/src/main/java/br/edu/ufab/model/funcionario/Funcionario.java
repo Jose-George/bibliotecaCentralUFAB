@@ -2,7 +2,7 @@ package br.edu.ufab.model.funcionario;
 
 
 
-/*
+/**
  * @author Jose George
  * Classe Funcionario
  * inicializa dados do funcionario por construtor
@@ -14,7 +14,7 @@ package br.edu.ufab.model.funcionario;
 
 public class Funcionario {
 
-	/*
+	/**
 	 * @param gerarMatricula()
 	 * */
 	public enum TipoFuncionario {
