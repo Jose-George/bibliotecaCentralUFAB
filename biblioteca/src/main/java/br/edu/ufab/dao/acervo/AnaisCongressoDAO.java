@@ -9,15 +9,28 @@ import br.edu.ufab.dao.Conexao;
 import br.edu.ufab.model.acervo.AnaisCongresso;
 import br.edu.ufab.model.acervo.ItemDeAcervo;
 
+/*Classe que abre uma conexao dos objetos de AnaisCongresso com o banco e realiza inserção, atualização e remoção de objetos do
+ * tipo AnaisCongresso.
+ * @author	José George	
+ * */
 
 public class AnaisCongressoDAO implements ItemDAO {
 
 	private Connection conexao;
 	
+	// abrindo uma conexao com a base
 	public AnaisCongressoDAO(){
 		this.conexao = (Connection) Conexao.getConexao();
 	}
 
+	
+	/**
+	 * Inserir um Anal de Congresso no banco de dados
+	 * @param item,um objeto do tipo AnaisDeCongresso
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
+	
 	public boolean insertion(Object item) {
 		
 		String sql = "INSERT INTO anaiscongresso(tipo,titulo,autor,nomeCongresso,"
@@ -40,6 +53,12 @@ public class AnaisCongressoDAO implements ItemDAO {
 		}
 	}
 
+	/**
+	 * Deletar um Anal de Congresso no banco de dados
+	 * @param item,um objeto do tipo AnaisDeCongresso
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
 	public boolean remove(Object item) {
 		
 		String sql = "DELETE FROM anaiscongresso"
@@ -60,6 +79,13 @@ public class AnaisCongressoDAO implements ItemDAO {
 		
 	}
 
+	/**
+	 * Atualizar um Anal de Congresso no banco de dados
+	 * @param item,um objeto do tipo AnaisDeCongresso
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
+	
 	public boolean update(Object item) {
 		
 		 String sql = "UPDATE anaiscongresso SET tipo = ?, titulo = ?, autor = ?, nomeCongresso = ? ,"

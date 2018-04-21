@@ -11,6 +11,10 @@ import br.edu.ufab.model.funcionario.Funcionario;
 import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
 import br.edu.ufab.model.interno.SistemaInternoDeAcervo;
 
+/*Essa Classe testa a inserção, remoção e atualização dos Livros na base de dados
+ * @author	José George	 
+ * */
+
 public class AcervoTestLivro {
 
 	private Funcionario func;
@@ -19,7 +23,7 @@ public class AcervoTestLivro {
 	private Livro livro;
 
 
-
+	//Inicialização do teste
 	@Before
 	public void inicializandoTeste(){
 		func = new Funcionario(TipoFuncionario.ADMINISTRADOR, 
@@ -32,12 +36,14 @@ public class AcervoTestLivro {
 		
 	}
 	
+	//Teste Cadastro, chama o método cadastrar do sistemaInternoDeAcervo
 	@Test
 	public void testCadastro() {
 		livro.setIsbn("38912-1212");
 		assertTrue(sisAcervo.cadastrar(livroD, livro));
 	}
 
+	//Teste Editar, chama o método editar do sistemaInternoDeAcervo
 	@Test
 	public void editarCadastro(){
 		livro.setIsbn("38912-1212");
@@ -45,6 +51,7 @@ public class AcervoTestLivro {
 		assertTrue(sisAcervo.editar(livroD, livro));
 	}
 	
+	//Teste Excluir, chama o método remover do sistemaInternoDeAcervo
 	@Test
 	public void remover(){
 		livro.setIsbn("38912-1212");

@@ -8,15 +8,28 @@ import com.mysql.jdbc.PreparedStatement;
 import br.edu.ufab.dao.Conexao;
 import br.edu.ufab.model.aluno.Aluno;
 
-public class AlunoDAO {
+/*A Classe AlunoDAO abre uma conexão com o banco de dados e realiza as operações de inserir, deletar e atualizar
+ * o objeto Aluno na base de dados.
+ *  
+ * @author	José George	
+ * */
 
+public class AlunoDAO {
+	
 	private Connection conexao;
 	PreparedStatement stmt;
 	
+	// abrindo uma conexao com a base
 	public AlunoDAO(){
 		this.conexao = (Connection) Conexao.getConexao();
 	}
 	
+	/**
+	 * Inserir um Aluno no banco de dados
+	 * @param item,um objeto do tipo Aluno
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
 	
 	public boolean insertion(Aluno aluno) {		
 	
@@ -49,6 +62,13 @@ public class AlunoDAO {
 
 	}
 	
+	/**
+	 * Atualizar um Aluno no banco de dados
+	 * @param item,um objeto do tipo Aluno
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
+	
 	public boolean update(Aluno aluno){
 		
 		String sql = "UPDATE aluno nome=?,nomeMae=?,rg=?,naturalidade=?,endereco=?"
@@ -79,6 +99,13 @@ public class AlunoDAO {
 
 	}
 	
+
+	/*
+	 * *Deletar um Aluno no banco de dados
+	 * @param item,um objeto do tipo Aluno
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
 	public boolean remove(Aluno aluno){
 		
 		String sql = "DELETE FROM aluno"

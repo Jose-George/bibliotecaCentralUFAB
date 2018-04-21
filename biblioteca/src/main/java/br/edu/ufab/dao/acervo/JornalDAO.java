@@ -9,15 +9,28 @@ import br.edu.ufab.dao.Conexao;
 import br.edu.ufab.model.acervo.ItemDeAcervo;
 import br.edu.ufab.model.acervo.Jornal;
 
+/*Classe que abre uma conexao dos objetos de Jornal com o banco e realiza inserção, atualização e remoção de objetos do
+ * tipo Jornal.
+ * @author	José George	
+ * */
+
 public class JornalDAO implements ItemDAO {
 
 	private Connection conexao;
 	PreparedStatement stmt;
-
+	
+	// abrindo uma conexao com a base
 	public JornalDAO() {
 		this.conexao = (Connection) Conexao.getConexao();
 	}
 
+	/**
+	 * Inserir um Jornal no banco de dados
+	 * @param item,um objeto do tipo Jornal
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
+	
 	public boolean insertion(Object item) {
 
 		String sql = "INSERT INTO jornal(titulo,dataPublicacao,edicao) VALUES(?,?,?)";
@@ -36,6 +49,13 @@ public class JornalDAO implements ItemDAO {
 		}
 	}
 
+	/**
+	 * Deletar um Jornal no banco de dados
+	 * @param item,um objeto do tipo Jornal
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
+	
 	public boolean remove(Object item) {
 
 		String sql = "DELETE FROM jornal" + " WHERE id = ?";
@@ -55,6 +75,13 @@ public class JornalDAO implements ItemDAO {
 		return false;
 	}
 
+	/**
+	 * Atualizar um Jornal no banco de dados
+	 * @param item,um objeto do tipo Jornal
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
+	
 	public boolean update(Object item) {
 
 		String sql = "UPDATE jornal SET titulo = ?, dataPublicacao = ?, edicao = ?" + " WHERE id = ?";

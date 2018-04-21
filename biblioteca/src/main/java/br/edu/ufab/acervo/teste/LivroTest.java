@@ -10,6 +10,7 @@ import br.edu.ufab.model.acervo.Livro;
 public class LivroTest {
 	public Livro livro; 
 	
+	
 	@Before
 	public void inicializando() {
 		livro = new Livro("123456", "Java Deitel", "Harvey Deitel", "Editora qualquer", null,

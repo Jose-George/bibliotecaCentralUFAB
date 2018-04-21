@@ -9,15 +9,29 @@ import br.edu.ufab.dao.Conexao;
 import br.edu.ufab.model.acervo.ItemDeAcervo;
 import br.edu.ufab.model.acervo.TrabalhoDeConclusao;
 
+/*Classe que abre uma conexao dos objetos de TrabalhoDeConclusao com o banco e realiza inserção, atualização e remoção de objetos do
+ * tipo TrabalhoDeConclusao.
+ * 
+ * @author	José George	
+ * */
+
 public class TrabalhoDAO implements ItemDAO {
 
 	private Connection conexao;
 	PreparedStatement stmt;
 
+	// abrindo uma conexao com a base
 	public TrabalhoDAO() {
 		this.conexao = (Connection) Conexao.getConexao();
 	}
 
+	/**
+	 * Inserir um TrabalhoDeConclusao no banco de dados
+	 * @param item,um objeto do TrabalhoDeConclusao
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
+	
 	public boolean insertion(Object item) {
 
 		String sql = "INSERT INTO trabalhoConclusao(tipo,autor,orientador,titulo,anoDefesa,localDefesa) VALUES(?,?,?,?,?,?)";
@@ -40,6 +54,13 @@ public class TrabalhoDAO implements ItemDAO {
 		}
 	}
 
+	/**
+	 * Remover um TrabalhoDeConclusao no banco de dados
+	 * @param item,um objeto do TrabalhoDeConclusao
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
+	
 	public boolean remove(Object item) {
 
 		String sql = "DELETE FROM trabalhoConclusao" + " WHERE id = ?";
@@ -59,6 +80,13 @@ public class TrabalhoDAO implements ItemDAO {
 		return false;
 	}
 
+	/**
+	 * Atualizar um TrabalhoDeConclusao no banco de dados
+	 * @param item,um objeto do TrabalhoDeConclusao
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
+	
 	public boolean update(Object item) {
 
 		String sql = "UPDATE trabalhoConclusao SET tipo = ?, autor = ?, orientador = ?,"

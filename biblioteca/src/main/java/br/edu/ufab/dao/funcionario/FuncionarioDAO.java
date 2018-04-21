@@ -8,15 +8,27 @@ import com.mysql.jdbc.PreparedStatement;
 import br.edu.ufab.dao.Conexao;
 import br.edu.ufab.model.funcionario.Funcionario;
 
+/*A Classe FuncionarioDAO abre uma conexão com o banco de dados e realiza as operações de inserir, deletar e atualizar
+ * o objeto funcionario na base de dados.
+ *  
+ * @author	José George	
+ * */
 public class FuncionarioDAO {
 
 	private Connection conexao;
 	PreparedStatement stmt;
 
+	// abrindo uma conexao com a base
 	public FuncionarioDAO() {
 		this.conexao = (Connection) Conexao.getConexao();
 	}
 	
+	/**
+	 * Inserir um Funcionario no banco de dados
+	 * @param item,um objeto do tipo funcionario
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
 	public boolean insertion(Funcionario funcionario) {
 
 		String sql = "INSERT INTO funcionario(tipoFuncionario,cpf,nomeCompleto,rg,"
@@ -46,6 +58,13 @@ public class FuncionarioDAO {
 
 	}
 	
+
+	/**
+	 * Remover um Funcionario no banco de dados
+	 * @param item,um objeto do tipo funcionario
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
 	public boolean remove(Funcionario curso) {
 		
 		String sql = "DELETE FROM funcionario"
@@ -62,7 +81,13 @@ public class FuncionarioDAO {
 		}
 		return false;
 	}
-	
+
+	/**
+	 * Atualizar um Funcionario no banco de dados
+	 * @param item,um objeto do tipo funcionario
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
 	public boolean update(Funcionario funcionario) {
 		
 		String sql = "UPDATE funcionario SET tipoFuncionario = ?, nomeCompleto = ?,"

@@ -12,6 +12,10 @@ import br.edu.ufab.model.funcionario.Funcionario;
 import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
 import br.edu.ufab.model.interno.SistemaInternoDeAcervo;
 
+/*Essa Classe testa a inserção, remoção e atualização dos TrabalhoDeConclusao na base de dados
+ * @author	José George	 
+ * */
+
 public class AcervoTestTrabalho {
 
 	private Funcionario func;
@@ -19,6 +23,7 @@ public class AcervoTestTrabalho {
 	private TrabalhoDeConclusao trab;
 	private TrabalhoDAO trabDao;
 	
+	//Inicialização do teste
 	@Before
 	public void inicializandoTeste(){
 		func = new Funcionario(TipoFuncionario.ADMINISTRADOR, 
@@ -34,13 +39,14 @@ public class AcervoTestTrabalho {
 		
 	}
 	
-	
+	//Teste Cadastro, chama o método cadastrar do sistemaInternoDeAcervo
 	@Test
 	public void testCadastro(){
 		trab.setId(0);
 		assertTrue(sisAcervo.cadastrar(trabDao, trab));	
 	}
 
+	//Teste Editar, chama o método editar do sistemaInternoDeAcervo
 	@Test
 	public void testEditar(){
 		trab.setId(0);
@@ -48,6 +54,7 @@ public class AcervoTestTrabalho {
 		assertTrue(sisAcervo.editar(trabDao,trab));	
 	}
 	
+	//Teste Excluir, chama o método remover do sistemaInternoDeAcervo
 	@Test
 	public void testExcluir(){
 		trab.setId(0);

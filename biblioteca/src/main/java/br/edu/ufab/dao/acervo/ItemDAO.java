@@ -1,5 +1,10 @@
 package br.edu.ufab.dao.acervo;
 
+/*Essa Interface é implementada em todas as classes do AcervoDAO, ela obriga as classes que a implementa
+ * de implementar as operações de inserir, deletar e atualizar o base de dados.
+ * @author	José George	
+ * */
+
 public interface ItemDAO {
 
 	public boolean insertion(Object item);

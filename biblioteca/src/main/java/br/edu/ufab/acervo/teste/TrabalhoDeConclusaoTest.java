@@ -11,7 +11,10 @@ import br.edu.ufab.model.acervo.TrabalhoDeConclusao.TrabalhoEnum;
 public class TrabalhoDeConclusaoTest {
 
 	TrabalhoDeConclusao trabalho;
+	
+	/*Responsável por testar os tipos da classe TrabalhoDeConclusao*/
 
+	
 	@Before
 	public void test() {
 		trabalho = new TrabalhoDeConclusao(TrabalhoEnum.TCC, "Carille", "Pesquisa", "Joaquim", null, "Italia");

@@ -12,6 +12,12 @@ import br.edu.ufab.model.funcionario.Funcionario;
 import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
 import br.edu.ufab.model.interno.SistemaInternoDeAcervo;
 
+
+/*Essa Classe testa a inserção, remoção e atualização dos Jornais na base de dados
+ * @author	José George	 
+ * */
+
+
 public class AcervoTestJornal {
 
 	
@@ -20,6 +26,7 @@ public class AcervoTestJornal {
 	private JornalDAO jornalDao;
 	private SistemaInternoDeAcervo sisAcervo;
 	
+	//Inicialização do teste
 	@Before
 	public void inicializandoTeste(){
 		func = new Funcionario(TipoFuncionario.ADMINISTRADOR, 
@@ -32,12 +39,14 @@ public class AcervoTestJornal {
 		
 	}
 	
+	//Teste Cadastro, chama o método cadastrar do sistemaInternoDeAcervo
 	@Test
 	public void testCadastro() {
 		jornal.setId(0);
 		assertTrue(sisAcervo.cadastrar(jornalDao, jornal));
 	}
 
+	//Teste Editar, chama o método editar do sistemaInternoDeAcervo
 	@Test
 	public void testEditarCadastro() {
 		jornal.setId(0);
@@ -45,6 +54,7 @@ public class AcervoTestJornal {
 		assertTrue(sisAcervo.editar(jornalDao, jornal));
 	}
 	
+	//Teste Excluir, chama o método remover do sistemaInternoDeAcervo
 	@Test
 	public void testExcluirCadastro(){
 		jornal.setId(0);

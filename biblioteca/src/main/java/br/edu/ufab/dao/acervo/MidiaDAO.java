@@ -9,15 +9,28 @@ import br.edu.ufab.dao.Conexao;
 import br.edu.ufab.model.acervo.ItemDeAcervo;
 import br.edu.ufab.model.acervo.MidiaEletronica;
 
+/*Classe que abre uma conexao dos objetos de MidiaEletronica com o banco e realiza inserção, atualização e remoção de objetos do
+ * tipo MidiaEletronica.
+ * @author	José George	
+ * */
+
 public class MidiaDAO implements ItemDAO {
 
 	private Connection conexao;
 	PreparedStatement stmt;
-
+	
+	// abrindo uma conexao com a base
 	public MidiaDAO() {
 		this.conexao = (Connection) Conexao.getConexao();
 	}
 
+	/**
+	 * Inserir uma MidiaEletronica no banco de dados
+	 * @param item,um objeto do tipo MidiaEletronica
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
+	
 	public boolean insertion(Object item) {
 		String sql = "INSERT INTO midiaEletronica (titulo,tipo,dataGravacao) VALUES(?,?,?)";
 
@@ -36,6 +49,14 @@ public class MidiaDAO implements ItemDAO {
 		}
 	}
 
+	
+	/**
+	 * Deletar uma MidiaEletronica no banco de dados
+	 * @param item,um objeto do tipo MidiaEletronica
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
+	
 	public boolean remove(Object item) {
 		String sql = "DELETE FROM midiaEletronica" + " WHERE id = ?";
 
@@ -55,6 +76,14 @@ public class MidiaDAO implements ItemDAO {
 		return false;
 	}
 
+	/**
+	 * Atualizar uma MidiaEletronica no banco de dados
+	 * @param item,um objeto do tipo MidiaEletronica
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
+	
+	
 	public boolean update(Object item) {
 
 		String sql = "UPDATE midiaEletronica SET titulo = ?, tipo= ?, dataGravacao = ?" + " WHERE id = ?";

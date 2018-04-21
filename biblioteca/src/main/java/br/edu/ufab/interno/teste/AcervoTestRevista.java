@@ -11,6 +11,10 @@ import br.edu.ufab.model.funcionario.Funcionario;
 import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
 import br.edu.ufab.model.interno.SistemaInternoDeAcervo;
 
+/*Essa Classe testa a inserção, remoção e atualização dos Revista na base de dados
+ * @author	José George	 
+ * */
+
 public class AcervoTestRevista {
 
 	private Funcionario func;
@@ -19,6 +23,7 @@ public class AcervoTestRevista {
 	private RevistaDAO revistaDao;
 	
 	
+	//Inicialização do teste
 	@Before
 	public void inicializandoTeste(){
 		func = new Funcionario(TipoFuncionario.ADMINISTRADOR, 
@@ -32,12 +37,14 @@ public class AcervoTestRevista {
 		
 	}
 	
+	//Teste Cadastro, chama o método cadastrar do sistemaInternoDeAcervo
 	@Test
 	public void testCadastro(){
 		revista.setId(0);
 		assertTrue(sisAcervo.cadastrar(revistaDao, revista));	
 	}
 
+	//Teste Editar, chama o método editar do sistemaInternoDeAcervo
 	@Test
 	public void testEditar(){
 		revista.setId(0);
@@ -45,6 +52,7 @@ public class AcervoTestRevista {
 		assertTrue(sisAcervo.editar(revistaDao, revista));	
 	}
 	
+	//Teste Excluir, chama o método remover do sistemaInternoDeAcervo
 	@Test
 	public void testExcluir(){
 		revista.setId(0);

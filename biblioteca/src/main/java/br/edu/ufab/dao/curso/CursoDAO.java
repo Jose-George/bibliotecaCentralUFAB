@@ -11,6 +11,13 @@ import br.edu.ufab.dao.Conexao;
 //import br.edu.ufab.model.acervo.Revista;
 import br.edu.ufab.model.curso.Curso;
 
+
+/*A Classe CursoDAO abre uma conexão com o banco de dados e realiza as operações de inserir, deletar e atualizar
+ * o objeto curso na base de dados.
+ *  
+ * @author	José George	
+ * */
+
 public class CursoDAO {
 
 	private Connection conexao;
@@ -18,10 +25,17 @@ public class CursoDAO {
 	
 	private static Logger logger = Logger.getLogger(CursoDAO.class);
 
+	// abrindo uma conexao com a base
 	public CursoDAO() {
 		this.conexao = (Connection) Conexao.getConexao();
 	}
 
+	/**
+	 * Inserir um Curso no banco de dados
+	 * @param item,um objeto do tipo Curso
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
 	public boolean insertion(Curso curso) {
 		logger.info("Inserindo curso na base de dados, passando"+curso+"como parametro");
 		
@@ -48,6 +62,12 @@ public class CursoDAO {
 
 	}
 
+	/**
+	 * Remover um Curso no banco de dados
+	 * @param item,um objeto do tipo Curso
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
 	public boolean remove(Curso curso) {
 		
 		String sql = "DELETE FROM curso"
@@ -65,6 +85,12 @@ public class CursoDAO {
 		return false;
 	}
 
+	/**
+	 * Atualizar um Curso no banco de dados
+	 * @param item,um objeto do tipo curso
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
 	public boolean update(Curso curso) {
 	
 		String sql = "UPDATE curso SET nome = ?, areaCurso = ?,sigla=?, tipo = ?";

@@ -12,6 +12,10 @@ import br.edu.ufab.model.funcionario.Funcionario;
 import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
 import br.edu.ufab.model.interno.SistemaInternoDeAcervo;
 
+/*Essa Classe testa a inserção, remoção e atualização dos MidiaEletronica na base de dados
+ * @author	José George	 
+ * */
+
 public class AcervoTestMidia {
 
 	private Funcionario func;
@@ -20,6 +24,7 @@ public class AcervoTestMidia {
 	private MidiaDAO midiaDao;
 	
 
+	//Inicialização do teste
 	@Before
 	public void inicializandoTeste(){
 		func = new Funcionario(TipoFuncionario.ADMINISTRADOR, 
@@ -33,18 +38,23 @@ public class AcervoTestMidia {
 		midia = new MidiaEletronica(MidiaEnum.CD, "trabalho ", null);
 	}
 	
+	//Teste Cadastro, chama o método cadastrar do sistemaInternoDeAcervo
 	@Test
 	public void testCadastrar(){
 		midia.setId(0);
 		assertTrue(sisAcervo.cadastrar(midiaDao, midia));
 	}
 	
+
+	//Teste Editar, chama o método editar do sistemaInternoDeAcervo
 	@Test
 	public void testEditar(){
 		midia.setId(0);
 		midia.setTitulo("uma história");
 		assertTrue(sisAcervo.editar(midiaDao, midia));
 	}
+	
+	//Teste Excluir, chama o método remover do sistemaInternoDeAcervo
 	@Test
 	public void TestRemover(){
 		midia.setId(0);

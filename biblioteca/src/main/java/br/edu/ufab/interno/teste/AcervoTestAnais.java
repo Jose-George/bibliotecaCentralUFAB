@@ -12,6 +12,10 @@ import br.edu.ufab.model.funcionario.Funcionario;
 import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
 import br.edu.ufab.model.interno.SistemaInternoDeAcervo;
 
+/*Essa Classe testa a inserção, remoção e atualização dos AnaisDeCongresso na base de dados
+ * @author	José George	 
+ * */
+
 public class AcervoTestAnais {
 	
 	private AnaisCongresso anais;
@@ -19,6 +23,8 @@ public class AcervoTestAnais {
 	private AnaisCongressoDAO anaisDao;
 	private SistemaInternoDeAcervo sisAcervo;
 	
+	
+	//Inicialização do teste
 	@Before
 	public void inicializandoTeste(){
 		 anais = new AnaisCongresso(AnaisEnum.ARTIGO, "CBA"
@@ -30,13 +36,14 @@ public class AcervoTestAnais {
 		sisAcervo = new SistemaInternoDeAcervo(func);
 	}
 
+	//Teste Cadastro, chama o método cadastrar do sistemaInternoDeAcervo
 	@Test
 	public void testCadastro() {
 		anais.setId(0);
 		assertTrue(sisAcervo.cadastrar(anaisDao,anais));
 	}
 
-	
+	//Teste Editar, chama o método editar do sistemaInternoDeAcervo
 	@Test
 	public void testEditarCadastro() {
 		anais.setNomeDoCongresso("CBA - 2018 - JP");
@@ -44,7 +51,7 @@ public class AcervoTestAnais {
 		assertTrue(sisAcervo.editar(anaisDao, anais));
 	}
 	
-	
+	//Teste Excluir, chama o método remover do sistemaInternoDeAcervo
 	@Test
 	public void testExcluirCadastro() {
 		anais.setId(0);

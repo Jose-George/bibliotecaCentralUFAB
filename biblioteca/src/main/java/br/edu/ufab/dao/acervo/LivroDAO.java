@@ -9,15 +9,28 @@ import br.edu.ufab.dao.Conexao;
 import br.edu.ufab.model.acervo.ItemDeAcervo;
 import br.edu.ufab.model.acervo.Livro;
 
+/*Classe que abre uma conexao dos objetos de Livro com o banco e realiza inserção, atualização e remoção de objetos do
+ * tipo Livro.
+ * @author	José George	
+ * */
+
 public class LivroDAO implements ItemDAO {
 
 	private Connection conexao;
 	PreparedStatement stmt;
-
+	
+	// abrindo uma conexao com a base
 	public LivroDAO() {
 		this.conexao = (Connection) Conexao.getConexao();
 	}
 
+	/**
+	 * Inserir um Livro no banco de dados
+	 * @param item,um objeto do tipo Livro
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
+	
 	public boolean insertion(Object item) {
 
 		String sql = "INSERT INTO livro(isbn,titulo,autor,editora,"
@@ -45,6 +58,14 @@ public class LivroDAO implements ItemDAO {
 		}
 	}
 
+	/**
+	 * Deletar um livro no banco de dados
+	 * @param item,um objeto do tipo Livro
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
+	
+	
 	public boolean remove(Object item) {
 
 		String sql = "DELETE FROM livro" + " WHERE isbn = ?";
@@ -62,6 +83,14 @@ public class LivroDAO implements ItemDAO {
 
 		return false;
 	}
+	
+	/**
+	 * Atualizar um Livro no banco de dados
+	 * @param item,um objeto do tipo Livro
+	 * @return true, se o objetivo for inserido no banco de dados
+	 * @return false, se não for inserido na base de dados
+	 */	
+	
 
 	public boolean update(Object item) {
 
