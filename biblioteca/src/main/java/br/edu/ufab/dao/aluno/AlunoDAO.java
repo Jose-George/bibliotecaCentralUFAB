@@ -8,7 +8,6 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
 import br.edu.ufab.dao.Conexao;
-
 import br.edu.ufab.model.aluno.Aluno;
 
 /**
