@@ -8,13 +8,21 @@ import com.mysql.jdbc.PreparedStatement;
 import br.edu.ufab.dao.Conexao;
 import br.edu.ufab.model.funcionario.Funcionario;
 
-/*A Classe FuncionarioDAO abre uma conexão com o banco de dados e realiza as operações de inserir, deletar e atualizar
+/**
+ * A Classe FuncionarioDAO abre uma conexão com o banco de dados e realiza as operações de inserir, deletar e atualizar
  * o objeto funcionario na base de dados.
  *  
  * @author	José George	
  * */
 public class FuncionarioDAO {
 
+
+	/*
+	 * @param insertion()
+	 * @param remove()
+	 * @param update()
+	 * */
+	
 	private Connection conexao;
 	PreparedStatement stmt;
 

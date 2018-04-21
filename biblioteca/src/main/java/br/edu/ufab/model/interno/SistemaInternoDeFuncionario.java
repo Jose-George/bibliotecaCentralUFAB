@@ -12,6 +12,12 @@ import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
 
 public class SistemaInternoDeFuncionario {
 
+	
+	/*
+	 * @param criarFuncionario()
+	 * @param editarFuncionario()
+	 * @param excluirFuncionario()
+	 * */
 	private Funcionario funcionario;
 	public SistemaInternoDeFuncionario(Funcionario funcionario) {
 		this.funcionario = funcionario;

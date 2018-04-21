@@ -13,6 +13,12 @@ import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
 
 public class SistemaInternoDeAluno {
 
+	/*
+	 * @param criarAluno()
+	 * @param editarAluno()
+	 * @param excluirAluno()
+	 * */
+	
 	private Funcionario func;
 	
 	/* só o ADM pode excluir aluno, sendo assim se faz necessário informar o funcionario

@@ -19,6 +19,13 @@ public class LivroDAO implements ItemDAO {
 	private Connection conexao;
 	PreparedStatement stmt;
 	
+
+	/*
+	 * @param insertion()
+	 * @param remove()
+	 * @param update()
+	 * */
+	
 	// abrindo uma conexao com a base
 	public LivroDAO() {
 		this.conexao = (Connection) Conexao.getConexao();

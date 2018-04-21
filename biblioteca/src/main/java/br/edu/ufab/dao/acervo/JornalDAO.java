@@ -16,6 +16,13 @@ import br.edu.ufab.model.acervo.Jornal;
 
 public class JornalDAO implements ItemDAO {
 
+
+	/*
+	 * @param insertion()
+	 * @param remove()
+	 * @param update()
+	 * */
+	
 	private Connection conexao;
 	PreparedStatement stmt;
 	

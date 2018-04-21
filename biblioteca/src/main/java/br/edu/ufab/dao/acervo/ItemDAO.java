@@ -7,6 +7,12 @@ package br.edu.ufab.dao.acervo;
 
 public interface ItemDAO {
 
+	/*
+	 * @param insertion()
+	 * @param remove()
+	 * @param update()
+	 * */
+	
 	public boolean insertion(Object item);
 	public boolean remove(Object item);
 	public boolean update(Object item);

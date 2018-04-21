@@ -20,6 +20,13 @@ import br.edu.ufab.model.curso.Curso;
 
 public class CursoDAO {
 
+
+	/*
+	 * @param insertion()
+	 * @param remove()
+	 * @param update()
+	 * */
+	
 	private Connection conexao;
 	PreparedStatement stmt;
 	

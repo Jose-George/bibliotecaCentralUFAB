@@ -14,6 +14,9 @@ package br.edu.ufab.model.funcionario;
 
 public class Funcionario {
 
+	/*
+	 * @param gerarMatricula()
+	 * */
 	public enum TipoFuncionario {
 		ADMINISTRADOR, OPERADOR
 	}

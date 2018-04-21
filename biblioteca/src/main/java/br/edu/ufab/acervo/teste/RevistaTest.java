@@ -18,7 +18,7 @@ public class RevistaTest {
 		revista = new Revista("Gibi", "cartoon", null, 3, 20);
 	}
 	
-	/*Testando o titulo da revista*/
+	/*Testando o titulo da revista*		/
 	@Test
 	public void getTituloTest() {
 		assertTrue(revista.getTitulo().equals("Gibi"));

@@ -16,6 +16,12 @@ import br.edu.ufab.model.acervo.ItemDeAcervo;
 
 public class AnaisCongressoDAO implements ItemDAO {
 
+	
+	/*
+	 * @param insertion()
+	 * @param remove()
+	 * @param update()
+	 * */
 	private Connection conexao;
 	
 	// abrindo uma conexao com a base

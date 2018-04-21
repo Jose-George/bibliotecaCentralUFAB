@@ -15,6 +15,13 @@ import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
 
 public class SistemaInternoDeCurso {
 	
+
+	/*
+	 * @param criarCurso()
+	 * @param editarCurso()
+	 * @param excluirCurso()
+	 * */
+	
 	private Funcionario func;
 	/* só o ADM pode excluir curso, sendo assim se faz necessário informar o funcionario
 	   que irá instaciar a classe

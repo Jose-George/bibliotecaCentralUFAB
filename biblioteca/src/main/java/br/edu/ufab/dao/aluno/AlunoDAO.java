@@ -16,6 +16,13 @@ import br.edu.ufab.model.aluno.Aluno;
 
 public class AlunoDAO {
 	
+
+	/*
+	 * @param insertion()
+	 * @param remove()
+	 * @param update()
+	 * */
+	
 	private Connection conexao;
 	PreparedStatement stmt;
 	

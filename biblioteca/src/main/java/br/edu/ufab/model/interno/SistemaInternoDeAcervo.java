@@ -15,6 +15,14 @@ public class SistemaInternoDeAcervo {
 	
 	private Funcionario func;
 	
+	
+	/*
+	 * @param cadastrarItemDeAcervo()
+	 * @param editarItemDeAcervo()
+	 * @param excluirItemDeAcervo()
+	 * */
+	
+	
 	/* só o ADM pode excluir curso, sendo assim se faz necessário informar o funcionario
 	   que irá instaciar a classe
 	 */

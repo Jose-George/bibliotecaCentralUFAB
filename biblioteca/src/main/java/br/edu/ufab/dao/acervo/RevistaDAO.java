@@ -20,6 +20,13 @@ public class RevistaDAO implements ItemDAO {
 	private Connection conexao;
 	PreparedStatement stmt;
 
+
+	/*
+	 * @param insertion()
+	 * @param remove()
+	 * @param update()
+	 * */
+	
 	// abrindo uma conexao com a base
 	public RevistaDAO() {
 		this.conexao = (Connection) Conexao.getConexao();

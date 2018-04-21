@@ -19,6 +19,13 @@ public class MidiaDAO implements ItemDAO {
 	private Connection conexao;
 	PreparedStatement stmt;
 	
+
+	/*
+	 * @param insertion()
+	 * @param remove()
+	 * @param update()
+	 * */
+	
 	// abrindo uma conexao com a base
 	public MidiaDAO() {
 		this.conexao = (Connection) Conexao.getConexao();
