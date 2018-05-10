@@ -9,9 +9,7 @@
  
 ARTEFATOS DO BANCO DE DADOS: https://github.com/Jose-George/bibliotecaCentralUFAB/tree/master/documenta%C3%A7%C3%A3o/bd_artefatos
 
-DIAGRAMA DE CLASSE: https://github.com/Jose-George/bibliotecaCentralUFAB/tree/master/documenta%C3%A7%C3%A3o/diagrama%20de%20classe
-
-DIAGRAMA ATUALIZADO: https://github.com/Jose-George/bibliotecaCentralUFAB/blob/master/documenta%C3%A7%C3%A3o/diagrama%20de%20classe/diagrama_completo_classe_sprint2.pdf
+DIAGRAMA DE CLASSE: https://github.com/Jose-George/bibliotecaCentralUFAB/blob/master/documenta%C3%A7%C3%A3o/diagrama%20de%20classe/diagrama%20de%20classe(sprint_2).png
 
 # IMPLEMENTAÇÃO ACERVO: https://github.com/Jose-George/bibliotecaCentralUFAB/tree/master/biblioteca/src/main/java/br/edu/ufab/model/acervo
 
