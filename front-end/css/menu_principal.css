@@ -1,0 +1,46 @@
+.menu-opcoes ul li{
+	background-color: #4CAF50;
+	float: left;
+	width: 200px;
+	height: 40px;
+	display: inline-block;
+	text-align: center;
+	line-height: 40px;
+	font-size: 24px;
+	position: relative;
+}
+
+.menu-opcoes ul li:hover{
+	background-color: #088A4B;
+}
+
+.menu-opcoes ul{
+	padding: 0px;
+}
+
+.menu-opcoes ul ul{
+	display: none;
+}
+
+.menu-opcoes ul li:hover > ul{
+	display:block;
+}
+
+.menu-opcoes ul ul ul{
+	margin-left: 201px;
+	top: 0px;
+	position: absolute;
+}
+
+.menu-opcoes ul ul li:hover{
+	background-color: #088A4B;
+}
+
+.menu-opcoes ul ul ul li:hover{
+	background-color: #088A4B;
+}
+
+.menu-opcoes a{
+	color: white;
+	text-decoration: none;
+}
