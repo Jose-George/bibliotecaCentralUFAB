@@ -1,4 +1,4 @@
-package br.edu.ufab.interno.teste;
+package br.edu.ufab.gerenciamento.teste;
 
 import static org.junit.Assert.*;
 
@@ -10,7 +10,7 @@ import br.edu.ufab.dao.acervo.JornalDAO;
 import br.edu.ufab.model.acervo.Jornal;
 import br.edu.ufab.model.funcionario.Funcionario;
 import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
-import br.edu.ufab.model.interno.SistemaInternoDeAcervo;
+import br.edu.ufab.model.gerenciamento.GerenciamentoAcervo;
 
 
 /**
@@ -25,7 +25,7 @@ public class AcervoTestJornal {
 	private Jornal jornal;
 	private Funcionario func;
 	private JornalDAO jornalDao;
-	private SistemaInternoDeAcervo sisAcervo;
+	private GerenciamentoAcervo sisAcervo;
 	
 	//Inicialização do teste
 	@Before
@@ -34,7 +34,7 @@ public class AcervoTestJornal {
 				"1001", "Jose George", "1232","Cajazeiras", "Aprigio Veloso", 
 				"99913413", "george.djc@gmail.com", "j.george", "123george");
 		
-		sisAcervo = new SistemaInternoDeAcervo(func);
+		sisAcervo = new GerenciamentoAcervo(func);
 		jornal= new Jornal("CG amanhace triste", null, 2);
 		jornalDao = new JornalDAO();
 		

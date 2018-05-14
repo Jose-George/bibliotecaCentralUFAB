@@ -1,4 +1,4 @@
-package br.edu.ufab.model.interno;
+package br.edu.ufab.model.gerenciamento;
 
 import org.apache.log4j.Logger;
 
@@ -14,7 +14,7 @@ import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
  * @author José George
  * */
 
-public class SistemaInternoDeAluno {
+public class GerenciamentoAluno {
 
 	/**
 	 * @param criarAluno()
@@ -22,7 +22,7 @@ public class SistemaInternoDeAluno {
 	 * @param excluirAluno()
 	 * */
 	
-	private static final Logger logger = Logger.getLogger(SistemaInternoDeAluno.class);
+	private static final Logger logger = Logger.getLogger(GerenciamentoAluno.class);
 
 	private Funcionario func;
 	
@@ -30,7 +30,7 @@ public class SistemaInternoDeAluno {
 	 * só o ADM pode excluir aluno, sendo assim se faz necessário informar o funcionario
 	   que irá instaciar a classe
 	 */
-	public SistemaInternoDeAluno(Funcionario func){
+	public GerenciamentoAluno(Funcionario func){
 		logger.info("iniciando campo funcionario com:"+func.getRg());
 		this.func = func;
 	}

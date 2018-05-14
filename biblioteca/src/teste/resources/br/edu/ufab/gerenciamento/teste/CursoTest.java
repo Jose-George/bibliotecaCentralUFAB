@@ -1,5 +1,5 @@
 
-package br.edu.ufab.interno.teste;
+package br.edu.ufab.gerenciamento.teste;
 
 import static org.junit.Assert.*;
 
@@ -11,7 +11,7 @@ import br.edu.ufab.model.curso.Curso;
 import br.edu.ufab.model.curso.Curso.CursoEnum;
 import br.edu.ufab.model.funcionario.Funcionario;
 import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
-import br.edu.ufab.model.interno.SistemaInternoDeCurso;
+import br.edu.ufab.model.gerenciamento.GerenciamentoDeCurso;
 
 /**
  * Essa classe CursoTest realiza teste para verificar se os dados do curso estão 
@@ -24,7 +24,7 @@ public class CursoTest {
 	Funcionario func;
 	Curso curso;
 	CursoDAO cursoDao;
-	SistemaInternoDeCurso sisCurso;
+	GerenciamentoDeCurso sisCurso;
 	
 	/**
 	 * Inicializando o teste
@@ -37,7 +37,7 @@ public class CursoTest {
 		func = new Funcionario(TipoFuncionario.ADMINISTRADOR, "1001", "Jose George", "1232", "Cajazeiras",
 				"Aprigio Veloso", "99913413", "george.djc@gmail.com", "j.george", "123george");
 		curso = new Curso("Psicologia", "Saúde","PI", CursoEnum.GRADUACAO);
-		sisCurso = new SistemaInternoDeCurso(func);
+		sisCurso = new GerenciamentoDeCurso(func);
 		cursoDao = new CursoDAO();
 	}
 

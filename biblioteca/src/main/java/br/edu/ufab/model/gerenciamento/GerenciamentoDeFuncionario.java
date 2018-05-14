@@ -1,4 +1,4 @@
-package br.edu.ufab.model.interno;
+package br.edu.ufab.model.gerenciamento;
 
 import org.apache.log4j.Logger;
 
@@ -13,9 +13,9 @@ import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
  * @author José George
  * */
 
-public class SistemaInternoDeFuncionario {
+public class GerenciamentoDeFuncionario {
 
-	private static final Logger logger = Logger.getLogger(SistemaInternoDeFuncionario.class);
+	private static final Logger logger = Logger.getLogger(GerenciamentoDeFuncionario.class);
 	private Funcionario funcionario;
 	
 	/**
@@ -24,7 +24,7 @@ public class SistemaInternoDeFuncionario {
 	 * @param excluirFuncionario()
 	 * */
 	
-	public SistemaInternoDeFuncionario(Funcionario funcionario) {
+	public GerenciamentoDeFuncionario(Funcionario funcionario) {
 		logger.info("iniciando campo funcionario com: "+funcionario.getRg());
 		this.funcionario = funcionario;
 	}

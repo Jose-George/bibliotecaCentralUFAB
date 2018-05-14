@@ -1,4 +1,4 @@
-package br.edu.ufab.interno.teste;
+package br.edu.ufab.gerenciamento.teste;
 
 import static org.junit.Assert.*;
 
@@ -10,7 +10,7 @@ import br.edu.ufab.model.acervo.TrabalhoDeConclusao;
 import br.edu.ufab.model.acervo.TrabalhoDeConclusao.TrabalhoEnum;
 import br.edu.ufab.model.funcionario.Funcionario;
 import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
-import br.edu.ufab.model.interno.SistemaInternoDeAcervo;
+import br.edu.ufab.model.gerenciamento.GerenciamentoAcervo;
 
 /**Essa Classe testa a inserção, remoção e atualização dos TrabalhoDeConclusao na base de dados
  * @author	José George	 
@@ -19,7 +19,7 @@ import br.edu.ufab.model.interno.SistemaInternoDeAcervo;
 public class AcervoTestTrabalho {
 
 	private Funcionario func;
-	private SistemaInternoDeAcervo sisAcervo;
+	private GerenciamentoAcervo sisAcervo;
 	private TrabalhoDeConclusao trab;
 	private TrabalhoDAO trabDao;
 	
@@ -30,7 +30,7 @@ public class AcervoTestTrabalho {
 				"1001", "Jose George", "1232","Cajazeiras", "Aprigio Veloso", 
 				"99913413", "george.djc@gmail.com", "j.george", "123george");
 		
-		sisAcervo = new SistemaInternoDeAcervo(func);
+		sisAcervo = new GerenciamentoAcervo(func);
 		
 	
 		trabDao = new TrabalhoDAO();

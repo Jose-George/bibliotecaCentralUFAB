@@ -1,4 +1,4 @@
-package br.edu.ufab.interno.teste;
+package br.edu.ufab.gerenciamento.teste;
 
 import static org.junit.Assert.*;
 
@@ -9,7 +9,7 @@ import br.edu.ufab.dao.acervo.LivroDAO;
 import br.edu.ufab.model.acervo.Livro;
 import br.edu.ufab.model.funcionario.Funcionario;
 import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
-import br.edu.ufab.model.interno.SistemaInternoDeAcervo;
+import br.edu.ufab.model.gerenciamento.GerenciamentoAcervo;
 
 /**Essa Classe testa a inserção, remoção e atualização dos Livros na base de dados
  * @author	José George	 
@@ -18,7 +18,7 @@ import br.edu.ufab.model.interno.SistemaInternoDeAcervo;
 public class AcervoTestLivro {
 
 	private Funcionario func;
-	private SistemaInternoDeAcervo sisAcervo;
+	private GerenciamentoAcervo sisAcervo;
 	private LivroDAO livroD;
 	private Livro livro;
 
@@ -30,7 +30,7 @@ public class AcervoTestLivro {
 				"1001", "Jose George", "1232","Cajazeiras", "Aprigio Veloso", 
 				"99913413", "george.djc@gmail.com", "j.george", "123george");
 		
-		sisAcervo = new SistemaInternoDeAcervo(func);
+		sisAcervo = new GerenciamentoAcervo(func);
 		livroD = new LivroDAO();
 		livro = new Livro("38912-1212", "use a cabeça", "kathy", "axvs", null, 1, 1232, "ti", "java");
 		

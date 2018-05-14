@@ -1,4 +1,4 @@
-package br.edu.ufab.interno.teste;
+package br.edu.ufab.gerenciamento.teste;
 
 import static org.junit.Assert.*;
 
@@ -10,7 +10,7 @@ import br.edu.ufab.model.acervo.MidiaEletronica;
 import br.edu.ufab.model.acervo.MidiaEletronica.MidiaEnum;
 import br.edu.ufab.model.funcionario.Funcionario;
 import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
-import br.edu.ufab.model.interno.SistemaInternoDeAcervo;
+import br.edu.ufab.model.gerenciamento.GerenciamentoAcervo;
 
 /**Essa Classe testa a inserção, remoção e atualização dos MidiaEletronica na base de dados
  * @author	José George	 
@@ -19,7 +19,7 @@ import br.edu.ufab.model.interno.SistemaInternoDeAcervo;
 public class AcervoTestMidia {
 
 	private Funcionario func;
-	private SistemaInternoDeAcervo sisAcervo;
+	private GerenciamentoAcervo sisAcervo;
 	private MidiaEletronica midia;
 	private MidiaDAO midiaDao;
 	
@@ -31,7 +31,7 @@ public class AcervoTestMidia {
 				"1001", "Jose George", "1232","Cajazeiras", "Aprigio Veloso", 
 				"99913413", "george.djc@gmail.com", "j.george", "123george");
 		
-		sisAcervo = new SistemaInternoDeAcervo(func);
+		sisAcervo = new GerenciamentoAcervo(func);
 		
 		midiaDao = new MidiaDAO();
 		

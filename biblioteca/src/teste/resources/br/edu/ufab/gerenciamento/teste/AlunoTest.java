@@ -1,4 +1,4 @@
-package br.edu.ufab.interno.teste;
+package br.edu.ufab.gerenciamento.teste;
 
 import static org.junit.Assert.*;
 
@@ -11,7 +11,7 @@ import br.edu.ufab.model.curso.Curso;
 import br.edu.ufab.model.curso.Curso.CursoEnum;
 import br.edu.ufab.model.funcionario.Funcionario;
 import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
-import br.edu.ufab.model.interno.SistemaInternoDeAluno;
+import br.edu.ufab.model.gerenciamento.GerenciamentoAluno;
 
 /**Essa classe AlunoTest realiza teste para verificar se os dados do aluno estão 
  * sendo corretamente salvos, como também atualizados e excluidos da base de dados
@@ -23,7 +23,7 @@ public class AlunoTest {
 	Funcionario func;
 	AlunoDAO alunoDao; 
 	Aluno aluno;
-	SistemaInternoDeAluno sisAluno;
+	GerenciamentoAluno sisAluno;
 	Curso curso;
 	
 	/**
@@ -45,7 +45,7 @@ public class AlunoTest {
 
 		alunoDao= new AlunoDAO();	
 		
-		sisAluno = new SistemaInternoDeAluno(func);
+		sisAluno = new GerenciamentoAluno(func);
 	}
 	
 	

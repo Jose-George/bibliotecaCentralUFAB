@@ -1,4 +1,4 @@
-package br.edu.ufab.model.interno;
+package br.edu.ufab.model.gerenciamento;
 
 import org.apache.log4j.Logger;
 
@@ -13,9 +13,9 @@ import br.edu.ufab.model.acervo.ItemDeAcervo;
 import br.edu.ufab.model.funcionario.Funcionario;
 import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
 
-public class SistemaInternoDeAcervo {
+public class GerenciamentoAcervo {
 	
-	private static final Logger logger = Logger.getLogger(SistemaInternoDeAcervo.class);
+	private static final Logger logger = Logger.getLogger(GerenciamentoAcervo.class);
 	private Funcionario func;
 	
 	
@@ -30,7 +30,7 @@ public class SistemaInternoDeAcervo {
 	 * só o ADM pode excluir curso, sendo assim se faz necessário informar o funcionario
 	   que irá instaciar a classe
 	 */
-	public SistemaInternoDeAcervo(Funcionario funcionario){
+	public GerenciamentoAcervo(Funcionario funcionario){
 		logger.info("iniciando campo funcionario com:"+funcionario.getRg());
 		this.func = funcionario;
 	}

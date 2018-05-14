@@ -1,4 +1,4 @@
-package br.edu.ufab.interno.teste;
+package br.edu.ufab.gerenciamento.teste;
 
 import static org.junit.Assert.*;
 
@@ -10,7 +10,7 @@ import br.edu.ufab.model.acervo.AnaisCongresso;
 import br.edu.ufab.model.acervo.AnaisCongresso.AnaisEnum;
 import br.edu.ufab.model.funcionario.Funcionario;
 import br.edu.ufab.model.funcionario.Funcionario.TipoFuncionario;
-import br.edu.ufab.model.interno.SistemaInternoDeAcervo;
+import br.edu.ufab.model.gerenciamento.GerenciamentoAcervo;
 
 /**
  * Essa Classe testa a inserção, remoção e atualização dos AnaisDeCongresso na base de dados
@@ -22,7 +22,7 @@ public class AcervoTestAnais {
 	private AnaisCongresso anais;
 	private Funcionario func;
 	private AnaisCongressoDAO anaisDao;
-	private SistemaInternoDeAcervo sisAcervo;
+	private GerenciamentoAcervo sisAcervo;
 	
 	
 	//Inicialização do teste
@@ -34,7 +34,7 @@ public class AcervoTestAnais {
 				"1001", "Jose George", "1232","Cajazeiras", "Aprigio Veloso", 
 				"99913413", "george.djc@gmail.com", "j.george", "123george");
 		anaisDao = new AnaisCongressoDAO();
-		sisAcervo = new SistemaInternoDeAcervo(func);
+		sisAcervo = new GerenciamentoAcervo(func);
 	}
 
 	//Teste Cadastro, chama o método cadastrar do sistemaInternoDeAcervo
