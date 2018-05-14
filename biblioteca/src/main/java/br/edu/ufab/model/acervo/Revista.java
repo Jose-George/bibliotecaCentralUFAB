@@ -1,35 +1,26 @@
 package br.edu.ufab.model.acervo;
 
-import java.sql.Date;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import org.apache.log4j.Logger;
 
-//import java.util.Date;
-
 /**
- * @author Jose George
+ * @author Jose George e Caio Silva
  * Classe Revista
  * implementa ItemAcervo
  * */
 
+@Entity
 public class Revista extends ItemDeAcervo{
-
+	
+	@Id
 	private int id;
 	private String editora; 
 	private int edicao; 
 	private int numeroPagina;
 	
 	private static final Logger logger = Logger.getLogger(Revista.class);
-	
-	public Revista(String titulo, String editora, Date dataPublicacao, int edicao, int numeroPagina) {
-		logger.info("iniciando construtor");
-		this.titulo = titulo;
-		this.editora = editora;
-		this.dataPublicacao = dataPublicacao;
-		this.edicao = edicao;
-		this.numeroPagina = numeroPagina;
-	}
-
 	
 	public int getId() {
 		return id;
@@ -43,7 +34,6 @@ public class Revista extends ItemDeAcervo{
 
 
 	public String getEditora() {
-		
 		return editora;
 	}
 

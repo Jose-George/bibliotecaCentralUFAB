@@ -1,8 +1,10 @@
 package br.edu.ufab.model.acervo;
 
-import java.sql.Date;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import org.apache.log4j.Logger;
+import br.edu.ufab.model.enumerador.TrabalhoEnum;;
 
 /**
  * Enum especificando tipos de trabalho de conclusão*/
@@ -13,11 +15,9 @@ import org.apache.log4j.Logger;
  * implementa ItemAcervo
  * */
 
+@Entity
 public class TrabalhoDeConclusao extends ItemDeAcervo{
-	
-	public enum TrabalhoEnum {
-		TCC,DISSERTACAO,TESE;
-	}
+	@Id
 	private int id;
 	private TrabalhoEnum tipo; 
 	private String autor; 
@@ -25,16 +25,6 @@ public class TrabalhoDeConclusao extends ItemDeAcervo{
 	private String local;
 	
 	private static final Logger logger = Logger.getLogger(TrabalhoDeConclusao.class);
-	
-	public TrabalhoDeConclusao(TrabalhoEnum tipo, String orientador, String titulo, String autor, Date anoDefesa,
-			String local) {
-		this.tipo = tipo;
-		Orientador = orientador;
-		this.titulo = titulo;
-		this.autor = autor;
-		this.dataPublicacao = anoDefesa;
-		this.local = local;
-	}
 
 	public int getId() {
 		return id;

@@ -1,36 +1,31 @@
 package br.edu.ufab.model.acervo;
 
-import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import org.apache.log4j.Logger;
+
+import br.edu.ufab.model.enumerador.MidiaEnum;
 
 /**
  * Enum para especificar tipos de midia eletronica*/
 
 
 /**
- * @author Jose George
+ * @author Jose George e Caio Silva
  * Classe MidiaEletronica
  * implementa ItemAcervo
  * */
 
+@Entity
 public class MidiaEletronica extends ItemDeAcervo{
 	
-	public enum MidiaEnum {
-		CD,DVD;
-	}
-
 	private MidiaEnum tipo;
- 	private int id;
+	@Id
+	private int id;
  	
  	private static final Logger logger = Logger.getLogger(MidiaEletronica.class);
- 	
-	public MidiaEletronica(MidiaEnum tipo, String titulo, Date dataGravacao) {
-		this.tipo = tipo;
-		this.titulo = titulo;
-		this.dataPublicacao = (java.sql.Date) dataGravacao;
-	}
-
 	
 	public int getId() {
 		return id;

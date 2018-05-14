@@ -1,44 +1,34 @@
 package br.edu.ufab.model.acervo;
 
-import java.sql.Date;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import org.apache.log4j.Logger;
+
+import br.edu.ufab.model.enumerador.AnaisEnum;
 
 
 
 /**
- * @author Jose George
+ * @author Jose George e Caio Silva
  * Classe AnaisCogresso
  * implementa interface ItemAcervo
  * */
-public class AnaisCongresso extends ItemDeAcervo{
 
-	public enum AnaisEnum {
-	ARTIGO, POSTER, RESUMO;
-	}
+@Entity
+public class AnaisCongresso extends ItemDeAcervo{
 	
+	@Id
+	private int id;
 	private AnaisEnum tipo;
 	private String autor; 
 	private String nomeDoCongresso; 
 	private String local;    
-	private int id;
 	
 	private static final Logger logger = Logger.getLogger(AnaisCongresso.class);
-	
-	
-	public AnaisCongresso(AnaisEnum tipo, String nomeDoCongresso, String titulo, String autor, Date anoPublicacao,
-			String local) {
-		logger.info("iniciando construtor");
-		this.tipo = tipo;
-		this.nomeDoCongresso = nomeDoCongresso;
-		this.titulo = titulo;
-		this.autor = autor;
-		this.dataPublicacao = anoPublicacao;
-		this.local = local;
-	}
-
 
 	public AnaisEnum getTipo(){
+		logger.info("getTipo sendo chamado");
 		return tipo;
 	}
 
@@ -50,6 +40,7 @@ public class AnaisCongresso extends ItemDeAcervo{
 
 
 	public String getAutor() {
+		logger.info("getAutor sendo chamado");
 		return autor;
 	}
 

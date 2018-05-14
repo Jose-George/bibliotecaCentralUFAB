@@ -1,16 +1,19 @@
 package br.edu.ufab.model.acervo;
 
-import java.sql.Date;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import org.apache.log4j.Logger;
 
 /**
- * @author Jose George
+ * @author Jose George e Caio Silva
  * Classe Livro
  * implementa ItemAcervo
  * */
-public class Livro extends ItemDeAcervo{
 
+@Entity
+public class Livro extends ItemDeAcervo{
+	@Id
 	private String isbn; 
 	private String autor; 
 	private String editora;  
@@ -18,21 +21,8 @@ public class Livro extends ItemDeAcervo{
 	private int numeroPagina; 
 	private String areaDoConhecimento; 
 	private String tema;
-	private static final Logger logger = Logger.getLogger(Livro.class);
 	
-	public Livro(String isbn, String titulo, String autor, String editora, Date dataPublicacao, int edicao,
-			int numeroPagina, String areaDoConhecimento, String tema) {
-		logger.info("iniciando construtor");
-		this.isbn = isbn;
-		this.titulo = titulo;
-		this.autor = autor;
-		this.editora = editora;
-		this.dataPublicacao = dataPublicacao;
-		this.edicao = edicao;
-		this.numeroPagina = numeroPagina;
-		this.areaDoConhecimento = areaDoConhecimento;
-		this.tema = tema;
-	}
+	private static final Logger logger = Logger.getLogger(Livro.class);
 
 	public String getIsbn() {
 		return isbn;

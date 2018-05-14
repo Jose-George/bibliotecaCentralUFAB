@@ -1,37 +1,32 @@
 package br.edu.ufab.model.curso;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
 import org.apache.log4j.Logger;
+
+import br.edu.ufab.model.enumerador.CursoEnum;
 
 /**
  * A classe curso, ela contem um tipo de curso, que é um ENUM.
  * o tipo pode ser: graduação, pos-graduacao, mestrado, especializacao e doutorado.
  * 
  * Contém ainda os metódos gets e sets
- * @author José George
+ * 
+ * @author José George e Caio Silva
  * */
-
+@Entity
 public class Curso {
 
-	public enum CursoEnum {
-		GRADUACAO, POS_GRADUACAO, MESTRADO, ESPECIALIZACAO, DOUTORADO;
-	}
 
 	private String nome;
 	private String area;
+	@Column(unique = true, name = "SiglaCurso")
 	private String siglaNomeCurso;
 	
 	private CursoEnum tipo;
 	
 	private static final Logger logger = Logger.getLogger(Curso.class);
-
-	public Curso(String nome, String area,String sigla ,CursoEnum tipo) {
-		logger.info("iniciando construtor");
-		this.nome = nome;
-		this.area = area;
-		this.siglaNomeCurso = sigla;
-		this.tipo = tipo;
-	}
-
 	
 	public String getSiglaNomeCurso() {
 		return siglaNomeCurso;

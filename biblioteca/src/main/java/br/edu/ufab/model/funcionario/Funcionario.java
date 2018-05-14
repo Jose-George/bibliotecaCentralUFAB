@@ -1,55 +1,38 @@
 package br.edu.ufab.model.funcionario;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
 import org.apache.log4j.Logger;
 
-
+import br.edu.ufab.model.enumerador.TipoFuncionario;
 
 /**
- * @author Jose George
- * Classe Funcionario
- * inicializa dados do funcionario por construtor
- * possui gets referentes a cada atributo
+ * @author Jose George e Caio Silva
  * 
+ * Classe Funcionario possui gets referentes a cada atributo
  * o usuario pode ser admin ou operador
  * o tipo do atributo 'tipo' referencia o Enum 'TipoFuncionario'
  * */
 
+@Entity
 public class Funcionario {
 
-	/**
-	 * @param gerarMatricula()
-	 * */
-	public enum TipoFuncionario {
-		ADMINISTRADOR, OPERADOR
-	}
-	
 	private static final Logger logger = Logger.getLogger(Funcionario.class);
 	
 	private TipoFuncionario tipo; /*USUARIO OPERADOR OU ADMINISTRADOR*/
+	@Column(unique = true, name = "Cpf")
 	private String cpf; 
 	private String nomeCompleto; 
+	@Column(unique = true, name = "Rg")
 	private String rg; 
 	private String naturalidade; 
 	private String endereco; 
 	private String telefone; 
+	@Column(unique = true)
 	private String email; 
 	private String nomeUsuario; 
 	private String senha;
-	
-	public Funcionario(TipoFuncionario tipo, String cpf, String nomeCompleto, String rg, String naturalidade, String endereco,
-			String telefone, String email, String nomeUsuario, String senha) {
-		
-		this.setTipo(tipo);
-		this.setCpf(cpf);
-		this.setNomeCompleto(nomeCompleto);
-		this.setRg(rg);
-		this.setNaturalidade(naturalidade);
-		this.setEndereco(endereco);
-		this.setTelefone(telefone);
-		this.setEmail(email);
-		this.setNomeUsuario(nomeUsuario);
-		this.setSenha(senha);
-	}
 
 	public TipoFuncionario isTipo() {
 		return tipo;

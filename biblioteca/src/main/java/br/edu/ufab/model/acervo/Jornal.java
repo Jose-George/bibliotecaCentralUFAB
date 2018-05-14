@@ -1,27 +1,25 @@
 package br.edu.ufab.model.acervo;
 
-import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import org.apache.log4j.Logger;
 
 /**
- * @author Jose George
+ * @author Jose George e Caio Silva
  * 
  * Classe Jornal
  * implementa interface ItemAcervo
  * */
-public class Jornal extends ItemDeAcervo{
 
+@Entity
+public class Jornal extends ItemDeAcervo{
+	@Id
 	private int id;
 	private int edicao;
 	
 	private static final Logger logger = Logger.getLogger(Jornal.class);
 	
-	public Jornal(String titulo, Date dataPublicacao, int edicao) {
-		this.titulo = titulo;
-		this.dataPublicacao = (java.sql.Date) dataPublicacao;
-		this.edicao = edicao;
-	}
 
 	public int getId() {
 		return id;
