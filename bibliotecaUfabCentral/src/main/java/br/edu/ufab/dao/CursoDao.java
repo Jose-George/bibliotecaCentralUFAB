@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
+import br.edu.ufab.model.Aluno;
 import br.edu.ufab.model.Curso;
 
 /**
@@ -12,7 +13,7 @@ import br.edu.ufab.model.Curso;
 * @version 1.0
 * @since   2018-05-13
 */
-public class CursoDao implements IDao<Curso> {
+public class CursoDao implements IDao<Curso>, PersistenceValidation{
 	
 	private HibernateTemplate hibernateTemplate;
 
@@ -55,5 +56,15 @@ public class CursoDao implements IDao<Curso> {
 	public Curso getRegisterById(int id) {
 		return hibernateTemplate.get(Curso.class, id);
 	}
-
+	
+	@SuppressWarnings("unchecked")
+	public boolean isItemExist(String code) {
+		String hql = "FROM Curso as curso WHERE curso.SiglaCurso = ?";
+		List<Curso> cursoExist = (List<Curso>) hibernateTemplate.find(hql, code);
+		if(cursoExist.size() == 0){
+			return false;
+		}else{
+			return true;
+		}
+	}
 }

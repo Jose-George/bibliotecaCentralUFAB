@@ -40,9 +40,10 @@ public class ItemAcervoService implements IService<ItemDeAcervo> {
 		return item.listAllRegisters();
 	}
 
-	public void addRegister(ItemDeAcervo item) {
+	public boolean addRegister(ItemDeAcervo item) {
 		logger.info("inserindo"+item);
 		this.item.addRegister(item);	
+		return true;
 	}
 
 	public void updateRegister(ItemDeAcervo item) {

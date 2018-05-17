@@ -41,10 +41,10 @@ private static final Logger logger = LogManager.getLogger(FuncionarioService.cla
 		return funcionario.listAllRegisters();
 	}
 
-	public void addRegister(Funcionario funcionario) {
+	public boolean addRegister(Funcionario funcionario) {
 		logger.info("inserindo"+funcionario);
 		this.funcionario.addRegister(funcionario);
-		
+		return true;
 	}
 
 	public void updateRegister(Funcionario funcionario) {

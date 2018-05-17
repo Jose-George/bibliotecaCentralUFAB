@@ -18,7 +18,7 @@ import br.edu.ufab.model.Aluno;
 * @version 1.0
 * @since   2018-05-13
 */
-public class AlunoDao implements IDao<Aluno> {
+public class AlunoDao implements IDao<Aluno>, PersistenceValidation {
 	
 	private HibernateTemplate hibernateTemplate;
 	
@@ -47,7 +47,21 @@ public class AlunoDao implements IDao<Aluno> {
 		return hibernateTemplate.get(Aluno.class, id);
 	}
 
+	@SuppressWarnings("unchecked")
+	public boolean isItemExist(String code) {
+		String hql = "FROM Aluno as aluno WHERE aluno.matricula = ?";
+		List<Aluno> alunoExist = (List<Aluno>) hibernateTemplate.find(hql, code);
+		if(alunoExist.size() == 0){
+			return false;
+		}else{
+			return true;
+		}
+	}
+	
+	
+	
 
+	
 
 
 }
