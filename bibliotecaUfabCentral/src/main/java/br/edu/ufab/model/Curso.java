@@ -2,6 +2,9 @@ package br.edu.ufab.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 import org.apache.log4j.Logger;
 
@@ -14,8 +17,12 @@ import br.edu.ufab.model.enumerador.CursoEnum;
  * */
 @Entity
 public class Curso {
-
-
+	
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	
 	private String nome;
 	private String area;
 	@Column(unique = true, name = "SiglaCurso")
@@ -24,6 +31,10 @@ public class Curso {
 	private CursoEnum tipo;
 	
 	private static final Logger logger = Logger.getLogger(Curso.class);
+	
+	public int getId() {
+		return id;
+	}
 	
 	public String getSiglaNomeCurso() {
 		return siglaNomeCurso;

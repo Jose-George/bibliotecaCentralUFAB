@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
 import br.edu.ufab.dao.FuncionarioDao;
-
 import br.edu.ufab.model.Funcionario;
 
 /**

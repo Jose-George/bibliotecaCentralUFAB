@@ -9,7 +9,6 @@ import org.apache.tomcat.dbcp.dbcp.BasicDataSource;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
@@ -22,7 +21,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @PropertySource({ "classpath:hibernate.properties" })
-@ComponentScan({"br.edu.ufab"})
 
 /**
 * System database configuration class
@@ -67,10 +65,10 @@ public class PersistenceConfig {
    @Bean
    public DataSource restDataSource() {
       BasicDataSource dataSource = new BasicDataSource();
-      dataSource.setDriverClassName(env.getProperty("hibernate.driver"));
-      dataSource.setUrl(env.getProperty("hibernate.url"));
-      dataSource.setUsername(env.getProperty("hibernate.root"));
-      dataSource.setPassword(env.getProperty("hibernate.root"));
+      dataSource.setDriverClassName(env.getProperty("database.driver"));
+      dataSource.setUrl(env.getProperty("database.url"));
+      dataSource.setUsername(env.getProperty("database.root"));
+      dataSource.setPassword(env.getProperty("database.root"));
  
       return dataSource;
    }

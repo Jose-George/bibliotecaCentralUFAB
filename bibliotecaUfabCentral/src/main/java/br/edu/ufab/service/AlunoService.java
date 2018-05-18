@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
 import br.edu.ufab.dao.AlunoDao;
-
 import br.edu.ufab.model.Aluno;
 import br.edu.ufab.service.exception.DuplicateItemException;
 import javassist.NotFoundException;
