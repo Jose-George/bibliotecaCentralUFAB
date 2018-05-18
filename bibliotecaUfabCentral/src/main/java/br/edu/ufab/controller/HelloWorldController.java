@@ -27,9 +27,9 @@ public class HelloWorldController {
 		return "ok";
 	}
 
-	@RequestMapping("/principal")
+	@RequestMapping("/index")
 	public String executeTelas() {
 		System.out.println("Executando	a	lógica	com	Spring	MVC");
-		return "index";
+		return "principal";
 	}
 }
