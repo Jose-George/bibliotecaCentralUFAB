@@ -1,10 +1,6 @@
 package br.edu.ufab.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
 
 import org.apache.log4j.Logger;
 
@@ -15,17 +11,16 @@ import br.edu.ufab.model.enumerador.CursoEnum;
  * 
  * @author Jose George e Caio Silva
  * */
-@Entity
+
 public class Curso {
 	
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
 	
+	private int id;
+	private int codigo;
 	private String nome;
 	private String area;
-	@Column(unique = true, name = "SiglaCurso")
+	
 	private String siglaNomeCurso;
 	
 	private CursoEnum tipo;
@@ -70,6 +65,14 @@ public class Curso {
 	public void setTipo(CursoEnum tipo) {
 		logger.info("passando"+tipo);
 		this.tipo = tipo;
+	}
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
 	}
 
 }

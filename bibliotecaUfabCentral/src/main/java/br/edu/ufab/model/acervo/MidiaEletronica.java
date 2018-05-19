@@ -1,9 +1,6 @@
 package br.edu.ufab.model.acervo;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 import org.apache.log4j.Logger;
 
@@ -19,8 +16,6 @@ import br.edu.ufab.model.enumerador.MidiaEnum;
  * implementa ItemAcervo
  * */
 
-@Entity
-@Table (name = "Midia")
 public class MidiaEletronica extends ItemDeAcervo{
 	
 	private MidiaEnum tipo;

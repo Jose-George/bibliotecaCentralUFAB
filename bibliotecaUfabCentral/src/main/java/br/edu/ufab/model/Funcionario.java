@@ -1,7 +1,6 @@
 package br.edu.ufab.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+
 
 import org.apache.log4j.Logger;
 
@@ -11,21 +10,21 @@ import br.edu.ufab.model.enumerador.TipoFuncionario;
  * @author Jose George e Caio Silva
  * 
  * */
-@Entity
+
 public class Funcionario {
 
 	private static final Logger logger = Logger.getLogger(Funcionario.class);
 	
 	private TipoFuncionario tipo; /*USUARIO OPERADOR OU ADMINISTRADOR*/
-	@Column(unique = true, name = "Cpf")
+	private int id;
 	private String cpf; 
 	private String nomeCompleto; 
-	@Column(unique = true, name = "Rg")
+	
 	private String rg; 
 	private String naturalidade; 
 	private String endereco; 
 	private String telefone; 
-	@Column(unique = true)
+	
 	private String email; 
 	private String nomeUsuario; 
 	private String senha;
@@ -118,6 +117,14 @@ public class Funcionario {
 	public void setSenha(String senha) {
 		logger.info("passando"+senha);
 		this.senha = senha;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	} 
 	
 	

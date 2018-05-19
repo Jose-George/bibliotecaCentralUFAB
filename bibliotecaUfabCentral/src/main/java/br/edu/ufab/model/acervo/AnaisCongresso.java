@@ -1,6 +1,5 @@
 package br.edu.ufab.model.acervo;
 
-import javax.persistence.Entity;
 
 import org.apache.log4j.Logger;
 
@@ -14,7 +13,6 @@ import br.edu.ufab.model.enumerador.AnaisEnum;
  * implementa interface ItemAcervo
  * */
 
-@Entity
 public class AnaisCongresso extends ItemDeAcervo{
 
 	private AnaisEnum tipo;

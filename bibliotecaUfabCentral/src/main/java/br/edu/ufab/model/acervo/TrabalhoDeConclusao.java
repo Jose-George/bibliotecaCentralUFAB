@@ -1,8 +1,6 @@
 package br.edu.ufab.model.acervo;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
 
 import org.apache.log4j.Logger;
 import br.edu.ufab.model.enumerador.TrabalhoEnum;;
@@ -16,8 +14,7 @@ import br.edu.ufab.model.enumerador.TrabalhoEnum;;
  * implementa ItemAcervo
  * */
 
-@Entity
-@Table (name = "Trabalho")
+
 public class TrabalhoDeConclusao extends ItemDeAcervo{
 	
 	private TrabalhoEnum tipo; 

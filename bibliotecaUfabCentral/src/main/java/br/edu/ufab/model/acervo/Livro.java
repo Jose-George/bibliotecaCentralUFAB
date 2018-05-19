@@ -1,7 +1,6 @@
 package br.edu.ufab.model.acervo;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+
 
 import org.apache.log4j.Logger;
 
@@ -11,7 +10,7 @@ import org.apache.log4j.Logger;
  * implementa ItemAcervo
  * */
 
-@Entity
+
 public class Livro extends ItemDeAcervo{
 	
 	private String isbn; 

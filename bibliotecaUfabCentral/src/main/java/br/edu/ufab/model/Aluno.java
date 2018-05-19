@@ -2,12 +2,6 @@ package br.edu.ufab.model;
 
 import java.util.Random;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
 import org.apache.log4j.Logger;
 
 import br.edu.ufab.model.enumerador.CursoEnum;
@@ -16,34 +10,33 @@ import br.edu.ufab.model.enumerador.CursoEnum;
  * A classe Aluno consiste em um Java Bean com anotacoes JPA
  * @author	Jose George e Caio Silva
  * */
-@Entity
+
 public class Aluno {
 	
+	private int id; 
 	private String nome;
 	
-	@Column(name = "Mae")
 	private String nomeMae;
 	
-	@Id
+	
 	private String matricula;
 	
-	@Column(unique = true)
+	
 	private String cpf;
 	
-	@Column(unique = true)
+	
 	private String rg;
 	
 	private String naturalidade;
 	private String endereco;
 	private String telefone;
 	
-	@Column(unique = true)
+	
 	private String email;
 	
 	private String senha;
 	
-	@ManyToOne
-    @JoinColumn(name = "Curso")
+	
 	private Curso curso;
 	
 	private int anoIngresso;
@@ -212,6 +205,14 @@ public class Aluno {
 	public int numAleatorio() {
 		Random gerador = new Random();
 		return gerador.nextInt(9);
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }

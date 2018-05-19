@@ -1,14 +1,6 @@
 package br.edu.ufab.model.acervo;
 
 import java.sql.Date;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
 import org.apache.log4j.Logger;
 
 
@@ -17,17 +9,16 @@ import org.apache.log4j.Logger;
  * 
  * @author	Jose George e Caio Silva	 
  * */
-@MappedSuperclass
+
 public class ItemDeAcervo {
 	
 	private static final Logger logger = Logger.getLogger(ItemDeAcervo.class);
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	protected int codigo;
 	
+	protected int codigo;
+	protected int id;
 	protected String titulo;
 	
-	@Temporal(TemporalType.DATE)
+	
 	protected Date dataPublicacao;
 	
 	public int getCodigo() {
@@ -55,6 +46,14 @@ public class ItemDeAcervo {
 	public void setDataPublicacao(Date dataPublicacao) {
 		logger.info("passando"+dataPublicacao);
 		this.dataPublicacao = dataPublicacao;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	

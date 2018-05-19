@@ -1,6 +1,6 @@
 package br.edu.ufab.model.acervo;
 
-import javax.persistence.Entity;
+
 
 import org.apache.log4j.Logger;
 
@@ -10,7 +10,7 @@ import org.apache.log4j.Logger;
  * implementa ItemAcervo
  * */
 
-@Entity
+
 public class Revista extends ItemDeAcervo{
 	
 	
