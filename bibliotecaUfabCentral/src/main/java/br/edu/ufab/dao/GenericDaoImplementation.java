@@ -1,4 +1,4 @@
-package br.edu.ufab.dao.implementation;
+package br.edu.ufab.dao;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;

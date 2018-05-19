@@ -1,65 +1,64 @@
 package br.edu.ufab.service;
 
-import java.util.List;
-
-import javax.transaction.Transactional;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Qualifier;
 
-import br.edu.ufab.dao.implementation.FuncionarioDao;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+
+import br.edu.ufab.dao.interfaces.IFuncionarioDao;
+import br.edu.ufab.dao.interfaces.IGenericDao;
+
 import br.edu.ufab.model.Funcionario;
+import br.edu.ufab.service.interfaces.IFuncionarioService;
 
 /**
-* CRUD de Funcionarios
-*
-* @author  Caio Silva e Jose George
-* @version 1.0
-* @since   2018-05-15
-*/
+ * CRUD de Funcionarios
+ *
+ * @author Caio Silva e Jose George
+ * @version 1.0
+ * @since 2018-05-15
+ */
 
-@Transactional
 @Service
-@Configuration
-public class FuncionarioService implements IService<Funcionario> {
+public class FuncionarioService extends GenericServiceImplementation<Funcionario> implements IFuncionarioService {
 
-private static final Logger logger = LogManager.getLogger(FuncionarioService.class);
-	
+	private static final Logger logger = LogManager.getLogger(FuncionarioService.class);
+
+	private IFuncionarioDao funcionarioDao;
+
+	public FuncionarioService(){	
+
+	}
+
 	@Autowired
-	private FuncionarioDao funcionario;
-	
-	public void setCursoDao(FuncionarioDao funcionario) {
-		this.funcionario= funcionario;
-	}
-	
-	public List<Funcionario> listAllRegisters() {
-		logger.info("listando cursos");
-		return funcionario.listAllRegisters();
+	public FuncionarioService(		
+        @Qualifier("funcionarioDao") IGenericDao<Funcionario> genericDao) {
+		super(genericDao);
+		this.funcionarioDao = (IFuncionarioDao) genericDao;
 	}
 
-	public boolean addRegister(Funcionario funcionario) {
-		logger.info("inserindo"+funcionario);
-		this.funcionario.addRegister(funcionario);
-		return true;
+	@Transactional(propagation = Propagation.REQUIRED)
+	public boolean removeFuncionario(String cpf) {
+		return funcionarioDao.removeFunc(cpf);
 	}
 
-	public void updateRegister(Funcionario funcionario) {
-		logger.info("update em"+funcionario);
-		this.funcionario.addRegister(funcionario);		
+	@Transactional(propagation = Propagation.REQUIRED, readOnly = true)
+	public boolean isAFuncionarioRegistered(String cpf) {
+		return funcionarioDao.isFuncRegistered(cpf);
 	}
 
-	public Funcionario getRegisterById(int id) {
-		logger.info("obtendo Curso apartir do registro"+id);
-		return this.funcionario.getRegisterById(id);		
+	@Transactional(propagation = Propagation.REQUIRED, readOnly = true)
+	public Funcionario getFuncionario(String matricula) {
+		return funcionarioDao.getFunc(matricula);
 	}
 
-	public void removeRegister(int id) {
-		logger.info("removendo curso de id "+id);
-		this.funcionario.removeRegister(id);
-		
-	}
+
+
 
 }

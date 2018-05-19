@@ -1,4 +1,4 @@
-package br.edu.ufab.dao.implementation;
+package br.edu.ufab.dao;
 
 import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
