@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
-import br.edu.ufab.dao.CursoDao;
+import br.edu.ufab.dao.implementation.CursoDao;
 import br.edu.ufab.model.Curso;
 import br.edu.ufab.service.exception.DuplicateItemException;
 

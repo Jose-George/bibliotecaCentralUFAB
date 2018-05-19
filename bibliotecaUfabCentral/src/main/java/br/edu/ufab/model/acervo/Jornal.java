@@ -18,14 +18,6 @@ public class Jornal extends ItemDeAcervo{
 	private static final Logger logger = Logger.getLogger(Jornal.class);
 	
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		logger.info("passando"+id);
-		this.id = id;
-	}
 
 	public int getEdicao() {
 		return edicao;

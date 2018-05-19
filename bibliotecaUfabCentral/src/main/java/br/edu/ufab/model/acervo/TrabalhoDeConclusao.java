@@ -19,8 +19,7 @@ import br.edu.ufab.model.enumerador.TrabalhoEnum;;
 @Entity
 @Table (name = "Trabalho")
 public class TrabalhoDeConclusao extends ItemDeAcervo{
-	@Id
-	private int id;
+	
 	private TrabalhoEnum tipo; 
 	private String autor; 
 	private String Orientador; 
@@ -28,14 +27,6 @@ public class TrabalhoDeConclusao extends ItemDeAcervo{
 	
 	private static final Logger logger = Logger.getLogger(TrabalhoDeConclusao.class);
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		logger.info("setando"+id);
-		this.id = id;
-	}
 
 	public TrabalhoEnum getTipo() {
 		return tipo;

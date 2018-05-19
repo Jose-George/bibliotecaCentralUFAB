@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
-import br.edu.ufab.dao.IDao;
+import br.edu.ufab.dao.implementation.IDao;
 import br.edu.ufab.model.acervo.ItemDeAcervo;
 
 /**

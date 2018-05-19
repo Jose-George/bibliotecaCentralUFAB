@@ -70,15 +70,7 @@ public class AnaisCongresso extends ItemDeAcervo{
 	}
 
 
-	public int getId() {
-		return id;
-	}
 
-
-	public void setId(int id) {
-		logger.info("passando"+id);
-		this.id = id;
-	}
 	
 	
 	

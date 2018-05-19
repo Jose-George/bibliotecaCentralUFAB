@@ -23,20 +23,20 @@ public class ItemDeAcervo {
 	private static final Logger logger = Logger.getLogger(ItemDeAcervo.class);
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	protected int id;
+	protected int codigo;
 	
 	protected String titulo;
 	
 	@Temporal(TemporalType.DATE)
 	protected Date dataPublicacao;
 	
-	public int getId() {
-		return id;
+	public int getCodigo() {
+		return codigo;
 	}
 	
-	public void setId(int id) {
-		logger.info("passando"+id);
-		this.id = id;
+	public void setCodigo(int codigo) {
+		logger.info("passando"+codigo);
+		this.codigo = codigo;
 	}
 	
 	public String getTitulo() {

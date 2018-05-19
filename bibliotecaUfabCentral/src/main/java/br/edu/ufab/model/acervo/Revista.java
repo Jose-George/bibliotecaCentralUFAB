@@ -1,7 +1,6 @@
 package br.edu.ufab.model.acervo;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
 
 import org.apache.log4j.Logger;
 
@@ -14,23 +13,12 @@ import org.apache.log4j.Logger;
 @Entity
 public class Revista extends ItemDeAcervo{
 	
-	@Id
-	private int id;
+	
 	private String editora; 
 	private int edicao; 
 	private int numeroPagina;
 	
 	private static final Logger logger = Logger.getLogger(Revista.class);
-	
-	public int getId() {
-		return id;
-	}
-
-
-	public void setId(int id) {
-		logger.info("setando"+id);
-		this.id = id;
-	}
 
 
 	public String getEditora() {

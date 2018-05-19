@@ -24,21 +24,9 @@ import br.edu.ufab.model.enumerador.MidiaEnum;
 public class MidiaEletronica extends ItemDeAcervo{
 	
 	private MidiaEnum tipo;
-	@Id
-	private int id;
+	
  	
  	private static final Logger logger = Logger.getLogger(MidiaEletronica.class);
-	
-	public int getId() {
-		return id;
-	}
-
-
-	public void setId(int id) {
-		logger.info("setando"+id);
-		this.id = id;
-	}
-
 
 	public MidiaEnum getTipo() {
 		return tipo;
