@@ -44,6 +44,28 @@ public class Aluno {
 	
 	private static final Logger logger = Logger.getLogger(Aluno.class);
 
+	public Aluno(){
+		
+	}
+	
+	public Aluno(String nome, String nomeMae, String cpf, String rg, String naturalidade, String endereco,
+			String telefone, String email, String senha, Curso curso, int anoIngresso, String periodoInrgresso) {
+		super();
+		this.nome = nome;
+		this.nomeMae = nomeMae;
+		this.cpf = cpf;
+		this.rg = rg;
+		this.naturalidade = naturalidade;
+		this.endereco = endereco;
+		this.telefone = telefone;
+		this.email = email;
+		this.senha = senha;
+		this.curso = curso;
+		this.anoIngresso = anoIngresso;
+		this.periodoIngresso = periodoInrgresso;
+	
+	}
+
 	public String getNome() {
 		return nome;
 	}

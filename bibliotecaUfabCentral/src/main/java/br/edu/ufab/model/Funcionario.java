@@ -29,6 +29,25 @@ public class Funcionario {
 	private String nomeUsuario; 
 	private String senha;
 
+	public Funcionario(TipoFuncionario tipo, String cpf, String nomeCompleto, String rg, String naturalidade, String endereco,
+			String telefone, String email, String nomeUsuario, String senha) {
+	
+		this.setTipo(tipo);
+		this.setCpf(cpf);
+		this.setNomeCompleto(nomeCompleto);
+		this.setRg(rg);
+		this.setNaturalidade(naturalidade);
+		this.setEndereco(endereco);
+		this.setTelefone(telefone);
+		this.setEmail(email);
+		this.setNomeUsuario(nomeUsuario);
+		this.setSenha(senha);
+	}
+	
+	public Funcionario(){
+		
+	}
+	
 	public TipoFuncionario isTipo() {
 		return tipo;
 	}

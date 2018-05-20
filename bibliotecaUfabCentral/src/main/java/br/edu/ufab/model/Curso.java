@@ -27,10 +27,31 @@ public class Curso {
 	
 	private static final Logger logger = Logger.getLogger(Curso.class);
 	
+	public Curso(){
+		
+	}
+	
+	public Curso(int cod,String nome, String area,String sigla ,CursoEnum tipo) {
+		logger.info("iniciando construtor");
+		this.codigo = cod;
+		this.nome = nome;
+		this.area = area;
+		this.siglaNomeCurso = sigla;
+		this.tipo = tipo;
+	}
+
 	public int getId() {
 		return id;
 	}
 	
+	public static Logger getLogger() {
+		return logger;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getSiglaNomeCurso() {
 		return siglaNomeCurso;
 	}

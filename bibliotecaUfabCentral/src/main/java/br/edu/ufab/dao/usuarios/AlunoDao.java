@@ -70,23 +70,24 @@ public class AlunoDao implements UserDao<Aluno> {
 	}
 
 	public boolean update(Aluno aluno) {
-		String sql = "UPDATE aluno nome=?,nomeMae=?,rg=?,naturalidade=?,endereco=?"
-				+ ",telefone=?,email=?,senha=?,anoIngresso=?,periodoIngresso=?, cpf=? WHERE id= ? ";
+		String sql = "UPDATE aluno SET nome=?,nomeMae=?,matricula=?,cpf=?,rg=?,naturalidade=?,endereco=?"
+				+ ",telefone=?,email=?,senha=?,nomeCurso=?,anoIngresso=?,periodoIngresso=? WHERE id= ? ";
 		try {
 			stmt = (PreparedStatement) conexao.prepareStatement(sql);
 			stmt.setString(1, aluno.getNome());
 			stmt.setString(2, aluno.getNomeMae());
-			stmt.setString(3, aluno.getRg());
-			stmt.setString(4, aluno.getNaturalidade());
-			stmt.setString(5, aluno.getEndereco());
-			stmt.setString(6, aluno.getTelefone());
-			stmt.setString(7, aluno.getEmail());
-			stmt.setString(8, aluno.getSenha());
-			stmt.setString(9, aluno.getCurso());
-			stmt.setInt(10, aluno.getAnoIngresso());
-			stmt.setString(11, aluno.getPeriodoInrgresso());
-			stmt.setString(12, aluno.getCpf());
-			stmt.setInt(13, aluno.getId());
+			stmt.setString(3, aluno.getMatricula());
+			stmt.setString(4, aluno.getCpf());
+			stmt.setString(5, aluno.getRg());
+			stmt.setString(6, aluno.getNaturalidade());
+			stmt.setString(7, aluno.getEndereco());
+			stmt.setString(8, aluno.getTelefone());
+			stmt.setString(9, aluno.getEmail());
+			stmt.setString(10, aluno.getSenha());
+			stmt.setString(11, aluno.getCurso());
+			stmt.setInt(12, aluno.getAnoIngresso());
+			stmt.setString(13, aluno.getPeriodoInrgresso());
+			stmt.setInt(14, aluno.getId());	
 			stmt.execute();
 			stmt.close();
 			

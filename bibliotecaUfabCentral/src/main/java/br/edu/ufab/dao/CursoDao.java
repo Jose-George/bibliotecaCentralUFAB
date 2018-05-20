@@ -25,10 +25,10 @@ public class CursoDao implements ItemDependencies<Curso> {
 		try {
 			stmt = (PreparedStatement) conexao.prepareStatement(sql);
 			stmt.setInt(1, curso.getCodigo());
-			stmt.setString(1, curso.getNome());
-			stmt.setString(2, curso.getArea());
-			stmt.setString(3, curso.getSiglaNomeCurso());
-			stmt.setString(4, curso.getTipo().name());
+			stmt.setString(2, curso.getNome());
+			stmt.setString(3, curso.getArea());
+			stmt.setString(4, curso.getSiglaNomeCurso());
+			stmt.setString(5, curso.getTipo().name());
 			stmt.execute();
 			stmt.close();
 
