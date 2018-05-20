@@ -1,6 +1,8 @@
 package br.edu.ufab.model.acervo;
 
 
+import java.sql.Date;
+
 import org.apache.log4j.Logger;
 
 /**
@@ -17,6 +19,17 @@ public class Jornal extends ItemDeAcervo{
 	
 	private static final Logger logger = Logger.getLogger(Jornal.class);
 	
+
+	public Jornal(int codigo, String titulo, Date dataPublicacao, int edicao) {
+		this.codigo = codigo;
+		this.titulo = titulo;
+		this.dataPublicacao = (java.sql.Date) dataPublicacao;
+		this.edicao = edicao;
+	}
+	
+	public Jornal(){
+		
+	}
 
 
 	public int getEdicao() {
