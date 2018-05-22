@@ -10,7 +10,7 @@ import com.mysql.jdbc.PreparedStatement;
 import br.edu.ufab.dao.Conexao;
 import br.edu.ufab.interfaces.UserDao;
 import br.edu.ufab.model.Funcionario;
-import br.edu.ufab.model.acervo.AnaisCongresso;
+
 
 public class FuncionarioDao implements UserDao<Funcionario> {
 	

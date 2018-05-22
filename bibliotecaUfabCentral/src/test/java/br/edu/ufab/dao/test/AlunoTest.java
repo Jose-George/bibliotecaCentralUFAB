@@ -33,9 +33,14 @@ public class AlunoTest {
 	@Test
 	public void inserir() {
 		aluno.setId(1);
+		aluno.setMatricula("1234");
 		assertTrue(alunoDao.create(aluno));
 	}
-
+	
+	@Test
+	public void buscarPorMatricula(){
+		assertTrue(alunoDao.buscaPorMatricula("1234"));
+	}
 	
 	@Test
 	public void atualizarAlunoTest(){
@@ -49,4 +54,6 @@ public class AlunoTest {
 		aluno.setId(1);
 		assertTrue(alunoDao.remove(aluno));
 	}
+	
+	
 }

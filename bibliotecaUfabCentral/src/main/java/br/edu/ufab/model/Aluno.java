@@ -1,53 +1,48 @@
 package br.edu.ufab.model;
 
-import java.util.Random;
+
 
 import org.apache.log4j.Logger;
 
-import br.edu.ufab.model.enumerador.CursoEnum;
 
 /**
  * A classe Aluno consiste em um Java Bean com anotacoes JPA
- * @author	Jose George e Caio Silva
- * */
+ * 
+ * @author Jose George e Caio Silva
+ */
 
 public class Aluno {
-	
-	private int id; 
+
+	private int id;
 	private String nome;
-	
+
 	private String nomeMae;
-	
-	
+
 	private String matricula;
-	
-	
+
 	private String cpf;
-	
-	
+
 	private String rg;
-	
+
 	private String naturalidade;
 	private String endereco;
 	private String telefone;
-	
-	
+
 	private String email;
-	
+
 	private String senha;
-	
-	
+
 	private Curso curso;
-	
+
 	private int anoIngresso;
 	private String periodoIngresso;
-	
+
 	private static final Logger logger = Logger.getLogger(Aluno.class);
 
-	public Aluno(){
-		
+	public Aluno() {
+
 	}
-	
+
 	public Aluno(String nome, String nomeMae, String cpf, String rg, String naturalidade, String endereco,
 			String telefone, String email, String senha, Curso curso, int anoIngresso, String periodoInrgresso) {
 		super();
@@ -63,7 +58,11 @@ public class Aluno {
 		this.curso = curso;
 		this.anoIngresso = anoIngresso;
 		this.periodoIngresso = periodoInrgresso;
-	
+
+	}
+
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
 	}
 
 	public String getNome() {
@@ -71,7 +70,7 @@ public class Aluno {
 	}
 
 	public void setNome(String nome) {
-		logger.info("setando campo nome, passando"+nome);
+		logger.info("setando campo nome, passando" + nome);
 		this.nome = nome;
 	}
 
@@ -80,22 +79,21 @@ public class Aluno {
 	}
 
 	public void setNomeMae(String nomeMae) {
-		logger.info("setando nomeMae, passando"+nomeMae);
+		logger.info("setando nomeMae, passando" + nomeMae);
 		this.nomeMae = nomeMae;
 	}
 
-
-//	public void setMatricula(String matricula) {
-//		logger.info("setando matrícula, passando"+matricula);
-//		this.matricula = matricula;
-//	}
+	// public void setMatricula(String matricula) {
+	// logger.info("setando matrícula, passando"+matricula);
+	// this.matricula = matricula;
+	// }
 
 	public String getCpf() {
 		return cpf;
 	}
 
 	public void setCpf(String cpf) {
-		logger.info("setando CPF, passando"+cpf);
+		logger.info("setando CPF, passando" + cpf);
 		this.cpf = cpf;
 	}
 
@@ -104,7 +102,7 @@ public class Aluno {
 	}
 
 	public void setRg(String rg) {
-		logger.info("setando RG, passando"+rg);
+		logger.info("setando RG, passando" + rg);
 		this.rg = rg;
 	}
 
@@ -113,7 +111,7 @@ public class Aluno {
 	}
 
 	public void setNaturalidade(String naturalidade) {
-		logger.info("setando naturalidade, passando"+naturalidade);
+		logger.info("setando naturalidade, passando" + naturalidade);
 		this.naturalidade = naturalidade;
 	}
 
@@ -122,7 +120,7 @@ public class Aluno {
 	}
 
 	public void setEndereco(String endereco) {
-		logger.info("setando endereco, passando"+endereco);
+		logger.info("setando endereco, passando" + endereco);
 		this.endereco = endereco;
 	}
 
@@ -131,7 +129,7 @@ public class Aluno {
 	}
 
 	public void setTelefone(String telefone) {
-		logger.info("setando telefone, passando"+telefone);
+		logger.info("setando telefone, passando" + telefone);
 		this.telefone = telefone;
 	}
 
@@ -140,7 +138,7 @@ public class Aluno {
 	}
 
 	public void setEmail(String email) {
-		logger.info("setando email, passando"+email);
+		logger.info("setando email, passando" + email);
 		this.email = email;
 	}
 
@@ -149,16 +147,20 @@ public class Aluno {
 	}
 
 	public void setSenha(String senha) {
-		logger.info("setando senha, passando"+senha);
+		logger.info("setando senha, passando" + senha);
 		this.senha = senha;
 	}
 
 	public String getCurso() {
 		return curso.getNome();
 	}
+	
+	public String cursoVerificacao() {
+		return curso.getSiglaNomeCurso();
+	}
 
 	public void setCurso(Curso curso) {
-		logger.info("setando Curso, passando"+curso);
+		logger.info("setando Curso, passando" + curso);
 		this.curso = curso;
 	}
 
@@ -167,7 +169,7 @@ public class Aluno {
 	}
 
 	public void setAnoIngresso(int anoIngresso) {
-		logger.info("sentando campo AnoIgresso, passando"+anoIngresso);
+		logger.info("sentando campo AnoIgresso, passando" + anoIngresso);
 		this.anoIngresso = anoIngresso;
 	}
 
@@ -176,59 +178,15 @@ public class Aluno {
 	}
 
 	public void setPeriodoInrgresso(String periodoInrgresso) {
-		logger.info("setando campo período, passando"+periodoInrgresso);
+		logger.info("setando campo período, passando" + periodoInrgresso);
 		this.periodoIngresso = periodoInrgresso;
 	}
 
 	public String getMatricula() {
 		return matricula;
 	}
+
 	
-	/*gerar uma matricula para o aluno baseado no curso, no ano que ele inicou, no periodo e no tipo de curso
-	que ele faz*/
-	public void setMatricula() {
-		logger.info("gerando matricula");
-		String retorno; 
-		
-		if (curso.getTipo().equals(CursoEnum.GRADUACAO)) {
-			retorno = "G"+curso.getSiglaNomeCurso()+anoIngresso+periodoIngresso
-					+numAleatorio()+numAleatorio()+numAleatorio();
-			this.matricula = retorno;
-			logger.info("matricula gerada = "+retorno);
-			
-		}
-		else if (curso.getTipo().equals(CursoEnum.MESTRADO)) {
-			
-			retorno = "M"+curso.getSiglaNomeCurso()+anoIngresso+periodoIngresso
-					+numAleatorio()+numAleatorio()+numAleatorio();
-			this.matricula = retorno;
-			logger.info("matricula gerada = "+retorno);			
-				
-		}
-
-		else if (curso.getTipo().equals(CursoEnum.DOUTORADO)) {
-			retorno = "D"+curso.getSiglaNomeCurso()+anoIngresso+periodoIngresso
-					+numAleatorio()+numAleatorio()+numAleatorio();
-			this.matricula = retorno;
-			logger.info("matricula gerada = "+retorno);
-			
-		}
-
-		else if(curso.getTipo().equals(CursoEnum.ESPECIALIZACAO)) {
-			retorno = "E"+curso.getSiglaNomeCurso()+anoIngresso+periodoIngresso
-					+numAleatorio()+numAleatorio()+numAleatorio();
-			this.matricula = retorno;
-			logger.info("matricula gerada = "+retorno);
-			
-		}		
-		
-	}
-
-	public int numAleatorio() {
-		Random gerador = new Random();
-		return gerador.nextInt(9);
-	}
-
 	public int getId() {
 		return id;
 	}

@@ -1,5 +1,6 @@
 package br.edu.ufab.dao.usuarios;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -14,13 +15,13 @@ public class AlunoDao implements UserDao<Aluno> {
 
 	private Connection conexao;
 	PreparedStatement stmt;
-	
-	public AlunoDao(){
+
+	public AlunoDao() {
 		this.conexao = (Connection) Conexao.getConexao();
 	}
-	
+
 	public boolean create(Aluno aluno) {
-		
+
 		String sql = "INSERT INTO aluno(nome,nomeMae,matricula,cpf,rg,naturalidade,endereco"
 				+ ",telefone,email,senha,nomeCurso,anoIngresso,periodoIngresso) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
@@ -41,29 +42,28 @@ public class AlunoDao implements UserDao<Aluno> {
 			stmt.setString(13, aluno.getPeriodoInrgresso());
 			stmt.execute();
 			stmt.close();
-			
+
 			return true;
 
 		} catch (SQLException u) {
 			throw new RuntimeException(u);
-			
+
 		}
-		
+
 	}
 
 	public boolean remove(Aluno aluno) {
-		
-		String sql = "DELETE FROM aluno"
-				+ " WHERE id = ?" ;
-		
-		try{
-			stmt = (PreparedStatement) conexao.prepareStatement(sql);  
+
+		String sql = "DELETE FROM aluno" + " WHERE id = ?";
+
+		try {
+			stmt = (PreparedStatement) conexao.prepareStatement(sql);
 			stmt.setInt(1, aluno.getId());
 			stmt.execute();
 			stmt.close();
-			
+
 			return true;
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return false;
@@ -87,24 +87,51 @@ public class AlunoDao implements UserDao<Aluno> {
 			stmt.setString(11, aluno.getCurso());
 			stmt.setInt(12, aluno.getAnoIngresso());
 			stmt.setString(13, aluno.getPeriodoInrgresso());
-			stmt.setInt(14, aluno.getId());	
+			stmt.setInt(14, aluno.getId());
 			stmt.execute();
 			stmt.close();
-			
+
 			return true;
-			
+
 		} catch (SQLException u) {
 			throw new RuntimeException(u);
-			
+
 		}
 	}
-		
 
 	public ArrayList<Aluno> searchAll(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	
+	public boolean buscaPorMatricula(String matricula) {
+		
+		String achouMatricula = matricula;
+		String sql = "select * from aluno";
+		ArrayList<Aluno> alunoResult = new ArrayList<Aluno>();
+		try {
+			stmt = (PreparedStatement) conexao.prepareStatement(sql);
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()) {
+				Aluno alu = new Aluno();
+				alu.setMatricula(rs.getString("matricula"));
+				alunoResult.add(alu);
+			}
+			rs.close();
+			stmt.close();
+			
+			for(int i=0; i<alunoResult.size();i++){
+				if(alunoResult.get(i).getMatricula().toString().equals(achouMatricula)){
+					return true;
+				}
+			}
+
+		} catch (SQLException u){
+			u.printStackTrace();
+		}
+		
+		return false;
+
+	}
 
 }
